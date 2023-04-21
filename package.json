@@ -2,10 +2,11 @@
   "name": "jplu8728-tracker",
   "version": "1.0.0",
   "description": "University project tracker",
-  "main": "dist/index.html",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "parcel build ./public/index.html",
+    "dev": "parcel serve ./public/index.html"
   },
   "author": "Jana Plumm",
   "license": "ISC",
@@ -14,8 +15,6 @@
     "express": "^4.18.2",
     "g": "^2.0.1",
     "npm": "^9.6.2"
-  },
-  "prestart": "parcel build ./public/index.html",
-  "dev": "parcel serve ./public/index.html"  
+  } 
 }
 
