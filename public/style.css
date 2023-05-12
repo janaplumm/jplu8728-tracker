@@ -8,28 +8,10 @@
 }
 
 /* Set the font-family and background color within this section */
-html, body {
+html, body, button {
     font-family: 'Inter', sans-serif;
+    font-style: normal;
     background-color: #ffffff;
-}
-
-h1 {
-    font-style: normal;
-    font-weight: 700; 
-    font-size: 64px;
-    line-height: 77px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-
-h2 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 44px;
-    display: flex;
-    align-items: center;
 }
 
 header {
@@ -38,6 +20,24 @@ header {
     height: 8rem;
     left: 5rem;
     top: 5rem;
+}
+
+h1, h2 {
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 5rem;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 2.5rem;
 }
 
 #tracking-list {
@@ -58,6 +58,14 @@ header {
     left: 60rem;
     top: 15rem;
     z-index: -2;
+}
+
+#show-details-button {
+    position: absolute;
+    width: 63px;
+    height: 44px;
+    left: 1072px;
+    top: 615px;
 }
 
 #left-shuffle-button {
