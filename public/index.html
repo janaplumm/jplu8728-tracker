@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Important to declare the language within the website to assist search engines and browsers -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Added 'initial-scale=1.0' as this sets the initial zoom level for when the page first loads by the browser -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Website title -->
+    <title>Podfetch</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- Embedding the Inter font family via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 id="main-heading">Podfetch</h1>
+        <h2 id="sub-heading">Easily track your listening habits</h2>
+    </header>
+    <article class="tracking-list">   
+    </article>
+    <article class="iPod">
+        <img id="left-shuffle-button" src="images/Left_Shuffle.png" alt="A silver iPod Classic" onclick="buttonClick()">
+        <img id="right-shuffle-button" src="images/Right_Shuffle.png" alt="A silver iPod Classic" onclick="buttonClick()">
+        <section id="iPod-frame">
+            <img id="iPod-photo" src="images/iPod_Classic.png" alt="A silver iPod Classic">
+        </section>
+       
+    </article>
+    <script src="script.js"></script>
+</body>
+
+</html>
