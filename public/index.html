@@ -16,23 +16,38 @@
 </head>
 
 <body>
+
     <header>
         <h1 id="main-heading">Podfetch</h1>
         <h2 id="sub-heading">Easily track your listening habits</h2>
     </header>
-    <article id="tracking-list">   
-    </article>
-    <article id="iPod">
-        <button id="show-details-button" onclick="buttonClick()">Show Details</button>
-        <button id="add-podcast-button" onclick="buttonClick()">Add Podcast</button>
-        <img id="left-shuffle-button" src="images/Left_Shuffle.png" alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
-        <img id="right-shuffle-button" src="images/Right_Shuffle.png" alt="Button in the shape of a right shuffle icon" onclick="buttonClick()">
-        <section id="iPod-frame">
-            <img id="iPod-photo" src="images/iPod_Classic.png" alt="A silver iPod Classic">
-        </section>
-       
-    </article>
+
+    <main>
+        <article class="left-container">
+            <section class="iPod-controls">
+                <button id="show-details-button" onclick="buttonClick()">Show Details</button>
+                <button id="add-podcast-button" onclick="buttonClick()">Add Podcast</button>
+                <img id="left-shuffle-button" src="images/Left_Shuffle.png" alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
+                <img id="right-shuffle-button" src="images/Right_Shuffle.png" alt="Button in the shape of a right shuffle icon" onclick="buttonClick()">
+            </section>
+            <section class="iPod-body">
+                <img id="iPod-photo" src="images/iPod_Classic.png" alt="A silver iPod Classic">
+            </section>
+        </article>
+
+        <article class="right-container">
+            <section id="tracking-list-container"></section>
+        </article>
+        
+    </main>
+
+    <footer>
+    </footer>
+
     <script src="script.js"></script>
+
 </body>
+
+
 
 </html>

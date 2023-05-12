@@ -14,14 +14,7 @@ html, body, button {
     background-color: #ffffff;
 }
 
-header {
-    position: absolute;
-    width: 35rem;
-    height: 8rem;
-    left: 5rem;
-    top: 2.5rem;
-}
-
+/* Font specifications for the main-heading and sub-heading */
 h1, h2 {
     display: flex;
     align-items: center;
@@ -31,74 +24,105 @@ h1, h2 {
 h1 {
     font-size: 64px;
     font-weight: 700;
-    line-height: 5rem;
 }
 
 h2 {
     font-size: 36px;
     font-weight: 400;
-    line-height: 2.5rem;
 }
 
-#tracking-list {
-    box-sizing: border-box;
-    position: absolute;
-    width: 50rem;
-    height: 45rem;
-    left: 5rem;
-    top: 13rem;
-    background: #EDFFB6;
-    border: 1px solid #000000;
+/* Use flexbox layout to manage main content and handle responsiveness */
+main {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
 }
 
+/* Using flexbox column layout so that the main-heading and sub-heading appear in column order*/
+header {
+    display: flex;
+    flex-flow: column;
+    margin: 2rem;
+    padding: 2rem;
+    width: 100%;
+    height: 8rem;
+}
+
+  
+.left-container {
+    flex: 40%;
+}
+
+/* The tracking list container requires more space than the iPod container */
+.right-container {
+    flex: 60%;
+}
+
+.left-container {
+    display: grid;
+    place-items: center;  
+}
+
+
+/* Using Z-Index to control the layering between the iPod body and the iPod controls*/
 #iPod-photo {
-    position: absolute;
     width: 28rem;
     height: 47rem;
-    left: 60rem;
-    top: 13rem;
-    z-index: -2;
+    z-index: -1;
 }
 
 #show-details-button, #add-podcast-button {
-    position: absolute;
     width: 4rem;
     height: 3rem;
     border: 0; 
+    z-index: 1;
     
     font-weight: 700;
     font-size: 18px;
     line-height: 1.5rem;
-    display: flex;
-    align-items: center;
     text-align: center;
     color: #000000;
 }
 
+/* Using transform and translate to move the buttons to fit the iPod's control wheel */
 #show-details-button {
-    left: 71rem;
-    top: 38rem;
+    transform: translate(5rem, 28rem);
 }
 
 #add-podcast-button {
-    left: 71rem;
-    top: 49.75rem;
+    transform: translate(0.8rem, 39.5rem);
 }
 
 #left-shuffle-button, #right-shuffle-button {
-    position: absolute; 
     width: 3.5rem;
     height: 2rem;
     z-index: 1;
 }
 
 #left-shuffle-button {
-    left: 65.5rem;
-    top: 44.5rem;
-    
+    transform: translate(-9rem, 35.5rem);
 }
 
 #right-shuffle-button {
-    left: 77rem;
-    top: 44.5rem;
+    transform: translate(-1.5rem, 35.5rem);
+}
+
+
+#tracking-list-container {
+    box-sizing: border-box;
+    width: 50rem;
+    height: 45rem;
+    margin: 2rem;
+    background: #EDFFB6;
+    border: 1px solid #000000;
+}
+
+/* RESPONSIVENESS */ 
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+
+@media (max-width: 800px) {
+    .left-container, .right-container {
+        flex: 100%;
+    }
 }
