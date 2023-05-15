@@ -139,6 +139,34 @@ li {
     border-radius: 20px 0px 0px 20px;
 }
 
+/* Styling for the genre image  */
+#tracking-genre-image {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* Styling for the podcast and episode titles  */
+#tracking-pod-title, #tracking-ep-title {
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+}
+
+#tracking-pod-title {
+    font-weight: 700;
+}
+
+#tracking-ep-title {
+    font-weight: 400;
+}
+
+/* Styling for the green tick emoji signifying that the user finished listening to the podcast episode  */
+#tracking-green-tick {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 /* Styling for the container holding the delete button in the form of a trash emoji */
 .tracking-del-container {
     box-sizing: border-box;
