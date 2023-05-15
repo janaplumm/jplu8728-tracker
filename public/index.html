@@ -44,7 +44,13 @@
             <ul id="tracking-list">
                 <!-- Divided the list element into two div elemens for easier CSS management -->
                 <li class="tracking-item">
-                    <div class="tracking-info-container"></div>
+                    <!-- Divided first div element into individual elements -->
+                    <div class="tracking-info-container">
+                        <h4 id="tracking-pod-title">Serial</h4>
+                        <img id="tracking-green-tick" src="images/green-tick-emoji.png" alt="Green tick emoji indicating completion">
+                        <p id="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                        <div id="tracking-rating"></div>
+                    </div>
                     <div class="tracking-del-container">
                         <img id="trash-icon-button" src="images/trash-emoji.png" alt="Button in the shape of a trash can emoji" onclick="buttonClick()">  
                     </div>
@@ -62,7 +68,5 @@
     <script src="script.js"></script>
 
 </body>
-
-
 
 </html>
