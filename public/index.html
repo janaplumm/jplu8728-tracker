@@ -17,20 +17,24 @@
 
 <body>
 
+    <!-- Created a header element with the two heading element types embedded within  -->
     <header>
         <h1 id="main-heading">Podfetch</h1>
         <h2 id="sub-heading">Easily track your listening habits</h2>
     </header>
 
+    <!-- Used the main element to structure the left and right containers containing the iPod and tracking list  -->
     <main>
         <article class="left-container">
             <section class="iPod-controls">
                 <button id="show-details-button" onclick="buttonClick()">Show Details</button>
                 <button id="add-podcast-button" onclick="buttonClick()">Add Podcast</button>
+                <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function  -->
                 <img id="left-shuffle-button" src="images/Left_Shuffle.png" alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
                 <img id="right-shuffle-button" src="images/Right_Shuffle.png" alt="Button in the shape of a right shuffle icon" onclick="buttonClick()">
             </section>
             <section class="iPod-body">
+                <!-- Important to add alt text to images for accessibility purposes and in-case the image disappears on the site  -->
                 <img id="iPod-photo" src="images/iPod_Classic.png" alt="A silver iPod Classic">
             </section>
         </article>
@@ -38,15 +42,21 @@
         <article class="right-container">
             <section id="tracking-list-container"></section>
             <ul class="tracking-list">
-                <li class="podcast-element"></li>
+                <!-- Divided the list element into a div element and an image element for easier CSS management -->
+                <li class="tracking-item">
+                    <div id="tracking-information"></div>
+                    <img id="trash-icon-button" src="images/trash-emoji.png" alt="Button in the shape of a trash can emoji" onclick="buttonClick()">  
+                </li>
             </ul>
         </article>
         
     </main>
 
+    <!-- Given the simplistic one-page layout, I added the footer element only to add some spacing at the bottom -->
     <footer>
     </footer>
 
+    <!-- Link to the javascript file -->
     <script src="script.js"></script>
 
 </body>
