@@ -120,7 +120,7 @@ li {
   }
   
   /* Styling for the background container holding the list of podcast elements */
-  #tracking-item-container {
+  #tracking-list-container {
     display: flex;
     align-items: center;
     width: 50rem;
@@ -131,7 +131,7 @@ li {
   }
   
   /* Styling for the container holding the individual podcast element information  */
-  .tracking-item-details-container {
+  .tracking-info-container {
     display: flex;
     align-items: center;
     width: 38.75rem;
@@ -142,13 +142,13 @@ li {
   }
   
   /* Styling for the genre image  */
-  .tracking-item-genre-img {
+  .tracking-genre-image {
     width: 4rem;
     height: 4rem;
   }
   
   /* Styling for the podcast and episode titles  */
-  .tracking-item-info {
+  .tracking-details {
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
@@ -168,13 +168,13 @@ li {
   }
   
   /* Styling for the green tick emoji signifying that the user finished listening to the podcast episode  */
-  #tracking-green-tick {
+  .tracking-green-tick {
     width: 1.5rem;
     height: 1.5rem;
   }
   
   /* Styling for the container holding the delete button in the form of a trash emoji */
-  .tracking-item-del-container {
+  .tracking-del-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,6 +191,16 @@ li {
     height: 4rem;
   }
   
+  .tracking-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tracking-heading {
+    display: flex;
+    flex-direction: row;
+  }
+
 
 /* RESPONSIVENESS */ 
 

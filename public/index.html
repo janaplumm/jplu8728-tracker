@@ -40,25 +40,25 @@
         </article>
 
         <article class="right-container">
-            <section id="tracking-list-container"></section>
             <ul id="tracking-list">
                 <!-- Divided the list element into two div elemens for easier CSS management -->
-                <li id="tracking-item-container">
-                    <!-- Divided list element into multiple div elements to keep an overview of each tracking element -->
-                    <!-- This div contains the genre image, podcast title, episode title, green tick and rating (if added) -->
-                    <div class="tracking-item-details-container">
-                        <img class="tracking-item-genre-img" src="images/journalism-emoji.png" alt="Investigative journalist emoji">
-                        <div class="tracking-item-info">
-                            <h4 class="tracking-pod-title">Serial</h4>
-                            <img id="tracking-green-tick" src="images/green-tick-emoji.png" alt="Green tick emoji indicating completion">
-                            <p class="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                <li id="tracking-list-item">
+                    <div id="tracking-list-container">
+                        <div class="tracking-info-container">
+                            <img class="tracking-genre-image" src="images/journalism-emoji.png" alt="Investigative journalist emoji">
+                            <div class="tracking-details">
+                                <div class="tracking-heading">
+                                    <h4 class="tracking-pod-title">Serial</h4>
+                                    <img class="tracking-green-tick" src="images/green-tick-emoji.png" alt="Green tick emoji indicating completion">
+                                </div>
+                                <p class="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                                <div class="tracking-rating">⭐⭐⭐⭐</div>
+                            </div>
                         </div>
-                        <div class="tracking-item-rating"></div>
-                    </div>
-                    <!-- This div contains the deletion button -->
-                    <div class="tracking-item-del-container">
-                        <img id="trash-icon-button" src="images/trash-emoji.png" alt="Trash emoji representing delete functionality">
-                    </div>                     
+                        <div class="tracking-del-container">
+                          <img id="trash-icon-button" src="images/trash-emoji.png" alt="Trash emoji representing delete functionality">
+                        </div>
+                      </div>                 
                 </li>
             </ul>
         </article>
