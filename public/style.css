@@ -130,7 +130,6 @@ li {
   flex-flow: column;
   align-items: center;
   align-content: flex-start;
-  overflow: auto; /* Enables scrolling */
   width: 50rem;
   height: 45rem;
   margin: 1rem;
@@ -141,20 +140,21 @@ li {
 
 /* Scrollbar container styling */
 .scroll-container {
-  overflow-y: auto;
+  overflow-y: auto; /* Enables scrolling */
 }
 
-/* width */
+/* Scrollbar width */
 .scroll-container::-webkit-scrollbar {
   width: 1.25rem;
 }
 
-/* Track */
+/* Scrollbar track */
 .scroll-container::-webkit-scrollbar-track {
   border: 1px solid #000000;
+  background: white;
 }
 
-/* Handle */
+/* Scrollbar handle */
 .scroll-container::-webkit-scrollbar-thumb {
   background: #D9D9D9;
   border: 1px solid #000000;
@@ -165,6 +165,7 @@ li {
 .tracking-list-item-container {
   display: flex;
   margin-top: 1rem;
+  padding-right: 1rem; /* Added padding to the right to create space with the scrollbar*/ 
 }
 
 /* Styling for the container holding the individual podcast information  */
