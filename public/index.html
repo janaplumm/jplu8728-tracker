@@ -41,11 +41,13 @@
 
         <article class="right-container">
             <section id="tracking-list-container"></section>
-            <ul class="tracking-list">
-                <!-- Divided the list element into a div element and an image element for easier CSS management -->
+            <ul id="tracking-list">
+                <!-- Divided the list element into two div elemens for easier CSS management -->
                 <li class="tracking-item">
-                    <div id="tracking-information"></div>
-                    <img id="trash-icon-button" src="images/trash-emoji.png" alt="Button in the shape of a trash can emoji" onclick="buttonClick()">  
+                    <div class="tracking-info-container"></div>
+                    <div class="tracking-del-container">
+                        <img id="trash-icon-button" src="images/trash-emoji.png" alt="Button in the shape of a trash can emoji" onclick="buttonClick()">  
+                    </div>
                 </li>
             </ul>
         </article>
