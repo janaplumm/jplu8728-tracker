@@ -43,18 +43,22 @@
             <section id="tracking-list-container"></section>
             <ul id="tracking-list">
                 <!-- Divided the list element into two div elemens for easier CSS management -->
-                <li class="tracking-item">
-                    <!-- Divided first div element into individual elements -->
-                    <div class="tracking-info-container">
-                        <img id="tracking-genre-image" src="images/journalism-emoji.png" alt="Investigative journalist emoji">
-                        <h4 id="tracking-pod-title">Serial</h4>
-                        <img id="tracking-green-tick" src="images/green-tick-emoji.png" alt="Green tick emoji indicating completion">
-                        <p id="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
-                        <div id="tracking-rating"></div>
+                <li id="tracking-item-container">
+                    <!-- Divided list element into multiple div elements to keep an overview of each tracking element -->
+                    <!-- This div contains the genre image, podcast title, episode title, green tick and rating (if added) -->
+                    <div class="tracking-item-details-container">
+                        <img class="tracking-item-genre-img" src="images/journalism-emoji.png" alt="Investigative journalist emoji">
+                        <div class="tracking-item-info">
+                            <h4 class="tracking-pod-title">Serial</h4>
+                            <img id="tracking-green-tick" src="images/green-tick-emoji.png" alt="Green tick emoji indicating completion">
+                            <p class="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                        </div>
+                        <div class="tracking-item-rating"></div>
                     </div>
-                    <div class="tracking-del-container">
-                        <img id="trash-icon-button" src="images/trash-emoji.png" alt="Button in the shape of a trash can emoji" onclick="buttonClick()">  
-                    </div>
+                    <!-- This div contains the deletion button -->
+                    <div class="tracking-item-del-container">
+                        <img id="trash-icon-button" src="images/trash-emoji.png" alt="Trash emoji representing delete functionality">
+                    </div>                     
                 </li>
             </ul>
         </article>
