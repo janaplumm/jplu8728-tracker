@@ -11,8 +11,8 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- Embedding the Inter font family via Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -30,8 +30,10 @@
                 <button id="show-details-button" onclick="buttonClick()">Show Details</button>
                 <button id="add-podcast-button" onclick="buttonClick()">Add Podcast</button>
                 <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function  -->
-                <img id="left-shuffle-button" src="images/Left_Shuffle.png" alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
-                <img id="right-shuffle-button" src="images/Right_Shuffle.png" alt="Button in the shape of a right shuffle icon" onclick="buttonClick()">
+                <img id="left-shuffle-button" src="images/Left_Shuffle.png"
+                    alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
+                <img id="right-shuffle-button" src="images/Right_Shuffle.png"
+                    alt="Button in the shape of a right shuffle icon" onclick="buttonClick()">
             </section>
             <section class="iPod-body">
                 <!-- Important to add alt text to images for accessibility purposes and in-case the image disappears on the site  -->
@@ -41,31 +43,156 @@
 
         <article class="right-container">
             <ul class="tracking-list">
-                <!-- Divided the list element into multiple div elements for easier CSS management -->
-                <li class="tracking-list-item-container" onclick="buttonClick()">
-                    <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
-                    <div class="tracking-list-item-details">
-                        <img id="tracking-list-item-genre-img" src="images/journalism-emoji.png" alt="Investigative journalist emoji">
-                        <!-- Tracking list item info holds all the text-based context of the tracking item -->
-                        <div class="tracking-list-item-info">
-                            <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
-                            <div class="tracking-list-item-heading">
-                                <h4 id="tracking-pod-title">Serial</h4>
-                                <img id="tracking-green-tick" src="images/green-tick-emoji.png"
-                                    alt="Green tick emoji indicating completion">
+                <!-- Created a separate element for the scrollbar to avoid the borders clashing and for easier scroll function -->
+                <div class="scroll-container">
+                    <!-- Divided the list element into multiple div elements for easier CSS management -->
+                    <li class="tracking-list-item-container" onclick="buttonClick()">
+                        <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
+                        <div class="tracking-list-item-details">
+                            <img id="tracking-list-item-genre-img" src="images/journalism-emoji.png"
+                                alt="Investigative journalist emoji">
+                            <!-- Tracking list item info holds all the text-based context of the tracking item -->
+                            <div class="tracking-list-item-info">
+                                <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
+                                <div class="tracking-list-item-heading">
+                                    <h4 id="tracking-pod-title">Serial</h4>
+                                    <img id="tracking-green-tick" src="images/green-tick-emoji.png"
+                                        alt="Green tick emoji indicating completion">
+                                </div>
+                                <p id="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                                <div class="tracking-rating">⭐⭐⭐⭐</div>
                             </div>
-                            <p id="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
-                            <div class="tracking-rating">⭐⭐⭐⭐</div>
                         </div>
-                    </div>
-                    <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
-                    <div class="tracking-list-item-del">
-                        <img id="trash-icon-button" src="images/trash-emoji.png" alt="Trash emoji representing delete functionality" onclick="buttonClick()">
-                    </div>
-                </li>
+                        <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
+                        <div class="tracking-list-item-del">
+                            <img id="trash-icon-button" src="images/trash-emoji.png"
+                                alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                        </div>
+                    </li>
+
+                    <li class="tracking-list-item-container" onclick="buttonClick()">
+                        <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
+                        <div class="tracking-list-item-details">
+                            <img id="tracking-list-item-genre-img" src="images/journalism-emoji.png"
+                                alt="Investigative journalist emoji">
+                            <!-- Tracking list item info holds all the text-based context of the tracking item -->
+                            <div class="tracking-list-item-info">
+                                <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
+                                <div class="tracking-list-item-heading">
+                                    <h4 id="tracking-pod-title">Serial</h4>
+                                    <img id="tracking-green-tick" src="images/green-tick-emoji.png"
+                                        alt="Green tick emoji indicating completion">
+                                </div>
+                                <p id="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                                <div class="tracking-rating">⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
+                        <div class="tracking-list-item-del">
+                            <img id="trash-icon-button" src="images/trash-emoji.png"
+                                alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                        </div>
+                    </li>
+
+                    <li class="tracking-list-item-container" onclick="buttonClick()">
+                        <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
+                        <div class="tracking-list-item-details">
+                            <img id="tracking-list-item-genre-img" src="images/journalism-emoji.png"
+                                alt="Investigative journalist emoji">
+                            <!-- Tracking list item info holds all the text-based context of the tracking item -->
+                            <div class="tracking-list-item-info">
+                                <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
+                                <div class="tracking-list-item-heading">
+                                    <h4 id="tracking-pod-title">Serial</h4>
+                                    <img id="tracking-green-tick" src="images/green-tick-emoji.png"
+                                        alt="Green tick emoji indicating completion">
+                                </div>
+                                <p id="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                                <div class="tracking-rating">⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
+                        <div class="tracking-list-item-del">
+                            <img id="trash-icon-button" src="images/trash-emoji.png"
+                                alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                        </div>
+                    </li>
+
+                    <li class="tracking-list-item-container" onclick="buttonClick()">
+                        <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
+                        <div class="tracking-list-item-details">
+                            <img id="tracking-list-item-genre-img" src="images/journalism-emoji.png"
+                                alt="Investigative journalist emoji">
+                            <!-- Tracking list item info holds all the text-based context of the tracking item -->
+                            <div class="tracking-list-item-info">
+                                <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
+                                <div class="tracking-list-item-heading">
+                                    <h4 id="tracking-pod-title">Serial</h4>
+                                    <img id="tracking-green-tick" src="images/green-tick-emoji.png"
+                                        alt="Green tick emoji indicating completion">
+                                </div>
+                                <p id="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                                <div class="tracking-rating">⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
+                        <div class="tracking-list-item-del">
+                            <img id="trash-icon-button" src="images/trash-emoji.png"
+                                alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                        </div>
+                    </li>
+
+                    <li class="tracking-list-item-container" onclick="buttonClick()">
+                        <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
+                        <div class="tracking-list-item-details">
+                            <img id="tracking-list-item-genre-img" src="images/journalism-emoji.png"
+                                alt="Investigative journalist emoji">
+                            <!-- Tracking list item info holds all the text-based context of the tracking item -->
+                            <div class="tracking-list-item-info">
+                                <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
+                                <div class="tracking-list-item-heading">
+                                    <h4 id="tracking-pod-title">Serial</h4>
+                                    <img id="tracking-green-tick" src="images/green-tick-emoji.png"
+                                        alt="Green tick emoji indicating completion">
+                                </div>
+                                <p id="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                                <div class="tracking-rating">⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
+                        <div class="tracking-list-item-del">
+                            <img id="trash-icon-button" src="images/trash-emoji.png"
+                                alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                        </div>
+                    </li>
+
+                    <li class="tracking-list-item-container" onclick="buttonClick()">
+                        <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
+                        <div class="tracking-list-item-details">
+                            <img id="tracking-list-item-genre-img" src="images/journalism-emoji.png"
+                                alt="Investigative journalist emoji">
+                            <!-- Tracking list item info holds all the text-based context of the tracking item -->
+                            <div class="tracking-list-item-info">
+                                <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
+                                <div class="tracking-list-item-heading">
+                                    <h4 id="tracking-pod-title">Serial</h4>
+                                    <img id="tracking-green-tick" src="images/green-tick-emoji.png"
+                                        alt="Green tick emoji indicating completion">
+                                </div>
+                                <p id="tracking-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                                <div class="tracking-rating">⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
+                        <div class="tracking-list-item-del">
+                            <img id="trash-icon-button" src="images/trash-emoji.png"
+                                alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                        </div>
+                    </li>
+                </div>
             </ul>
         </article>
-        
+
     </main>
 
     <!-- Given the simplistic one-page layout, I added the footer element only to add some spacing at the bottom -->
