@@ -2,212 +2,231 @@
 
 /* Removed any default browser margin and padding and applied border-box property to account for border and padding within the element's width and height properties */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Set the font-family and background colour within this section */
-html, body, button {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    background-color: #ffffff;
+html,
+body,
+button {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  background-color: #ffffff;
 }
 
 /* HEADING ELEMENTS */
 
 /* Font specifications for the main-heading and sub-heading */
-h1, h2 {
-    display: flex;
-    align-items: center;
-    color: #000000;
+h1,
+h2 {
+  display: flex;
+  align-items: center;
+  color: #000000;
 }
 
-/* Applied these specifications regarding font-size and weight using my mockups in Figma */ 
+/* Applied these specifications regarding font-size and weight using my mockups in Figma */
 h1 {
-    font-size: 64px;
-    font-weight: 700;
+  font-size: 64px;
+  font-weight: 700;
 }
 
 h2 {
-    font-size: 36px;
-    font-weight: 400;
+  font-size: 36px;
+  font-weight: 400;
 }
 
 /* FLEXBOX LAYOUT */
 
 /* Use flexbox layout to manage main content and handle responsiveness */
 main {
-    display: flex;
-    align-items: center;
-    flex-flow: row wrap;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
 }
 
 /* Using flexbox column layout so that the main-heading and sub-heading appear in column order*/
 header {
-    display: flex;
-    flex-flow: column;
-    margin: 2rem;
-    padding: 2rem;
-    width: 100%;
-    height: 8rem;
+  display: flex;
+  flex-flow: column;
+  margin: 2rem;
+  padding: 2rem;
+  width: 100%;
+  height: 8rem;
 }
-  
+
 .left-container {
-    flex: 40%;
+  flex: 40%;
 }
 
 /* The tracking list container requires more space than the iPod container */
 .right-container {
-    flex: 60%;
+  flex: 60%;
 }
 
 .left-container {
-    display: grid;
-    place-items: center;  
+  display: grid;
+  place-items: center;
 }
 
-/* IPOD ELEMENT (LEFT CONTAINER) */
+/* IPOD ELEMENT */
 
 /* Using Z-Index to control the layering between the iPod body and the iPod controls*/
 #iPod-photo {
-    width: 28rem;
-    height: 47rem;
-    z-index: -1;
+  width: 28rem;
+  height: 47rem;
+  z-index: -1;
 }
 
-#show-details-button, #add-podcast-button {
-    width: 4rem;
-    height: 3rem;
-    border: 0; 
-    z-index: 1;
-    
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.5rem;
-    text-align: center;
-    color: #000000;
+#show-details-button,
+#add-podcast-button {
+  width: 4rem;
+  height: 3rem;
+  border: 0;
+  z-index: 1;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #000000;
 }
 
 /* Using transform and translate to move the buttons to fit the iPod's control wheel */
 #show-details-button {
-    transform: translate(5rem, 28rem);
+  transform: translate(5rem, 28rem);
 }
 
 #add-podcast-button {
-    transform: translate(0.8rem, 39.5rem);
+  transform: translate(0.8rem, 39.5rem);
 }
 
-#left-shuffle-button, #right-shuffle-button {
-    width: 3.5rem;
-    height: 2rem;
-    z-index: 1;
+#left-shuffle-button,
+#right-shuffle-button {
+  width: 3.5rem;
+  height: 2rem;
+  z-index: 1;
 }
 
 #left-shuffle-button {
-    transform: translate(-9rem, 35.5rem);
+  transform: translate(-9rem, 35.5rem);
 }
 
 #right-shuffle-button {
-    transform: translate(-1.5rem, 35.5rem);
+  transform: translate(-1.5rem, 35.5rem);
 }
 
-/* TRACKING LIST ELEMENT (RIGHT CONTAINER) */
+/* TRACKING LIST ELEMENT */
 
 /* This removes the bullet-point from the list display */
 li {
-    list-style-type: none;
-  }
-  
-  /* Styling for the background container holding the list of podcast elements */
-  #tracking-list-container {
-    display: flex;
-    align-items: center;
-    width: 50rem;
-    height: 45rem;
-    margin: 2rem;
-    background: #EDFFB6;
-    border: 1px solid #000000;
-  }
-  
-  /* Styling for the container holding the individual podcast element information  */
-  .tracking-info-container {
-    display: flex;
-    align-items: center;
-    width: 38.75rem;
-    height: 6.25rem;
-    background: #C8B6FF;
-    border: 2px solid #000000;
-    border-radius: 20px 0px 0px 20px;
-  }
-  
-  /* Styling for the genre image  */
-  .tracking-genre-image {
-    width: 4rem;
-    height: 4rem;
-  }
-  
-  /* Styling for the podcast and episode titles  */
-  .tracking-details {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1rem;
-  }
-  
-  .tracking-pod-title, .tracking-ep-title {
-    font-size: 18px;
-    line-height: 22px;
-  }
-  
-  .tracking-pod-title {
-    font-weight: 700;
-  }
-  
-  .tracking-ep-title {
-    font-weight: 400;
-  }
-  
-  /* Styling for the green tick emoji signifying that the user finished listening to the podcast episode  */
-  .tracking-green-tick {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-  
-  /* Styling for the container holding the delete button in the form of a trash emoji */
-  .tracking-del-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 5.625rem;
-    height: 6.25rem;
-    background: #C8B6FF;
-    border: 2px solid #000000;
-    border-radius: 0px 20px 20px 0px;
-  }
-  
-  /* Styling for the trash emoji image representing the delete functionality for the user */
-  #trash-icon-button {
-    width: 4rem;
-    height: 4rem;
-  }
-  
-  .tracking-details {
-    display: flex;
-    flex-direction: column;
-  }
+  list-style-type: none;
+}
 
-  .tracking-heading {
-    display: flex;
-    flex-direction: row;
-  }
+/* Styling for the background container holding the list of podcast elements */
+.tracking-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 50rem;
+  height: 45rem;
+  margin: 2rem;
+  padding: 2rem;
+  background: #EDFFB6;
+  border: 1px solid #000000;
+}
 
+/* Ensuring that the list item details and delete button are on the same line rather than split up */
+.tracking-list-item-container {
+  display: flex;
+}
 
-/* RESPONSIVENESS */ 
+/* Styling for the container holding the individual podcast information  */
+.tracking-list-item-details {
+  display: flex;
+  align-items: center;
+  width: 38.75rem;
+  height: 7rem;
+  background: #C8B6FF;
+  border: 2px solid #000000;
+  border-radius: 20px 0px 0px 20px;
+}
+
+/* Styling for the genre image  */
+#tracking-list-item-genre-img {
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem; /* Adding space between the image and the text elements */
+}
+
+/* Styling for the podcast and episode titles  */
+.tracking-list-item-info {
+  display: flex;
+  flex-direction: column; /* Having the elements stack up vertically */
+  justify-content: center; 
+  margin-left: 0.5rem;
+}
+
+/* Styling the podcast title and green tick emoji  */
+.tracking-list-item-heading {
+  display: flex;
+}
+
+/* Styling the podcast title and episode title */
+#tracking-pod-title,
+#tracking-ep-title {
+  font-size: 18px;
+}
+
+#tracking-pod-title {
+  font-weight: 700;
+}
+
+#tracking-ep-title {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for the green tick emoji signifying that the user finished listening to the podcast episode  */
+#tracking-green-tick {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tracking-rating {
+  font-size: 18px;
+}
+
+/* Styling for the container holding the delete button in the form of a trash emoji */
+.tracking-list-item-del {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.625rem;
+  height: 7rem;
+  background: #C8B6FF;
+  border: 2px solid #000000;
+  border-radius: 0px 20px 20px 0px;
+  transform: translate(-0.1rem, 0rem); /* Shifting the container slightly to the left for the border lines to overlap */
+}
+
+/* Styling for the trash emoji image representing the delete functionality for the user */
+#trash-icon-button {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* RESPONSIVENESS */
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 
 @media (max-width: 800px) {
-    .left-container, .right-container {
-        flex: 100%;
-    }
+
+  .left-container,
+  .right-container {
+    flex: 100%;
+  }
 }
