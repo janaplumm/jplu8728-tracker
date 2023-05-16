@@ -220,11 +220,6 @@ li {
   display: flex;
 }
 
-/* Adding margin to the bottom of the episode title to create space */
-#tracking-ep-title {
-  margin-bottom: 0.5rem;
-}
-
 /* Styling for the green tick emoji signifying that the user finished listening to the podcast episode  */
 #tracking-green-tick {
   width: 1.5rem;
@@ -235,6 +230,7 @@ li {
 
 /* Styling for the star rating */
 .tracking-rating {
+  margin-top: 0.5rem;
   font-size: 18px;
 }
 
