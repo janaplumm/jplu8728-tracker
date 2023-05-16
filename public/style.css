@@ -19,8 +19,8 @@ button {
 /* HEADING ELEMENTS */
 
 /* Font specifications for the main-heading and sub-heading */
-h1,
-h2 {
+#main-heading,
+#sub-heading {
   display: flex;
   align-items: center;
   color: #000000;
@@ -37,7 +37,17 @@ h2 {
   font-weight: 400;
 }
 
-/* FLEXBOX LAYOUT */
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* MAIN FLEXBOX LAYOUT */
 
 /* Use flexbox layout to manage main content and handle responsiveness */
 main {
@@ -72,13 +82,23 @@ header {
 
 /* IPOD ELEMENT */
 
-/* Using Z-Index to control the layering between the iPod body and the iPod controls*/
+.iPod-display {
+  display: flex;
+}
+
+#iPod-display-genre-img {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+/* Styling for iPod frame made up of photo of an iPod classic */
 #iPod-photo {
   width: 28rem;
   height: 47rem;
-  z-index: -1;
+  z-index: -1; /* Using Z-Index to control the layering between the iPod body and the iPod controls*/
 }
 
+/* Styling for top and bottom buttons of iPod controls */
 #show-details-button,
 #add-podcast-button {
   width: 4rem;
@@ -102,6 +122,7 @@ header {
   transform: translate(0.8rem, 39.5rem);
 }
 
+/* Styling for left and right shuffle buttons of iPod controls */
 #left-shuffle-button,
 #right-shuffle-button {
   width: 3.5rem;
@@ -199,18 +220,8 @@ li {
   display: flex;
 }
 
-/* Styling the podcast title and episode title */
-#tracking-pod-title,
+/* Adding margin to the bottom of the episode title to create space */
 #tracking-ep-title {
-  font-size: 18px;
-}
-
-#tracking-pod-title {
-  font-weight: 700;
-}
-
-#tracking-ep-title {
-  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
@@ -222,6 +233,7 @@ li {
   margin-bottom: 0.5rem;
 }
 
+/* Styling for the star rating */
 .tracking-rating {
   font-size: 18px;
 }
