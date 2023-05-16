@@ -111,9 +111,12 @@
                             </div>
                         </div>
                         <!-- Episode completed selection -->
-                        <label for="episodeCompleted">Episode Completed*:</label>
-                        <label><input type="radio" name="episodeCompleted" value="yes"> Yes</label>
-                        <label><input type="radio" name="episodeCompleted" value="no"> No</label>
+                        <div class="episode-completed-container">
+                            <label for="episodeCompleted">Episode Completed*:</label>
+                            <!-- Used buttons instead of radio input type -->
+                            <button type="button" name="episodeCompleted" value="yes" onclick="buttonClick()">👍 Yes</button>
+                            <button type="button" name="episodeCompleted" value="no" onclick="buttonClick()">👎 No</button>
+                        </div>
                         <!-- Episode rating selection -->
                         <label for="rating">Rate Episode</label>
                         <div id="rating">
