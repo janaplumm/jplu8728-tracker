@@ -71,10 +71,10 @@
                     <!-- Input form that user fills out to add a new podcast episode -->
                     <form class="add-podcast-form">
                         <!-- Podcast name input -->
-                        <label for="podcastName">Podcast Name</label>
+                        <label for="podcastName">Podcast Name*</label>
                         <input type="text" id="podcastName" name="podcastName" required> 
                         <!-- Podcast genre dropdown menu -->
-                        <label for="podcastGenre">Podcast Genre</label>
+                        <label for="podcastGenre">Podcast Genre*</label>
                         <select id="genre" name="genre" required>
                             <option value="" selected>Select Genre</option>
                             <option value="advice">Advice & Self-Help</option>
@@ -90,19 +90,19 @@
                             <option value="truecrime">True Crime</option>
                         </select>
                         <!-- Podcast hosts input -->
-                        <label for="podcastHosts">Podcast Host(s)</label>
+                        <label for="podcastHosts">Podcast Host(s)*</label>
                         <input type="text" id="podcastHosts" name="podcastHosts" required> 
                         <!-- Episode title input -->
-                        <label for="episodeTitle">Episode Title</label>
+                        <label for="episodeTitle">Episode Title*</label>
                         <input type="text" id="episodeTitle" name="episodeTitle" required> 
                         <!-- Episode duration in hours input -->
-                        <label for="episodeHours">Episode Duration (Hours):</label>
+                        <label for="episodeHours">Episode Duration (Hours)*:</label>
                         <input type="number" id="episodeHours" name="episodeHours" min="0" required>
                         <!-- Episode duration in minutes input -->
-                        <label for="episodeMinutes">Episode Duration (Minutes):</label>
+                        <label for="episodeMinutes">Episode Duration (Minutes)*:</label>
                         <input type="number" id="episodeMinutes" name="episodeMinutes" min="0" max="59" required>
                         <!-- Episode completed selection -->
-                        <label for="episodeCompleted">Episode Completed:</label>
+                        <label for="episodeCompleted">Episode Completed*:</label>
                         <label><input type="radio" name="episodeCompleted" value="yes"> Yes</label>
                         <label><input type="radio" name="episodeCompleted" value="no"> No</label>
                         <!-- Episode rating selection -->
