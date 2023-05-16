@@ -23,20 +23,34 @@
         <h2 id="sub-heading">Easily track your listening habits</h2>
     </header>
 
-    <!-- Used the main element to structure the left and right containers containing the iPod and tracking list  -->
+    <!-- Used the main element to structure the left and right containers containing the iPod and tracking list -->
     <main>
         <article class="left-container">
+            <!-- iPod display container with genre image, heading, episode title and rating -->
+            <section class="iPod-display">
+                <img id="iPod-display-genre-img" src="images/journalism-emoji.png" 
+                alt="Investigative journalist emoji">
+                <div class="iPod-display-heading">
+                    <h3 id="iPod-display-pod-title">Serial</h3>
+                    <img id="iPod-display-green-tick" src="images/green-tick-emoji.png"
+                        alt="Green tick emoji indicating completion">
+                </div>
+                <p id="iPod-display-ep-title">Serial S01 - Ep. 1: The Alibi</p>
+                <div class="iPod-display-rating">⭐⭐⭐⭐</div>
+            </section>
+            <!-- iPod controls container with shuffle buttons, show details and add podcast buttons -->
             <section class="iPod-controls">
                 <button id="show-details-button" onclick="buttonClick()">Show Details</button>
                 <button id="add-podcast-button" onclick="buttonClick()">Add Podcast</button>
-                <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function  -->
+                <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function -->
                 <img id="left-shuffle-button" src="images/Left_Shuffle.png"
                     alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
                 <img id="right-shuffle-button" src="images/Right_Shuffle.png"
                     alt="Button in the shape of a right shuffle icon" onclick="buttonClick()">
             </section>
+            <!-- iPod body container that holds the frame of a classic iPod -->
             <section class="iPod-body">
-                <!-- Important to add alt text to images for accessibility purposes and in-case the image disappears on the site  -->
+                <!-- Important to add alt text to images for accessibility purposes and in-case the image disappears on the site -->
                 <img id="iPod-photo" src="images/iPod_Classic.png" alt="A silver iPod Classic">
             </section>
         </article>
