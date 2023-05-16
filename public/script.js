@@ -36,7 +36,7 @@ stars.forEach((star) => {
         s.innerHTML = "&#9734;"; // Unicode representing empty star
       }
     });
-    console.log("Selected rating:", ratingInput.value);
+    // console.log("Selected rating:", ratingInput.value);
   });
 });
 

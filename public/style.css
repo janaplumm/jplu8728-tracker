@@ -303,6 +303,12 @@ select {
   transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
 }
 
+/* Styling to make thumbs up (yes) and thumbs down (no) emojis bigger without affecting text */
+#yes-emoji,
+#no-emoji {
+  font-size: 24px;
+}
+
 /* Styling for podcast form input type 'text' */
 input[type="text"],
 select { /* 'select' selects the dropdown menu styling */
