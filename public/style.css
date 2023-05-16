@@ -208,6 +208,13 @@ header {
   margin-top: 2rem;
   margin-right: 2rem;
   cursor: pointer;
+  /* Creates a smooth transition effect when hovering over the button */
+  transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
+}
+
+.close-popup-button:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Filter is smoother than box shadow */
 }
 
 /* ADD PODCAST POP-UP */
@@ -250,9 +257,8 @@ label {
   margin-right: 0.5rem; /* Adjust the margin for the labels */
 }
 
-/* Styling for the episode duration title */
-#episode-duration-title {
-  font-weight: 400;
+/* Styling for the episode completed title */
+#episode-completed-title {
   margin-bottom: 0.5rem;
 }
 
@@ -260,6 +266,7 @@ label {
 .episode-completed-container {
   display: flex;
   flex-direction: row;
+  margin-bottom: 1rem;
 }
 
 /* Styling for the episode completed (yes) button */
@@ -270,6 +277,8 @@ label {
   border: 2px solid #000000;
   border-radius: 10px;
   cursor: pointer;
+  /* Creates a smooth transition effect when hovering over the button */
+  transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
 }
 
 /* Styling for the episode completed (no) button */
@@ -280,6 +289,9 @@ label {
   border: 2px solid #000000;
   border-radius: 10px;
   cursor: pointer;
+  margin-left: 2.5rem;
+  /* Creates a smooth transition effect when hovering over the button */
+  transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
 }
 
 /* Styling for podcast form input type 'text' */
@@ -306,39 +318,9 @@ input[type="number"] {
   border-radius: 10px;
 }
 
-button[type="submit"] {
-  box-sizing: border-box;
-  width: 25rem;
-  height: 3.75rem;
-  padding: 0.5rem 1rem;
-  background: #B6FFED;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  cursor: pointer;
-  /* Creates a smooth transition effect when hovering over the button */
-  transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), box-shadow 0.5s;
-}
-
-/* Styling for effects taking place when hovering over the button */
-button[type="submit"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Styling for required text to line up with input form start */
-#required-text {
-  margin-left: 2rem;
-}
-
 /* Styling for star rating input */
-.star-rating {
-  font-size: 0;
-}
-
 .star-rating label {
   display: inline-block;
-  font-size: 2rem;
-  cursor: default;
 }
 .star-rating input[type="checkbox"] {
   display: none;
@@ -346,6 +328,34 @@ button[type="submit"]:hover {
 
 .star-rating input[type="checkbox"]:checked + label {
   content: '&#11088;';
+}
+
+/* Styling for submit button */
+button[type="submit"] {
+  box-sizing: border-box;
+  width: 25rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: #B6FFED;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  cursor: pointer;
+  /* Creates a smooth transition effect when hovering over the button */
+  transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
+}
+
+/* Styling for effects taking place when hovering over buttons */
+button[type="submit"]:hover,
+button[type="button"]:hover  {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Styling for required text to line up with input form start */
+#required-text {
+  font-size: 16px;
+  margin-left: 2rem;
 }
 
 /* SHOW DETAILS POP-UP */
