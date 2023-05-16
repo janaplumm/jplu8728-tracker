@@ -4,16 +4,23 @@ function buttonClick() {
 }
 
 // Star rating functionality
+
+// Select and store all elements with class name 'star'
 const stars = document.querySelectorAll(".star");
+// Iterate over each star element
 stars.forEach((star) => {
+  // Event listener executes code below once clicked by user
   star.addEventListener("click", () => {
+    // Store the value of the data-rating attribute from clicked star element
     const rating = star.getAttribute("data-rating");
+    // Update hidden input field value with selected user rating 
     document.querySelector('[name="rating"]').value = rating;
+    // Update visual appearance of stars depending on if empty or filled
     stars.forEach((s) => {
       if (s.getAttribute("data-rating") <= rating) {
-        s.innerHTML = "&#11088;";
+        s.innerHTML = "&#11088;"; // Unicode for solid emoji star symbol
       } else {
-        s.innerHTML = "&#9734;";
+        s.innerHTML = "&#9734;"; // Unicode for empty star symbol
       }
     });
   });

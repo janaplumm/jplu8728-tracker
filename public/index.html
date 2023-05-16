@@ -32,7 +32,8 @@
             <section class="iPod">
                 <!-- iPod display container with genre image, heading, episode title and rating -->
                 <section class="iPod-display">
-                    <img id="iPod-display-genre-img" src="images/journalism-emoji.png" alt="Investigative journalist emoji">
+                    <img id="iPod-display-genre-img" src="images/journalism-emoji.png"
+                        alt="Investigative journalist emoji">
                     <div class="iPod-display-heading">
                         <!-- Using podcast-title as a class to share with the tracking list item -->
                         <h3 class="podcast-title">Serial</h3>
@@ -73,7 +74,7 @@
                         <!-- Podcast name input -->
                         <label for="podcastName">Podcast Name*</label>
                         <!-- Added placeholder for better usability -->
-                        <input type="text" id="podcastName" name="podcastName" placeholder="Hamish & Andy" required> 
+                        <input type="text" id="podcastName" name="podcastName" placeholder="Hamish & Andy" required>
                         <!-- Podcast genre dropdown menu -->
                         <label for="podcastGenre">Podcast Genre*</label>
                         <select id="genre" name="genre" required>
@@ -91,13 +92,15 @@
                             <option value="science">Science</option>
                             <option value="technology">Technology</option>
                             <option value="truecrime">True Crime</option>
-                          </select>
+                        </select>
                         <!-- Podcast hosts input -->
                         <label for="podcastHosts">Podcast Host(s)*</label>
-                        <input type="text" id="podcastHosts" name="podcastHosts" placeholder="Hamish Blake, Andy Lee" required> 
+                        <input type="text" id="podcastHosts" name="podcastHosts" placeholder="Hamish Blake, Andy Lee"
+                            required>
                         <!-- Episode title input -->
                         <label for="episodeTitle">Episode Title*</label>
-                        <input type="text" id="episodeTitle" name="episodeTitle" placeholder="Hamish & Andy 2023 Ep 211" required> 
+                        <input type="text" id="episodeTitle" name="episodeTitle" placeholder="Hamish & Andy 2023 Ep 211"
+                            required>
                         <!-- Separate title for episode duration -->
                         <h4 id="episode-duration-title">Episode Duration*</h4>
                         <!-- Episode duration container for CSS flexbox purposes -->
@@ -105,30 +108,36 @@
                             <div class="episode-hours-container">
                                 <!-- Episode duration in hours input -->
                                 <label for="episodeHours">Hours</label>
-                                <input type="number" id="episodeHours" name="episodeHours" min="0" placeholder="0" required>
+                                <input type="number" id="episodeHours" name="episodeHours" min="0" placeholder="0"
+                                    required>
                             </div>
                             <div class="episode-minutes-container">
                                 <!-- Episode duration in minutes input -->
                                 <label for="episodeMinutes">Minutes</label>
-                                <input type="number" id="episodeMinutes" name="episodeMinutes" min="0" max="59" placeholder="41" required>
+                                <input type="number" id="episodeMinutes" name="episodeMinutes" min="0" max="59"
+                                    placeholder="41" required>
                             </div>
                         </div>
                         <!-- Episode completed selection -->
                         <h4 id="episode-completed-title">Episode Completed*</h4>
                         <div class="episode-completed-container">
                             <!-- Used buttons instead of radio input type -->
-                            <button type="button" id="episodeCompletedTrue" name="episodeCompleted" value="yes" onclick="buttonClick()">👍 Yes</button>
-                            <button type="button" id="episodeCompletedFalse" name="episodeCompleted" value="no" onclick="buttonClick()">👎 No</button>
+                            <button type="button" id="episodeCompletedTrue" name="episodeCompleted" value="yes"
+                                onclick="buttonClick()">👍 Yes</button>
+                            <button type="button" id="episodeCompletedFalse" name="episodeCompleted" value="no"
+                                onclick="buttonClick()">👎 No</button>
                         </div>
                         <!-- Episode rating selection -->
-                        <label for="rating">Rate Episode</label>
-                        <div id="rating">
-                            <input type="hidden" name="rating" value="0">
-                            <span class="star" data-rating="1">&#9734;</span>
-                            <span class="star" data-rating="2">&#9734;</span>
-                            <span class="star" data-rating="3">&#9734;</span>
-                            <span class="star" data-rating="4">&#9734;</span>
-                            <span class="star" data-rating="5">&#9734;</span>
+                        <h4 id="episode-completed-title">Rate Episode</h4>
+                        <div class="star-rating-container">
+                            <div id="rating">
+                                <input type="hidden" name="rating" value="0">
+                                <span class="star" data-rating="1">&#9734;</span>
+                                <span class="star" data-rating="2">&#9734;</span>
+                                <span class="star" data-rating="3">&#9734;</span>
+                                <span class="star" data-rating="4">&#9734;</span>
+                                <span class="star" data-rating="5">&#9734;</span>
+                            </div>
                         </div>
                         <!-- Tracking submission button -->
                         <button type="submit">Add Episode</button>
