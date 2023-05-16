@@ -430,7 +430,15 @@ li {
 .tracking-list-item-container {
   display: flex;
   margin-top: 1rem;
-  padding-right: 1rem; /* Added padding to the right to create space with the scrollbar*/ 
+  padding-right: 1rem; /* Added padding to the right to create space with the scrollbar */ 
+  /* Applied smooth hovering transition effect for playfulness */ 
+  transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
+}
+
+/* Applied smooth hovering effect for playfulness */ 
+.tracking-list-item-container:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Filter is smoother than box shadow */
 }
 
 /* Styling for the container holding the individual podcast information  */
