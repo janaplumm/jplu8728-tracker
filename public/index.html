@@ -95,13 +95,20 @@
                         <!-- Episode title input -->
                         <label for="episodeTitle">Episode Title*</label>
                         <input type="text" id="episodeTitle" name="episodeTitle" required> 
-                        <div class="episodeDuration">
-                            <!-- Episode duration in hours input -->
-                            <label for="episodeHours">Episode Duration (Hours)*:</label>
-                            <input type="number" id="episodeHours" name="episodeHours" min="0" required>
-                            <!-- Episode duration in minutes input -->
-                            <label for="episodeMinutes">Episode Duration (Minutes)*:</label>
-                            <input type="number" id="episodeMinutes" name="episodeMinutes" min="0" max="59" required>
+                        <!-- Separate title for episode duration -->
+                        <h4 id="episode-duration-title">Episode Duration*</h4>
+                        <!-- Episode duration container for CSS flexbox purposes -->
+                        <div class="episode-duration-container">
+                            <div class="episode-hours-container">
+                                <!-- Episode duration in hours input -->
+                                <label for="episodeHours">Hours</label>
+                                <input type="number" id="episodeHours" name="episodeHours" min="0" required>
+                            </div>
+                            <div class="episode-minutes-container">
+                                <!-- Episode duration in minutes input -->
+                                <label for="episodeMinutes">Minutes</label>
+                                <input type="number" id="episodeMinutes" name="episodeMinutes" min="0" max="59" required>
+                            </div>
                         </div>
                         <!-- Episode completed selection -->
                         <label for="episodeCompleted">Episode Completed*:</label>

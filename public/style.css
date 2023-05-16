@@ -42,6 +42,11 @@ h3 {
   font-weight: 700;
 }
 
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
 p {
   font-size: 18px;
   font-weight: 400;
@@ -208,10 +213,38 @@ header {
   padding-top: 1rem;
 }
 
-/* Styling for podcast form label */
+/* Styling for general podcast form label */
 label {
   font-weight: 400;
   font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for the episode duration container */
+.episode-duration-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* Styling for the containers within the episode duration container*/
+.episode-hours-container,
+.episode-minutes-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 2.5rem; /* Add margin between the hour and minute input boxes */
+}
+
+/* Styling for the episode container labels */
+.episode-hours-container label,
+.episode-minutes-container label {
+  margin-right: 0.5rem; /* Adjust the margin for the labels */
+}
+
+/* Styling for the episode duration title */
+#episode-duration-title {
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
@@ -227,9 +260,13 @@ select { /* 'select' selects the dropdown menu styling */
   border-radius: 10px;
 }
 
+/* Styling for podcast form input type 'number' */
 input[type="number"] {
-  width: 11.25rem;
+  box-sizing: border-box;
+  width: 7rem;
   height: 2.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   background: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 10px;
@@ -238,6 +275,8 @@ input[type="number"] {
 input[type="radio"],
 input[type="checkbox"] {
   margin-right: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 button[type="submit"] {
@@ -257,7 +296,6 @@ button[type="submit"]:hover {
 #required-text {
   margin-left: 2rem;
 }
-
 
 /* Styling for star rating input */
 .star-rating {
