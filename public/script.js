@@ -44,7 +44,7 @@ stars.forEach((star) => {
 // This code sorts the genre list alphabetically to keep 'Investigative Journalism' in order
 
 // Get the select element
-var selectElement = document.getElementById("genre");
+var selectElement = document.getElementById("podcastGenre");
 
 // Sort the options alphabetically
 var options = Array.from(selectElement.options);
