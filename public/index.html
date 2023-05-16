@@ -26,36 +26,38 @@
     <!-- Used the main element to structure the left and right containers containing the iPod and tracking list -->
     <main>
         <article class="left-container">
-            <!-- iPod display container with genre image, heading, episode title and rating -->
-            <section class="iPod-display">
-                <img id="iPod-display-genre-img" src="images/journalism-emoji.png" 
-                alt="Investigative journalist emoji">
-                <div class="iPod-display-heading">
-                    <!-- Using podcast-title as a class to share with the tracking list item -->
-                    <h3 class="podcast-title">Serial</h3>
-                    <img class="green-tick-complete" src="images/green-tick-emoji.png"
-                        alt="Green tick emoji indicating completion">
-                </div>
-                <div class="iPod-display-details">
-                    <!-- Using episode-title as a class to share with the tracking list item -->
-                    <p class="episode-title">Serial S01 - Ep. 1: The Alibi</p>
-                    <div class="iPod-display-rating">⭐⭐⭐⭐</div>
-                </div>
-            </section>
-            <!-- iPod controls container with shuffle buttons, show details and add podcast buttons -->
-            <section class="iPod-controls">
-                <button id="show-details-button" onclick="buttonClick()">Show Details</button>
-                <button id="add-podcast-button" onclick="buttonClick()">Add Podcast</button>
-                <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function -->
-                <img id="left-shuffle-button" src="images/Left_Shuffle.png"
-                    alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
-                <img id="right-shuffle-button" src="images/Right_Shuffle.png"
-                    alt="Button in the shape of a right shuffle icon" onclick="buttonClick()">
-            </section>
-            <!-- iPod body container that holds the frame of a classic iPod -->
-            <section class="iPod-body">
-                <!-- Important to add alt text to images for accessibility purposes and in-case the image disappears on the site -->
-                <img id="iPod-photo" src="images/iPod_Classic.png" alt="A silver iPod Classic">
+            <!-- Created a container section that holds all the iPod elements to control in CSS with transform -->
+            <section class="iPod">
+                <!-- iPod display container with genre image, heading, episode title and rating -->
+                <section class="iPod-display">
+                    <img id="iPod-display-genre-img" src="images/journalism-emoji.png" alt="Investigative journalist emoji">
+                    <div class="iPod-display-heading">
+                        <!-- Using podcast-title as a class to share with the tracking list item -->
+                        <h3 class="podcast-title">Serial</h3>
+                        <img class="green-tick-complete" src="images/green-tick-emoji.png"
+                            alt="Green tick emoji indicating completion">
+                    </div>
+                    <div class="iPod-display-details">
+                        <!-- Using episode-title as a class to share with the tracking list item -->
+                        <p class="episode-title">Serial S01 - Ep. 1: The Alibi</p>
+                        <div class="iPod-display-rating">⭐⭐⭐⭐</div>
+                    </div>
+                </section>
+                <!-- iPod controls container with shuffle buttons, show details and add podcast buttons -->
+                <section class="iPod-controls">
+                    <button id="show-details-button" onclick="buttonClick()">Show Details</button>
+                    <button id="add-podcast-button" onclick="buttonClick()">Add Podcast</button>
+                    <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function -->
+                    <img id="left-shuffle-button" src="images/Left_Shuffle.png"
+                        alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
+                    <img id="right-shuffle-button" src="images/Right_Shuffle.png"
+                        alt="Button in the shape of a right shuffle icon" onclick="buttonClick()">
+                </section>
+                <!-- iPod body container that holds the frame of a classic iPod -->
+                <section class="iPod-body">
+                    <!-- Important to add alt text to images for accessibility purposes and in-case the image disappears on the site -->
+                    <img id="iPod-photo" src="images/iPod_Classic.png" alt="A silver iPod Classic">
+                </section>
             </section>
         </article>
 

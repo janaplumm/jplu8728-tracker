@@ -82,17 +82,26 @@ header {
 
 /* IPOD ELEMENT */
 
+/* Styling for iPod, moving it to the correct spot on the screen */
+.iPod {
+  display: flex;
+  flex-direction: column;
+  transform: translate(-1rem, -20rem);
+}
+
 /* Styling for iPod display container that holds the tracking item details */
 .iPod-display {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  width: 25rem;
+  width: 24rem;
   height: 19rem;
   background: #C8B6FF;
   border: 8px solid #000000;
   border-radius: 10px;
+  z-index: 9999;
+  transform: translate(1rem, 24rem);
 }
 
 /* Styling for iPod display heading that holds the genre image, podcast title and green tick */
@@ -144,11 +153,11 @@ header {
 
 /* Using transform and translate to move the buttons to fit the iPod's control wheel */
 #show-details-button {
-  transform: translate(5rem, 28rem);
+  transform: translate(11rem, 28rem);
 }
 
 #add-podcast-button {
-  transform: translate(0.8rem, 39.5rem);
+  transform: translate(6.8rem, 39.5rem);
 }
 
 /* Styling for left and right shuffle buttons of iPod controls */
@@ -160,11 +169,11 @@ header {
 }
 
 #left-shuffle-button {
-  transform: translate(-9rem, 35.5rem);
+  transform: translate(-3rem, 35.5rem);
 }
 
 #right-shuffle-button {
-  transform: translate(-1.5rem, 35.5rem);
+  transform: translate(4.5rem, 35.5rem);
 }
 
 /* TRACKING LIST ELEMENT */
@@ -186,6 +195,7 @@ li {
   padding: 1rem;
   background: #EDFFB6;
   border: 1px solid #000000;
+  transform: translate(0rem, -9.7rem);
 }
 
 /* Scrollbar container styling */
