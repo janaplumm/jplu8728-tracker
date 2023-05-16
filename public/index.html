@@ -72,18 +72,20 @@
                     <form class="add-podcast-form">
                         <!-- Podcast name input -->
                         <label for="podcastName">Podcast Name*</label>
-                        <input type="text" id="podcastName" name="podcastName" placeholder="Serial" required> 
+                        <!-- Added placeholder for better usability -->
+                        <input type="text" id="podcastName" name="podcastName" placeholder="Hamish & Andy" required> 
                         <!-- Podcast genre dropdown menu -->
                         <label for="podcastGenre">Podcast Genre*</label>
                         <select id="genre" name="genre" required>
-                            <!-- Investigative Journalism is at the top, as it acts like a placeholder -->
+                            <!-- Comedy is at the top, as it acts like a placeholder -->
                             <!-- Javascript code orders this alphabetically when user clicks on dropdown menu -->
-                            <option value="investigative" class="grayed-out" selected>Investigative Journalism</option>
+                            <option value="comedy" selected>Comedy</option>
                             <option value="advice">Advice & Self-Help</option>
                             <option value="arts">Arts & Entertainment</option>
                             <option value="business">Business & Finance</option>
                             <option value="comedy">Comedy</option>
                             <option value="educational">Educational</option>
+                            <option value="investigative">Investigative Journalism</option>
                             <option value="news">News & Politics</option>
                             <option value="popculture">Pop Culture</option>
                             <option value="science">Science</option>
@@ -92,10 +94,10 @@
                           </select>
                         <!-- Podcast hosts input -->
                         <label for="podcastHosts">Podcast Host(s)*</label>
-                        <input type="text" id="podcastHosts" name="podcastHosts" required> 
+                        <input type="text" id="podcastHosts" name="podcastHosts" placeholder="Hamish Blake, Andy Lee" required> 
                         <!-- Episode title input -->
                         <label for="episodeTitle">Episode Title*</label>
-                        <input type="text" id="episodeTitle" name="episodeTitle" required> 
+                        <input type="text" id="episodeTitle" name="episodeTitle" placeholder="Hamish & Andy 2023 Ep 211" required> 
                         <!-- Separate title for episode duration -->
                         <h4 id="episode-duration-title">Episode Duration*</h4>
                         <!-- Episode duration container for CSS flexbox purposes -->
@@ -103,12 +105,12 @@
                             <div class="episode-hours-container">
                                 <!-- Episode duration in hours input -->
                                 <label for="episodeHours">Hours</label>
-                                <input type="number" id="episodeHours" name="episodeHours" min="0" required>
+                                <input type="number" id="episodeHours" name="episodeHours" min="0" placeholder="0" required>
                             </div>
                             <div class="episode-minutes-container">
                                 <!-- Episode duration in minutes input -->
                                 <label for="episodeMinutes">Minutes</label>
-                                <input type="number" id="episodeMinutes" name="episodeMinutes" min="0" max="59" required>
+                                <input type="number" id="episodeMinutes" name="episodeMinutes" min="0" max="59" placeholder="41" required>
                             </div>
                         </div>
                         <!-- Episode completed selection -->
