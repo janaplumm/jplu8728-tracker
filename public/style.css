@@ -351,6 +351,11 @@ input[type="number"] {
   cursor: pointer;
 }
 
+/* Prevents text selection (highlighted box) appearing when user clicks on stars */
+.star {
+  user-select: none;
+}
+
 /* Styling for submit button */
 button[type="submit"] {
   box-sizing: border-box;

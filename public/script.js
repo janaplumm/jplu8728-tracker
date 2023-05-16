@@ -5,26 +5,40 @@ function buttonClick() {
 
 // Star rating functionality
 
-// Select and store all elements with class name 'star'
+// Select and store all 'star' class name elements
 const stars = document.querySelectorAll(".star");
-// Iterate over each star element
+// Select and store selected rating value 
+const ratingInput = document.querySelector('[name="rating"]');
+
+// Loop over each star element 
 stars.forEach((star) => {
-  // Event listener executes code below once clicked by user
+  // Event listener listens out for any user clicks
   star.addEventListener("click", () => {
-    // Store the value of the data-rating attribute from clicked star element
+    // When user clicks on a star, this value is selected and stored
     const rating = star.getAttribute("data-rating");
-    // Update hidden input field value with selected user rating 
-    document.querySelector('[name="rating"]').value = rating;
-    // Update visual appearance of stars depending on if empty or filled
+    const currentRating = ratingInput.value;
+
+    // Check for deselection of stars by the user to maintain correct value
+    if (currentRating === rating) {
+      // Deselect the current rating
+      ratingInput.value = "0";
+    } else {
+      // Select the clicked star
+      ratingInput.value = rating;
+    }
+
+    // Iterate over star elements 
     stars.forEach((s) => {
-      if (s.getAttribute("data-rating") <= rating) {
-        s.innerHTML = "&#11088;"; // Unicode for solid emoji star symbol
+      // Check if data-rating is less than or equal to updated ratingInput value
+      if (s.getAttribute("data-rating") <= ratingInput.value) {
+        s.innerHTML = "&#11088;"; // Unicode representing filled emoji star
       } else {
-        s.innerHTML = "&#9734;"; // Unicode for empty star symbol
+        s.innerHTML = "&#9734;"; // Unicode representing empty star
       }
     });
   });
 });
+
 
 // This code sorts the genre list alphabetically to keep 'Investigative Journalism' in order
 
