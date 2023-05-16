@@ -173,7 +173,44 @@ header {
   transform: translate(4.5rem, 35.5rem);
 }
 
-/* INPUT FORM ELEMENTS */
+/* POP-UP ELEMENTS */
+
+/* Styling for pop-up container */
+.podcast-popup-container {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  height: 50rem;
+  background: #C8B6FF;
+  border: 1px solid #000000;
+  border-radius: 45px;
+}
+
+/* Styling for closing button for both pop-ups */
+.close-popup-button {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+
+/* ADD PODCAST POP-UP */
+
+.add-podcast-form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/* Styling for required text to line up with input form start */
+#required-text {
+  margin-left: 2rem;
+}
+
 
 /* Styling for star rating input */
 .star-rating {
@@ -192,6 +229,8 @@ header {
 .star-rating input[type="checkbox"]:checked + label {
   content: '&#11088;';
 }
+
+/* SHOW DETAILS POP-UP */
 
 /* TRACKING LIST ELEMENT */
 
