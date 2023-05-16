@@ -150,6 +150,7 @@ header {
   height: 3rem;
   border: 0;
   z-index: 1;
+  cursor: pointer;
 
   font-weight: 700;
   font-size: 18px;
@@ -173,6 +174,7 @@ header {
   width: 3.5rem;
   height: 2rem;
   z-index: 1;
+  cursor: pointer;
 }
 
 #left-shuffle-button {
@@ -404,6 +406,7 @@ li {
   background: #C8B6FF;
   border: 2px solid #000000;
   border-radius: 20px 0px 0px 20px;
+  cursor: pointer;
 }
 
 /* Styling for the genre image  */
@@ -450,6 +453,7 @@ li {
   background: #C8B6FF;
   border: 2px solid #000000;
   border-radius: 0px 20px 20px 0px;
+  cursor: pointer;
   transform: translate(-0.1rem, 0rem); /* Shifting the container slightly to the left for the border lines to overlap */
 }
 
