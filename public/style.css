@@ -135,7 +135,7 @@ header {
 
 /* Styling for top and bottom buttons of iPod controls */
 #show-details-button,
-#add-podcast-button {
+#add-episode-button {
   width: 4rem;
   height: 3rem;
   border: 0;
@@ -153,7 +153,7 @@ header {
   transform: translate(11rem, 28rem);
 }
 
-#add-podcast-button {
+#add-episode-button {
   transform: translate(6.8rem, 39.5rem);
 }
 
@@ -171,6 +171,26 @@ header {
 
 #right-shuffle-button {
   transform: translate(4.5rem, 35.5rem);
+}
+
+/* INPUT FORM ELEMENTS */
+
+/* Styling for star rating input */
+.star-rating {
+  font-size: 0;
+}
+
+.star-rating label {
+  display: inline-block;
+  font-size: 2rem;
+  cursor: default;
+}
+.star-rating input[type="checkbox"] {
+  display: none;
+}
+
+.star-rating input[type="checkbox"]:checked + label {
+  content: '&#11088;';
 }
 
 /* TRACKING LIST ELEMENT */

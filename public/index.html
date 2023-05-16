@@ -25,6 +25,8 @@
 
     <!-- Used the main element to structure the left and right containers containing the iPod and tracking list -->
     <main>
+
+        <!-- Left container holds iPod -->
         <article class="left-container">
             <!-- Created a container section that holds all the iPod elements to control in CSS with transform -->
             <section class="iPod">
@@ -46,7 +48,7 @@
                 <!-- iPod controls container with shuffle buttons, show details and add podcast buttons -->
                 <section class="iPod-controls">
                     <button id="show-details-button" onclick="buttonClick()">Show Details</button>
-                    <button id="add-podcast-button" onclick="buttonClick()">Add Podcast</button>
+                    <button id="add-episode-button" onclick="buttonClick()">Add Episode</button>
                     <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function -->
                     <img id="left-shuffle-button" src="images/Left_Shuffle.png"
                         alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
@@ -59,8 +61,74 @@
                     <img id="iPod-photo" src="images/iPod_Classic.png" alt="A silver iPod Classic">
                 </section>
             </section>
+
+            <!-- Pop-up for user to add a new podcast -->
+            <section class="add-podcast-popup">
+                <section class="add-podcast-container">
+                    <!-- Close pop-up button -->
+                    <img class="close-popup-button" src="images/cancel-button.png"
+                        alt="Button with a cross to close pop-up window" onclick="buttonClick()">
+                    <!-- Input form that user fills out to add a new podcast episode -->
+                    <form class="add-postcast-form">
+                        <!-- Podcast name input -->
+                        <label for="podcastName">Podcast Name</label>
+                        <input type="text" id="podcastName" name="podcastName" required> 
+                        <!-- Podcast genre dropdown menu -->
+                        <label for="podcastGenre">Podcast Genre</label>
+                        <select id="genre" name="genre" required>
+                            <option value="" selected>Select Genre</option>
+                            <option value="advice">Advice & Self-Help</option>
+                            <option value="arts">Arts & Entertainment</option>
+                            <option value="business">Business & Finance</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="educational">Educational</option>
+                            <option value="investigative">Investigative Journalism</option>
+                            <option value="news">News & Politics</option>
+                            <option value="popculture">Pop Culture</option>
+                            <option value="science">Science</option>
+                            <option value="technology">Technology</option>
+                            <option value="truecrime">True Crime</option>
+                        </select>
+                        <!-- Podcast hosts input -->
+                        <label for="podcastHosts">Podcast Host(s)</label>
+                        <input type="text" id="podcastHosts" name="podcastHosts" required> 
+                        <!-- Episode title input -->
+                        <label for="episodeTitle">Episode Title</label>
+                        <input type="text" id="episodeTitle" name="episodeTitle" required> 
+                        <!-- Episode duration in hours input -->
+                        <label for="episodeHours">Episode Duration (Hours):</label>
+                        <input type="number" id="episodeHours" name="episodeHours" min="0" required>
+                        <!-- Episode duration in minutes input -->
+                        <label for="episodeMinutes">Episode Duration (Minutes):</label>
+                        <input type="number" id="episodeMinutes" name="episodeMinutes" min="0" max="59" required>
+                        <!-- Episode completed selection -->
+                        <label for="episodeCompleted">Episode Completed:</label>
+                        <label><input type="radio" name="episodeCompleted" value="yes"> Yes</label>
+                        <label><input type="radio" name="episodeCompleted" value="no"> No</label>
+                        <!-- Episode rating selection -->
+                        <label for="rating">Rate Episode</label>
+                        <div id="rating">
+                            <input type="hidden" name="rating" value="0">
+                            <span class="star" data-rating="1">&#9734;</span>
+                            <span class="star" data-rating="2">&#9734;</span>
+                            <span class="star" data-rating="3">&#9734;</span>
+                            <span class="star" data-rating="4">&#9734;</span>
+                            <span class="star" data-rating="5">&#9734;</span>
+                        </div>
+                        <!-- Tracking submission button -->
+                        <button type="submit">Add Episode</button>
+                    </form>
+                    <p id="required-text">*Please fill in the mandatory fields</p>
+                </section>
+            </section>
+            
+            <!-- Pop-up for user to view details of a podcast item -->
+            <section class="show-details-popup">
+            </section>
+
         </article>
 
+        <!-- Right container holds tracking list -->
         <article class="right-container">
             <ul class="tracking-list">
                 <!-- Created a separate element for the scrollbar to avoid the borders clashing and for easier scroll function -->
@@ -211,6 +279,7 @@
                     </li>
                 </div>
             </ul>
+
         </article>
 
     </main>
