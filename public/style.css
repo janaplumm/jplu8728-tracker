@@ -245,6 +245,10 @@ select {
   padding: 0.5rem;
 }
 
+.grayed-out {
+  color: #808080;
+}
+
 /* Styling for the episode duration container */
 .episode-duration-container {
   display: flex;

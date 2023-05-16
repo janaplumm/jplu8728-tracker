@@ -72,23 +72,24 @@
                     <form class="add-podcast-form">
                         <!-- Podcast name input -->
                         <label for="podcastName">Podcast Name*</label>
-                        <input type="text" id="podcastName" name="podcastName" required> 
+                        <input type="text" id="podcastName" name="podcastName" placeholder="Serial" required> 
                         <!-- Podcast genre dropdown menu -->
                         <label for="podcastGenre">Podcast Genre*</label>
                         <select id="genre" name="genre" required>
-                            <option value="" selected>Select Genre</option>
+                            <!-- Investigative Journalism is at the top, as it acts like a placeholder -->
+                            <!-- Javascript code orders this alphabetically when user clicks on dropdown menu -->
+                            <option value="investigative" class="grayed-out" selected>Investigative Journalism</option>
                             <option value="advice">Advice & Self-Help</option>
                             <option value="arts">Arts & Entertainment</option>
                             <option value="business">Business & Finance</option>
                             <option value="comedy">Comedy</option>
                             <option value="educational">Educational</option>
-                            <option value="investigative">Investigative Journalism</option>
                             <option value="news">News & Politics</option>
                             <option value="popculture">Pop Culture</option>
                             <option value="science">Science</option>
                             <option value="technology">Technology</option>
                             <option value="truecrime">True Crime</option>
-                        </select>
+                          </select>
                         <!-- Podcast hosts input -->
                         <label for="podcastHosts">Podcast Host(s)*</label>
                         <input type="text" id="podcastHosts" name="podcastHosts" required> 
