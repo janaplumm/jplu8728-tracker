@@ -49,7 +49,7 @@
                 <!-- iPod controls container with shuffle buttons, show details and add podcast buttons -->
                 <section class="iPod-controls">
                     <button id="show-details-button" onclick="buttonClick()">Show Details</button>
-                    <button id="add-episode-button" onclick="buttonClick()">Add Episode</button>
+                    <button id="add-episode-button" onclick="addEpisode()">Add Episode</button>
                     <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function -->
                     <img id="left-shuffle-button" src="images/Left_Shuffle.png"
                         alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
@@ -64,11 +64,11 @@
             </section>
 
             <!-- Pop-up for user to add a new podcast -->
-            <section class="add-podcast-popup">
+            <section id="add-podcast-popup">
                 <section class="podcast-popup-container">
                     <!-- Close pop-up button -->
                     <img class="close-popup-button" src="images/cancel-button.png"
-                        alt="Button with a cross to close pop-up window" onclick="buttonClick()">
+                        alt="Button with a cross to close pop-up window" onclick="closePopup()">
                     <!-- Input form that user fills out to add a new podcast episode -->
                     <form class="add-podcast-form">
                         <!-- Podcast name input -->
