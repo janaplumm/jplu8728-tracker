@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+/* Removes horizontal scrollbar appearing despite content not overflowing */
+html {
+  overflow-x: hidden;
+} 
+
 /* Set the font-family and background colour within this section */
 html,
 body,
@@ -71,20 +76,21 @@ header {
   display: flex;
   flex-flow: column;
   margin: 1rem;
+  margin-left: 2rem;
   padding: 2rem;
   width: 100%;
   height: 8rem;
 }
 
 .left-container {
-  flex: 40%;
-  height: 50vh;
+  width: 25rem; 
+  height: 30rem;
 }
 
 /* The tracking list container requires more space than the iPod container */
 .right-container {
-  flex: 60%;
-  height: 50vh;
+  width: 37.5rem;
+  height: 30rem;
 }
 
 /* IPOD ELEMENT */
@@ -196,7 +202,7 @@ header {
   flex-direction: column;
   width: 30rem;
   height: 50rem;
-  z-index: 9999;
+  z-index: -9999;
   background: #C8B6FF;
   border: 1px solid #000000;
   border-radius: 45px;
@@ -415,7 +421,7 @@ li {
   padding: 1rem;
   background: #EDFFB6;
   border: 1px solid #000000;
-  transform: translate(0rem, 1.8rem);
+  transform: translate(12rem, 1.8rem);
 }
 
 /* Scrollbar container styling */
@@ -526,7 +532,7 @@ li {
 
 /* Styling to create some invisible spacing at the bottom */
 footer {
-  height: 8rem;
+  height: 2rem;
   transform: translate(0rem, 25rem);
 }
 
