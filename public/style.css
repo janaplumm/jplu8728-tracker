@@ -421,7 +421,7 @@ li {
   padding: 1rem;
   background: #EDFFB6;
   border: 1px solid #000000;
-  transform: translate(12rem, 1.8rem);
+  transform: translate(10rem, 1.8rem);
 }
 
 /* Scrollbar container styling */
@@ -538,10 +538,19 @@ footer {
 
 /* RESPONSIVENESS */
 
-/* Responsive layout - makes a one column layout instead of a two-column layout */
+/* Max-width 1400px */
+@media (max-width: 87.5rem) {
+  
+  /* Enables horizontal scrollbar again */
+  html {
+    overflow-x: auto;
+  } 
+}
 
-@media (max-width: 800px) {
+/* Max-width 400px */
+@media (max-width: 25rem) {
 
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
   .left-container,
   .right-container {
     flex: 100%;
