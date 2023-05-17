@@ -70,7 +70,7 @@ main {
 header {
   display: flex;
   flex-flow: column;
-  margin: 2rem;
+  margin: 1rem;
   padding: 2rem;
   width: 100%;
   height: 8rem;
@@ -189,10 +189,14 @@ header {
 
 /* Styling for pop-up container */
 .podcast-popup-container {
+  position: absolute;
+  top: 12.8rem;
+  left: 3rem;
   display: flex;
   flex-direction: column;
   width: 30rem;
   height: 50rem;
+  z-index: 9999;
   background: #C8B6FF;
   border: 1px solid #000000;
   border-radius: 45px;
@@ -242,6 +246,30 @@ select {
   font-style: normal;
   font-size: 18px;
   padding: 0.5rem;
+}
+
+/* Styling for podcast form input type 'text' */
+input[type="text"],
+select { /* 'select' selects the dropdown menu styling */
+  box-sizing: border-box;
+  width: 25rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+/* Styling for podcast form input type 'number' */
+input[type="number"] {
+  box-sizing: border-box;
+  width: 7rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 10px;
 }
 
 /* Styling for the episode duration container */
@@ -307,30 +335,6 @@ select {
 #yes-emoji,
 #no-emoji {
   font-size: 24px;
-}
-
-/* Styling for podcast form input type 'text' */
-input[type="text"],
-select { /* 'select' selects the dropdown menu styling */
-  box-sizing: border-box;
-  width: 25rem;
-  height: 2.5rem;
-  margin-bottom: 1rem;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  border-radius: 10px;
-}
-
-/* Styling for podcast form input type 'number' */
-input[type="number"] {
-  box-sizing: border-box;
-  width: 7rem;
-  height: 2.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  border-radius: 10px;
 }
 
 /* Styling for the star rating container */
@@ -522,7 +526,7 @@ li {
 
 /* Styling to create some invisible spacing at the bottom */
 footer {
-  height: 5rem;
+  height: 8rem;
   transform: translate(0rem, 25rem);
 }
 
