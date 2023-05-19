@@ -3,25 +3,43 @@ function buttonClick() {
   alert("Button clicked!");
 }
 
+// Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
+
 function addEpisode() {
   // get the add-podcast-popup window via ID
-  let addEpisodePopup = document.getElementById('add-podcast-popup');
+  const addEpisodePopup = document.getElementById("add-podcast-popup");
 
   // get the current value of the add-podcast-popup window display in CSS
-  let displaySetting = addEpisodePopup.style.display;
+  const displaySetting = addEpisodePopup.style.display;
 
   // check if add-podcast-popup is hidden 
-  if (displaySetting == 'none') {
+  if (displaySetting == "none") {
     // show add-podcast-popup
-    addEpisodePopup.style.display = 'block';
+    addEpisodePopup.style.display = "block";
   }
   else {
     // add-podcast-popup is visible, leave as is
-    addEpisodePopup.style.display = 'block';
+    addEpisodePopup.style.display = "block";
   }
-  
+
   // test functionality with console 
   //console.log(addEpisodePopup)
+}
+
+function closePopup() {
+  // get the close button image element 
+  const closePopupButton = document.getElementById("close-popup-button");
+
+  // get the add-podcast-popup window via ID
+  const addEpisodePopup = document.getElementById("add-podcast-popup");
+
+  // add event listener that listens for user clicks and hides the pop-up window
+  closePopupButton.addEventListener("click", function() {
+    addEpisodePopup.style.display = "none";
+  })
+
+  // test functionality with console 
+  //console.log(closePopup)
 }
 
 // Star rating functionality

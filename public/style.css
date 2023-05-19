@@ -213,7 +213,7 @@ header {
 }
 
 /* Styling for closing button for both pop-ups */
-.close-popup-button {
+#close-popup-button {
   display: flex;
   justify-content: flex-end;
   align-self: flex-end;
