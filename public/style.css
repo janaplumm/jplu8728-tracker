@@ -189,8 +189,8 @@ header {
 /* POP-UP ELEMENTS */
 
 /* Hide podcast popups initially - javascript handles opening and closing */
-#add-podcast-popup,
-#show-details-popup {
+#add-podcast-popup /*,
+#show-details-popup */ {
   display: none;
 }
 
@@ -412,6 +412,7 @@ button[type="button"]:hover  {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  margin-left: 2.5rem;
 }
 
 .show-details-heading {
