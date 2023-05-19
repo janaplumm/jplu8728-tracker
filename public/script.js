@@ -3,6 +3,27 @@ function buttonClick() {
   alert("Button clicked!");
 }
 
+function addEpisode() {
+  // get the add-podcast-popup window via ID
+  let addEpisodePopup = document.getElementById('add-podcast-popup');
+
+  // get the current value of the add-podcast-popup window display in CSS
+  let displaySetting = addEpisodePopup.style.display;
+
+  // check if add-podcast-popup is hidden 
+  if (displaySetting == 'none') {
+    // show add-podcast-popup
+    addEpisodePopup.style.display = 'block';
+  }
+  else {
+    // add-podcast-popup is visible, leave as is
+    addEpisodePopup.style.display = 'block';
+  }
+  
+  // test functionality with console 
+  //console.log(addEpisodePopup)
+}
+
 // Star rating functionality
 
 // Select and store all 'star' class name elements

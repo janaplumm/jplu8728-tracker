@@ -125,7 +125,7 @@ header {
 }
 
 /* Styling for iPod display genre image */
-#iPod-display-genre-img {
+.iPod-display-genre-img {
   width: 6.25rem;
   height: 6.25rem;
 }
@@ -192,6 +192,10 @@ header {
 }
 
 /* POP-UP ELEMENTS */
+
+#add-podcast-popup {
+  display: none;
+}
 
 /* Styling for pop-up container */
 .podcast-popup-container {
@@ -475,7 +479,7 @@ li {
 }
 
 /* Styling for the genre image  */
-#tracking-list-item-genre-img {
+.tracking-list-item-genre-img {
   width: 4rem;
   height: 4rem;
   margin: 0.5rem; /* Adding space between the image and the text elements */
