@@ -48,8 +48,8 @@
                 </section>
                 <!-- iPod controls container with shuffle buttons, show details and add podcast buttons -->
                 <section class="iPod-controls">
-                    <button id="show-details-button" onclick="buttonClick()">Show Details</button>
-                    <button id="add-episode-button" onclick="addEpisode()">Add Episode</button>
+                    <button id="show-details-button" onclick="openDetailsPopup()">Show Details</button>
+                    <button id="add-episode-button" onclick="openEpisodePopup()">Add Episode</button>
                     <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function -->
                     <img id="left-shuffle-button" src="images/Left_Shuffle.png"
                         alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
@@ -67,8 +67,9 @@
             <section id="add-podcast-popup">
                 <section class="podcast-popup-container">
                     <!-- Close pop-up button -->
-                    <img id="close-popup-button" src="images/cancel-button.png"
-                        alt="Button with a cross to close pop-up window" onclick="closePopup()">
+                    <!-- Adding class and ID selectors for css and javascript purposes -->
+                    <img class="close-popup-button" id="close-episode-popup" src="images/cancel-button.png"
+                        alt="Button with a cross to close pop-up window" onclick="closeEpisodePopup()">
                     <!-- Input form that user fills out to add a new podcast episode -->
                     <form class="add-podcast-form">
                         <!-- Podcast name input -->
@@ -152,8 +153,9 @@
                 <section class="podcast-popup-container">
                     <section id="show-details-content">
                         <!-- Close pop-up button -->
-                        <img id="close-popup-button" src="images/cancel-button.png" alt="Button with a cross to close pop-up window"
-                            onclick="closePopup()">
+                        <!-- Adding class and ID selectors for css and javascript purposes -->
+                        <img class="close-popup-button" id="close-details-popup" src="images/cancel-button.png" alt="Button with a cross to close pop-up window"
+                            onclick="closeDetailsPopup()">
                         <!-- Input form that user fills out to add a new podcast episode -->
                         <section id="podcast-details-name">
                             <h3 class="show-details-heading">Podcast Name</h3>
@@ -161,7 +163,11 @@
                         </section>
                         <section id="podcast-details-genre">
                             <h3 class="show-details-heading">Podcast Genre</h3>
-                            <p id="podcast-input-genre">Comedy</p>
+                            <div class="show-details-subheading">
+                                <p id="podcast-input-genre">Comedy</p>
+                                <img id="show-details-genre-img" src="images/journalism-emoji.png"
+                                    alt="Investigative journalist emoji">
+                            </div>
                         </section>
                         <section id="podcast-details-hosts">
                             <h3 class="show-details-heading">Podcast Host(s)</h3>

@@ -5,15 +5,15 @@ function buttonClick() {
 
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
 
-function addEpisode() {
+function openEpisodePopup() {
   // get the add-podcast-popup window via ID
   const addEpisodePopup = document.getElementById("add-podcast-popup");
 
   // get the current value of the add-podcast-popup window display in CSS
-  const displaySetting = addEpisodePopup.style.display;
+  const displayEpisodeSetting = addEpisodePopup.style.display;
 
   // check if add-podcast-popup is hidden 
-  if (displaySetting == "none") {
+  if (displayEpisodeSetting == "none") {
     // show add-podcast-popup
     addEpisodePopup.style.display = "block";
   }
@@ -23,23 +23,62 @@ function addEpisode() {
   }
 
   // test functionality with console 
-  //console.log(addEpisodePopup)
+  //console.log(openEpisodePopup)
 }
 
-function closePopup() {
+function closeEpisodePopup() {
   // get the close button image element 
-  const closePopupButton = document.getElementById("close-popup-button");
+  const closeEpisodeButton = document.getElementById("close-episode-popup");
 
   // get the add-podcast-popup window via ID
   const addEpisodePopup = document.getElementById("add-podcast-popup");
 
   // add event listener that listens for user clicks and hides the pop-up window
-  closePopupButton.addEventListener("click", function() {
+  closeEpisodeButton.addEventListener("click", function() {
     addEpisodePopup.style.display = "none";
   })
 
   // test functionality with console 
-  //console.log(closePopup)
+  //console.log(closeEpisodePopup)
+}
+
+function openDetailsPopup() {
+  // get the show-details -popup window via ID
+  const addDetailsPopup = document.getElementById("show-details-popup");
+
+  // get the current value of the show-details-popup window display in CSS
+  const displayDetailsSetting = addDetailsPopup.style.display;
+
+  // check if show-details-popup is hidden 
+  if (displayDetailsSetting == "none") {
+    // show show-details-popup
+    addDetailsPopup.style.display = "block";
+    console.log("show details popup visible")
+  }
+  else {
+    // show-details-popup is visible, leave as is
+    addDetailsPopup.style.display = "block";
+    console.log("show details popup hidden")
+  }
+
+  // test functionality with console 
+  //console.log(openDetailsPopup)
+}
+
+function closeDetailsPopup() {
+  // get the close button image element 
+  const closeDetailsButton = document.getElementById("close-details-popup");
+
+  // get the show-details-popup window via ID
+  const showDetailsPopup = document.getElementById("show-details-popup");
+
+  // add event listener that listens for user clicks and hides the pop-up window
+  closeDetailsButton.addEventListener("click", function() {
+    showDetailsPopup.style.display = "none";
+  })
+
+  // test functionality with console 
+  console.log(closeDetailsPopup)
 }
 
 // Star rating functionality
