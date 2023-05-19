@@ -408,6 +408,7 @@ button[type="button"]:hover  {
 
 /* SHOW DETAILS POP-UP */
 
+/* Specific styling for container holding content of episode item data */
 #show-details-content {
   display: flex;
   flex-flow: column nowrap;
@@ -415,16 +416,19 @@ button[type="button"]:hover  {
   margin-left: 2.5rem;
 }
 
+/* Specific styling for heading margin spacing */
 .show-details-heading {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
 
+/* Specific styling for subheading to appear in a row rather than column */
 .show-details-subheading {
   display: flex;
   flex-direction: row;
 }
 
+/* Specific styling genre image */
 #show-details-genre-img {
   width: 3rem;
   height: 3rem;
