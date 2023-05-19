@@ -149,6 +149,42 @@
 
             <!-- Pop-up for user to view details of a podcast item -->
             <section class="show-details-popup">
+                <section class="podcast-popup-container">
+                    <!-- Close pop-up button -->
+                    <img id="close-popup-button" src="images/cancel-button.png"
+                        alt="Button with a cross to close pop-up window" onclick="closePopup()">
+                    <!-- Input form that user fills out to add a new podcast episode -->
+                    <section id="podcast-details-name">
+                        <div class="show-details-heading">Podcast Name</div>
+                        <div id="podcast-input-name">Serial</div>
+                    </section>
+                    <section id="podcast-details-genre">
+                        <div class="show-details-heading">Podcast Genre</div>
+                        <div id="podcast-input-genre">Serial</div>
+                    </section>
+                    <section id="podcast-details-hosts">
+                        <div class="show-details-heading">Podcast Host(s)</div>
+                        <div id="podcast-input-hosts">Sarah Koenig</div>
+                    </section>
+                    <section id="episode-details-title">
+                        <div class="show-details-heading">Episode Title</div>
+                        <div id="episode-input-title">Serial S01 - Ep. 1: The Alibi</div>
+                    </section>
+                    <section id="episode-details-duration">
+                        <div class="show-details-heading">Episode Duration</div>
+                        <div id="episode-input-duration">52 min.</div>
+                    </section>
+                    <section id="episode-details-complete">
+                        <div class="show-details-heading">Episode Completed</div>
+                        <div id="episode-input-complete">Yes ✅ on 21 April 2023</div>
+                    </section>
+                    <section id="episode-details-rating">
+                        <div class="show-details-heading">Episode Rating</div>
+                        <div id="episode-input-rating">⭐⭐⭐⭐ </div>
+                    </section>
+                    <!-- Delete episode item button -->
+                    <button type="button">Delete Episode</button>
+                </section>
             </section>
 
         </article>
