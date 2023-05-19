@@ -125,7 +125,7 @@
                             <!-- Used buttons instead of radio input type -->
                             <button type="button" id="episodeCompletedTrue" name="episodeCompleted" value="yes"
                                 onclick="buttonClick()"><span id="yes-emoji">👍</span> Yes</button>
-                                <!-- Used span tags to isolate emoji from text for CSS management -->
+                            <!-- Used span tags to isolate emoji from text for CSS management -->
                             <button type="button" id="episodeCompletedFalse" name="episodeCompleted" value="no"
                                 onclick="buttonClick()"><span id="no-emoji">👎</span> No</button>
                         </div>
@@ -150,41 +150,50 @@
 
             <!-- Pop-up for user to view details of a podcast item -->
             <section id="show-details-popup">
+                <!-- General popup container for both popups -->
                 <section class="podcast-popup-container">
+                    <!-- Specific show details content container holding the podcast episode item data -->
                     <section id="show-details-content">
                         <!-- Close pop-up button -->
                         <!-- Adding class and ID selectors for css and javascript purposes -->
-                        <img class="close-popup-button" id="close-details-popup" src="images/cancel-button.png" alt="Button with a cross to close pop-up window"
-                            onclick="closeDetailsPopup()">
-                        <!-- Input form that user fills out to add a new podcast episode -->
+                        <img class="close-popup-button" id="close-details-popup" src="images/cancel-button.png"
+                            alt="Button with a cross to close pop-up window" onclick="closeDetailsPopup()">
+                        <!-- Podcast name input by user for this podcast episode item -->
                         <section id="podcast-details-name">
                             <h3 class="show-details-heading">Podcast Name</h3>
                             <p id="podcast-input-name">Hamish & Andy</p>
                         </section>
+                        <!-- Podcast genre input by user for this podcast episode item -->
                         <section id="podcast-details-genre">
                             <h3 class="show-details-heading">Podcast Genre</h3>
+                            <!-- Separate div for genre title and image for CSS styling purposes -->
                             <div class="show-details-subheading">
                                 <p id="podcast-input-genre">Comedy</p>
                                 <img id="show-details-genre-img" src="images/journalism-emoji.png"
                                     alt="Investigative journalist emoji">
                             </div>
                         </section>
+                        <!-- Podcast hosts input by user for this podcast episode item -->
                         <section id="podcast-details-hosts">
                             <h3 class="show-details-heading">Podcast Host(s)</h3>
                             <p id="podcast-input-hosts">Hamish Blake, Andy Lee</p>
                         </section>
+                        <!-- Episode details input by user for this podcast episode item -->
                         <section id="episode-details-title">
                             <h3 class="show-details-heading">Episode Title</h3>
                             <p id="episode-input-title">Hamish & Andy 2023 Ep 211</p>
                         </section>
+                        <!-- Episode duration input by user for this podcast episode item -->
                         <section id="episode-details-duration">
                             <h3 class="show-details-heading">Episode Duration</h3>
                             <p id="episode-input-duration">41 min.</p>
                         </section>
+                        <!-- Episode completed input by user for this podcast episode item -->
                         <section id="episode-details-complete">
                             <h3 class="show-details-heading">Episode Completed</h3>
                             <p id="episode-input-complete">Yes ✅ on 21 April 2023</p>
                         </section>
+                        <!-- Episode ratings input by user for this podcast episode item -->
                         <section id="episode-details-rating">
                             <h3 class="show-details-heading">Episode Rating</h3>
                             <p id="episode-input-rating">⭐⭐⭐⭐ </p>
