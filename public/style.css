@@ -422,8 +422,7 @@ button[type="button"]:hover  {
   margin-bottom: 0.5rem;
 }
 
-/* Specific styling for subheading to appear in a row rather than column */
-.show-details-subheading {
+#podcast-details-genre {
   display: flex;
   flex-direction: row;
 }
@@ -432,6 +431,8 @@ button[type="button"]:hover  {
 #show-details-genre-img {
   width: 3rem;
   height: 3rem;
+  margin-left: 1rem;
+  transform: translate(0rem, 2.2rem);
 }
 
 /* Specific styling for delete episode button */
