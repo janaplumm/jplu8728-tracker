@@ -71,7 +71,7 @@
                     <img class="close-popup-button" id="close-episode-popup" src="images/cancel-button.png"
                         alt="Button with a cross to close pop-up window" onclick="closeEpisodePopup()">
                     <!-- Input form that user fills out to add a new podcast episode -->
-                    <form class="add-podcast-form">
+                    <form id="add-podcast-form">
                         <!-- Podcast name input -->
                         <label for="podcastName">Podcast Name*</label>
                         <!-- Added placeholder for better usability -->
@@ -210,7 +210,7 @@
 
         <!-- Right container holds tracking list -->
         <article class="right-container">
-            <ul class="tracking-list">
+            <ul id="tracking-list">
                 <!-- Created a separate element for the scrollbar to avoid the borders clashing and for easier scroll function -->
                 <div class="scroll-container">
                     <!-- Divided the list element into multiple div elements for easier CSS management -->

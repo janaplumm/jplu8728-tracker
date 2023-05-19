@@ -148,3 +148,77 @@ for (var i = 0; i < options.length; i++) {
 
 // Set the selected value
 selectElement.value = selectedValue;
+
+// TASK LIST CODE FROM REPLIT
+
+const form = document.getElementById("add-podcast-form");
+const trackingList = document.getElementById("tracking-list");
+// get the close button image element
+const submitForm = document.getElementById("add-button");
+let podcastList = [];
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  addEpisode(
+    form.elements.podcastName.value,
+    form.elements.postcastGenre.value,
+    form.elements.podcastHosts.value,
+    form.elements.episodeTitle.value,
+    form.elements.episodeHours.value,
+    form.elements.episodeMinutes.value,
+    form.elements.episodeCompleted.value,
+    form.elements.rating.value
+  );
+});
+
+function displayEpisode(episode) {
+  let item = document.createElement("li");
+  item.setAttribute("data-id", episode.id);
+  item.innerHTML = `<p><strong>${episode.name}<br>${episode.type}<br>${episode.rate}<br>${episode.time}<br>${episode.client}</strong></p>`;
+  podcastList.appendChild(item);
+  form.reset();
+  // Setup delete button DOM elements
+  let delButton = document.createElement("button");
+  let delButtonText = document.createTextNode("Delete");
+  delButton.appendChild(delButtonText);
+  item.appendChild(delButton); // Adds a delete button to every task
+  // Listen for when the delete button is clicked
+  delButton.addEventListener("click", function (event) {
+    item.remove(); // Remove the task item from the page when button clicked
+    // Because we used 'let' to define the item, this will delete the right element
+    // Loop through the array and remove the element corresponding with the list item
+    podcastList.forEach(function (taskArrayElement, taskArrayindex) {
+      if (task.id == item.getAttribute("data-id")) {
+        podcastList.splice(taskArrayindex, 1);
+      }
+    });
+  });
+}
+
+function addEpisode(
+  name,
+  genre,
+  hosts,
+  title,
+  hours,
+  minutes,
+  completed,
+  rating
+) {
+  let episode = {
+    name,
+    genre,
+    hosts,
+    title,
+    hours,
+    minutes,
+    completed,
+    rating,
+    id: Date.now(),
+    date: new Date().toISOString(),
+  };
+  podcastList.push(episode);
+  displayEpisode(episode);
+}
+
+console.log(addEpisode);

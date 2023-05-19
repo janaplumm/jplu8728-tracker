@@ -249,7 +249,7 @@ header {
 /* ADD PODCAST POP-UP */
 
 /* Styling for podcast form layout */
-.add-podcast-form {
+#add-podcast-form {
   display: flex;
   flex-direction: column;
   padding-left: 2rem;
@@ -454,7 +454,7 @@ li {
 }
 
 /* Styling for the background container holding the list of podcast elements */
-.tracking-list {
+#tracking-list {
   display: flex;
   flex-flow: column;
   align-items: center;
