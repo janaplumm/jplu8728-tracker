@@ -10,7 +10,7 @@
 /* Removes horizontal scrollbar appearing despite content not overflowing */
 html {
   overflow-x: hidden;
-} 
+}
 
 /* Set the font-family and background colour within this section */
 html,
@@ -47,7 +47,8 @@ h3 {
   font-weight: 700;
 }
 
-h4, p {
+h4,
+p {
   font-size: 18px;
   font-weight: 400;
 }
@@ -78,7 +79,7 @@ header {
 }
 
 .left-container {
-  width: 25rem; 
+  width: 25rem;
   height: 30rem;
 }
 
@@ -141,7 +142,8 @@ header {
 #iPod-photo {
   width: 28rem;
   height: 47rem;
-  z-index: -1; /* Using Z-Index to control the layering between the iPod body and the iPod controls*/
+  z-index: -1;
+  /* Using Z-Index to control the layering between the iPod body and the iPod controls*/
 }
 
 /* Styling for top and bottom buttons of iPod controls */
@@ -225,7 +227,8 @@ header {
 
 .close-popup-button:hover {
   transform: translateY(-2px);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Filter is smoother than box shadow */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  /* Filter is smoother than box shadow */
 }
 
 /* Styling for add and delete episode buttons across both popups */
@@ -272,7 +275,8 @@ select {
 
 /* Styling for podcast form input type 'text' */
 input[type="text"],
-select { /* 'select' selects the dropdown menu styling */
+select {
+  /* 'select' selects the dropdown menu styling */
   box-sizing: border-box;
   width: 25rem;
   height: 2.5rem;
@@ -307,13 +311,15 @@ input[type="number"] {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 2.5rem; /* Add margin between the hour and minute input boxes */
+  margin-right: 2.5rem;
+  /* Add margin between the hour and minute input boxes */
 }
 
 /* Styling for the episode container labels */
 .episode-hours-container label,
 .episode-minutes-container label {
-  margin-right: 0.5rem; /* Adjust the margin for the labels */
+  margin-right: 0.5rem;
+  /* Adjust the margin for the labels */
 }
 
 /* Styling for the episode completed title */
@@ -375,7 +381,7 @@ input[type="number"] {
 
 /* Styling for the star sizes */
 .star-rating-container #rating {
-  font-size: 24px; 
+  font-size: 24px;
 }
 
 /* Styling for the cursor when user hovers over stars */
@@ -390,7 +396,7 @@ input[type="number"] {
 
 /* Styling for effects taking place when hovering over buttons */
 button[type="submit"]:hover,
-button[type="button"]:hover  {
+button[type="button"]:hover {
   transform: translateY(-2px);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
@@ -464,7 +470,8 @@ li {
 
 /* Scrollbar container styling */
 .scroll-container {
-  overflow-y: auto; /* Enables scrolling */
+  overflow-y: auto;
+  /* Enables scrolling */
 }
 
 /* Scrollbar width */
@@ -489,15 +496,17 @@ li {
 .tracking-list-item-container {
   display: flex;
   margin-top: 1rem;
-  padding-right: 1rem; /* Added padding to the right to create space with the scrollbar */ 
-  /* Applied smooth hovering transition effect for playfulness */ 
+  padding-right: 1rem;
+  /* Added padding to the right to create space with the scrollbar */
+  /* Applied smooth hovering transition effect for playfulness */
   transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
 }
 
-/* Applied smooth hovering effect for playfulness */ 
+/* Applied smooth hovering effect for playfulness */
 .tracking-list-item-container:hover {
   transform: translateY(-2px);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Filter is smoother than box shadow */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  /* Filter is smoother than box shadow */
 }
 
 /* Styling for the container holding the individual podcast information  */
@@ -516,14 +525,16 @@ li {
 .tracking-list-item-genre-img {
   width: 4rem;
   height: 4rem;
-  margin: 0.5rem; /* Adding space between the image and the text elements */
+  margin: 0.5rem;
+  /* Adding space between the image and the text elements */
 }
 
 /* Styling for the podcast and episode titles  */
 .tracking-list-item-info {
   display: flex;
-  flex-direction: column; /* Having the elements stack up vertically */
-  justify-content: center; 
+  flex-direction: column;
+  /* Having the elements stack up vertically */
+  justify-content: center;
   margin-left: 0.5rem;
 }
 
@@ -557,7 +568,8 @@ li {
   border: 2px solid #000000;
   border-radius: 0px 20px 20px 0px;
   cursor: pointer;
-  transform: translate(-0.1rem, 0rem); /* Shifting the container slightly to the left for the border lines to overlap */
+  transform: translate(-0.1rem, 0rem);
+  /* Shifting the container slightly to the left for the border lines to overlap */
 }
 
 /* Styling for the trash emoji image representing the delete functionality for the user */
@@ -578,11 +590,11 @@ footer {
 
 /* Max-width 1400px */
 @media (max-width: 87.5rem) {
-  
+
   /* Enables horizontal scrollbar again */
   html {
     overflow-x: auto;
-  } 
+  }
 }
 
 /* Max-width 400px */

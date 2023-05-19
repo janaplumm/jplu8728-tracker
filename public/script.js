@@ -16,33 +16,32 @@ function openEpisodePopup() {
   // get the current value of the add-podcast-popup window display in CSS
   const displayEpisodeSetting = addEpisodePopup.style.display;
 
-  // check if add-podcast-popup is hidden 
+  // check if add-podcast-popup is hidden
   if (displayEpisodeSetting == "none") {
     // show add-podcast-popup
     addEpisodePopup.style.display = "block";
-  }
-  else {
+  } else {
     // add-podcast-popup is visible, leave as is
     addEpisodePopup.style.display = "block";
   }
 
-  // test functionality with console 
+  // test functionality with console
   //console.log(openEpisodePopup)
 }
 
 function closeEpisodePopup() {
-  // get the close button image element 
+  // get the close button image element
   const closeEpisodeButton = document.getElementById("close-episode-popup");
 
   // get the add-podcast-popup window via ID
   const addEpisodePopup = document.getElementById("add-podcast-popup");
 
   // add event listener that listens for user clicks and hides the pop-up window
-  closeEpisodeButton.addEventListener("click", function() {
+  closeEpisodeButton.addEventListener("click", function () {
     addEpisodePopup.style.display = "none";
-  })
+  });
 
-  // test functionality with console 
+  // test functionality with console
   //console.log(closeEpisodePopup)
 }
 
@@ -55,35 +54,34 @@ function openDetailsPopup() {
   // get the current value of the show-details-popup window display in CSS
   const displayDetailsSetting = addDetailsPopup.style.display;
 
-  // check if show-details-popup is hidden 
+  // check if show-details-popup is hidden
   if (displayDetailsSetting == "none") {
     // show show-details-popup
     addDetailsPopup.style.display = "block";
     //console.log("show details popup visible")
-  }
-  else {
+  } else {
     // show-details-popup is visible, leave as is
     addDetailsPopup.style.display = "block";
     //console.log("show details popup hidden")
   }
 
-  // test functionality with console 
+  // test functionality with console
   //console.log(openDetailsPopup)
 }
 
 function closeDetailsPopup() {
-  // get the close button image element 
+  // get the close button image element
   const closeDetailsButton = document.getElementById("close-details-popup");
 
   // get the show-details-popup window via ID
   const showDetailsPopup = document.getElementById("show-details-popup");
 
   // add event listener that listens for user clicks and hides the pop-up window
-  closeDetailsButton.addEventListener("click", function() {
+  closeDetailsButton.addEventListener("click", function () {
     showDetailsPopup.style.display = "none";
-  })
+  });
 
-  // test functionality with console 
+  // test functionality with console
   //console.log(closeDetailsPopup)
 }
 
@@ -91,10 +89,10 @@ function closeDetailsPopup() {
 
 // Select and store all 'star' class name elements
 const stars = document.querySelectorAll(".star");
-// Select and store selected rating value 
+// Select and store selected rating value
 const ratingInput = document.querySelector('[name="rating"]');
 
-// Loop over each star element 
+// Loop over each star element
 stars.forEach((star) => {
   // Event listener listens out for any user clicks
   star.addEventListener("click", () => {
@@ -111,7 +109,7 @@ stars.forEach((star) => {
       ratingInput.value = rating;
     }
 
-    // Iterate over star elements 
+    // Iterate over star elements
     stars.forEach((s) => {
       // Check if data-rating is less than or equal to updated ratingInput value
       if (s.getAttribute("data-rating") <= ratingInput.value) {
@@ -124,7 +122,6 @@ stars.forEach((star) => {
   });
 });
 
-
 // INPUT FORM DROPDOWN MENU FEATURE
 
 // This code sorts the genre list alphabetically to keep 'Investigative Journalism' in order
@@ -134,7 +131,7 @@ var selectElement = document.getElementById("podcastGenre");
 
 // Sort the options alphabetically
 var options = Array.from(selectElement.options);
-options.sort(function(a, b) {
+options.sort(function (a, b) {
   return a.text.localeCompare(b.text);
 });
 
