@@ -141,49 +141,51 @@
                             </div>
                         </div>
                         <!-- Tracking submission button -->
-                        <button type="submit">Add Episode</button>
+                        <button type="submit" id="add-button">Add Episode</button>
                     </form>
                     <p id="required-text">*Please fill in the mandatory fields</p>
                 </section>
             </section>
 
             <!-- Pop-up for user to view details of a podcast item -->
-            <section class="show-details-popup">
+            <section id="show-details-popup">
                 <section class="podcast-popup-container">
-                    <!-- Close pop-up button -->
-                    <img id="close-popup-button" src="images/cancel-button.png"
-                        alt="Button with a cross to close pop-up window" onclick="closePopup()">
-                    <!-- Input form that user fills out to add a new podcast episode -->
-                    <section id="podcast-details-name">
-                        <div class="show-details-heading">Podcast Name</div>
-                        <div id="podcast-input-name">Serial</div>
+                    <section id="show-details-content">
+                        <!-- Close pop-up button -->
+                        <img id="close-popup-button" src="images/cancel-button.png" alt="Button with a cross to close pop-up window"
+                            onclick="closePopup()">
+                        <!-- Input form that user fills out to add a new podcast episode -->
+                        <section id="podcast-details-name">
+                            <h3 class="show-details-heading">Podcast Name</h3>
+                            <p id="podcast-input-name">Hamish & Andy</p>
+                        </section>
+                        <section id="podcast-details-genre">
+                            <h3 class="show-details-heading">Podcast Genre</h3>
+                            <p id="podcast-input-genre">Comedy</p>
+                        </section>
+                        <section id="podcast-details-hosts">
+                            <h3 class="show-details-heading">Podcast Host(s)</h3>
+                            <p id="podcast-input-hosts">Hamish Blake, Andy Lee</p>
+                        </section>
+                        <section id="episode-details-title">
+                            <h3 class="show-details-heading">Episode Title</h3>
+                            <p id="episode-input-title">Hamish & Andy 2023 Ep 211</p>
+                        </section>
+                        <section id="episode-details-duration">
+                            <h3 class="show-details-heading">Episode Duration</h3>
+                            <p id="episode-input-duration">41 min.</p>
+                        </section>
+                        <section id="episode-details-complete">
+                            <h3 class="show-details-heading">Episode Completed</h3>
+                            <p id="episode-input-complete">Yes ✅ on 21 April 2023</p>
+                        </section>
+                        <section id="episode-details-rating">
+                            <h3 class="show-details-heading">Episode Rating</h3>
+                            <p id="episode-input-rating">⭐⭐⭐⭐ </p>
+                        </section>
+                        <!-- Delete episode item button -->
+                        <button type="button" id="delete-button">Delete Episode</button>
                     </section>
-                    <section id="podcast-details-genre">
-                        <div class="show-details-heading">Podcast Genre</div>
-                        <div id="podcast-input-genre">Serial</div>
-                    </section>
-                    <section id="podcast-details-hosts">
-                        <div class="show-details-heading">Podcast Host(s)</div>
-                        <div id="podcast-input-hosts">Sarah Koenig</div>
-                    </section>
-                    <section id="episode-details-title">
-                        <div class="show-details-heading">Episode Title</div>
-                        <div id="episode-input-title">Serial S01 - Ep. 1: The Alibi</div>
-                    </section>
-                    <section id="episode-details-duration">
-                        <div class="show-details-heading">Episode Duration</div>
-                        <div id="episode-input-duration">52 min.</div>
-                    </section>
-                    <section id="episode-details-complete">
-                        <div class="show-details-heading">Episode Completed</div>
-                        <div id="episode-input-complete">Yes ✅ on 21 April 2023</div>
-                    </section>
-                    <section id="episode-details-rating">
-                        <div class="show-details-heading">Episode Rating</div>
-                        <div id="episode-input-rating">⭐⭐⭐⭐ </div>
-                    </section>
-                    <!-- Delete episode item button -->
-                    <button type="button">Delete Episode</button>
                 </section>
             </section>
 

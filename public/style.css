@@ -47,12 +47,7 @@ h3 {
   font-weight: 700;
 }
 
-h4 {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-p {
+h4, p {
   font-size: 18px;
   font-weight: 400;
 }
@@ -193,11 +188,13 @@ header {
 
 /* POP-UP ELEMENTS */
 
-#add-podcast-popup {
+/* Hide podcast popups initially - javascript handles opening and closing */
+#add-podcast-popup,
+#show-details-popup {
   display: none;
 }
 
-/* Styling for pop-up container */
+/* Styling for pop-up container that applies to both pop ups */
 .podcast-popup-container {
   position: absolute;
   top: 12.8rem;
@@ -229,6 +226,21 @@ header {
 .close-popup-button:hover {
   transform: translateY(-2px);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Filter is smoother than box shadow */
+}
+
+/* Styling for add and delete episode buttons across both popups */
+#add-button,
+#delete-button {
+  box-sizing: border-box;
+  width: 25rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  cursor: pointer;
+  /* Creates a smooth transition effect when hovering over the button */
+  transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
 }
 
 /* ADD PODCAST POP-UP */
@@ -376,21 +388,6 @@ input[type="number"] {
   user-select: none;
 }
 
-/* Styling for submit button */
-button[type="submit"] {
-  box-sizing: border-box;
-  width: 25rem;
-  height: 2.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  background: #B6FFED;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  cursor: pointer;
-  /* Creates a smooth transition effect when hovering over the button */
-  transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
-}
-
 /* Styling for effects taking place when hovering over buttons */
 button[type="submit"]:hover,
 button[type="button"]:hover  {
@@ -404,7 +401,28 @@ button[type="button"]:hover  {
   margin-left: 2rem;
 }
 
+/* Specific styling for add episode button */
+#add-button {
+  background: #B6FFED;
+}
+
 /* SHOW DETAILS POP-UP */
+
+#show-details-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.show-details-heading {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Specific styling for delete episode button */
+#delete-button {
+  background: #FFB6C8;
+}
 
 /* TRACKING LIST ELEMENT */
 
