@@ -223,7 +223,7 @@ header {
   transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
 }
 
-.close-popup-button:hover {
+#close-popup-button:hover {
   transform: translateY(-2px);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Filter is smoother than box shadow */
 }
