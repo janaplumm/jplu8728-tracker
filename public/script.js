@@ -1,7 +1,11 @@
+// BUTTON CLICK FUNCTIONS
+
 function buttonClick() {
   // Add your button click functionality here
   alert("Button clicked!");
 }
+
+// OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
 
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
 
@@ -42,6 +46,8 @@ function closeEpisodePopup() {
   //console.log(closeEpisodePopup)
 }
 
+// OPEN AND CLOSE SHOW-DETAILS-POPUP FUNCTIONS
+
 function openDetailsPopup() {
   // get the show-details -popup window via ID
   const addDetailsPopup = document.getElementById("show-details-popup");
@@ -53,12 +59,12 @@ function openDetailsPopup() {
   if (displayDetailsSetting == "none") {
     // show show-details-popup
     addDetailsPopup.style.display = "block";
-    console.log("show details popup visible")
+    //console.log("show details popup visible")
   }
   else {
     // show-details-popup is visible, leave as is
     addDetailsPopup.style.display = "block";
-    console.log("show details popup hidden")
+    //console.log("show details popup hidden")
   }
 
   // test functionality with console 
@@ -78,10 +84,10 @@ function closeDetailsPopup() {
   })
 
   // test functionality with console 
-  console.log(closeDetailsPopup)
+  //console.log(closeDetailsPopup)
 }
 
-// Star rating functionality
+// INPUT FORM STAR RATING FEATURE
 
 // Select and store all 'star' class name elements
 const stars = document.querySelectorAll(".star");
@@ -118,6 +124,8 @@ stars.forEach((star) => {
   });
 });
 
+
+// INPUT FORM DROPDOWN MENU FEATURE
 
 // This code sorts the genre list alphabetically to keep 'Investigative Journalism' in order
 
