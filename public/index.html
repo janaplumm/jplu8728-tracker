@@ -71,7 +71,8 @@
                     <img class="close-popup-button" id="close-episode-popup" src="images/cancel-button.png"
                         alt="Button with a cross to close pop-up window" onclick="closeEpisodePopup()">
                     <!-- Input form that user fills out to add a new podcast episode -->
-                    <form id="add-podcast-form" onsubmit="return submitForm()">
+                    <!-- Check if all required items have been submitted -->
+                    <form id="add-podcast-form" onsubmit="return submitCheck()">
                         <!-- Podcast name input -->
                         <label for="podcastName">Podcast Name*</label>
                         <!-- Added placeholder for better usability -->

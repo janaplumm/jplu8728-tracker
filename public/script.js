@@ -1,4 +1,4 @@
-
+// FORM SUBMISSION HANDLING
 // Used this from unit content Scrimba JS Objects - Input and event handling 
 const form = document.getElementById("add-podcast-form");
 const formlist = document.querySelector("#tracking-list");
@@ -258,7 +258,7 @@ function episodeCompletedButton(value) {
 // INPUT FORM SUBMISSION: CHECK THAT EPISODE COMPLETED SELECTION MADE BY USER
 
 // Use a function to check if user has selected either button in order to submit the form 
-function submitForm() {
+function submitCheck() {
   // Check if value is still null, in which case user is alerted to make a selection 
   if (episodeCompleted === null) {
     alert("Please select whether you completed the episode.");
