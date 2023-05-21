@@ -117,7 +117,7 @@ stars.forEach((star) => {
 
 // INPUT FORM: DROPDOWN MENU FEATURE
 
-// This code sorts the genre list alphabetically to keep 'Investigative Journalism' in order
+// This code sorts the genre list alphabetically to keep 'Comedy' in order
 
 // Get the select element
 const selectElement = document.getElementById("podcastGenre");
