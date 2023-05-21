@@ -120,12 +120,14 @@
                         </div>
                         <!-- Episode completed selection -->
                         <h4 id="episode-completed-title">Episode Completed*</h4>
+                        <!-- Hidden input field to store value of user selection using Javascript-->
+                        <input type="hidden" id="episodeCompletedInput" name="episodeCompleted">
                         <div class="episode-completed-container">
                             <!-- Used buttons instead of radio input type -->
                             <!-- This information is translated to a javascript function that evaluates if the boolean value is true or false -->
-                            <button type="button" id="episodeCompletedTrue" name="episodeCompleted" value="true"
+                            <button type="button" id="episodeCompletedTrue" value="true"
                                 onclick="episodeCompletedButton(true)"><span id="yes-emoji">👍</span> Yes</button>
-                            <button type="button" id="episodeCompletedFalse" name="episodeCompleted" value="false"
+                            <button type="button" id="episodeCompletedFalse" value="false"
                                 onclick="episodeCompletedButton(false)"><span id="no-emoji">👎</span> No</button>
                         </div>
                         <!-- Episode rating selection -->

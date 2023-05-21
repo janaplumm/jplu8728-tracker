@@ -1,3 +1,30 @@
+
+// Used this from unit content Scrimba JS Objects - Input and event handling 
+const form = document.getElementById("add-podcast-form");
+const formlist = document.querySelector("#tracking-list");
+
+form.addEventListener("submit", function(event) {
+  // Block the default submission behaviour 
+  event.preventDefault();
+  console.log(form.elements.podcastName.value);
+  console.log(form.elements.postcastGenre.value);
+  console.log(form.elements.podcastHosts.value);
+  console.log(form.elements.episodeTitle.value);
+  console.log(form.elements.episodeHours.value);
+  console.log(form.elements.episodeMinutes.value);
+  console.log(form.elements.episodeCompleted.value);
+  console.log(form.elements.rating.value);
+  form.reset();
+});
+
+// BUTTON: TEST FUNCTION
+// Used this to check if user interaction worked correctly on buttons 
+
+function buttonClick() {
+  // Add your button click functionality here
+  alert("Button clicked!");
+}
+
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
 
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
@@ -142,7 +169,7 @@ for (let i = 0; i < options.length; i++) {
 // Set the selected value
 selectElement.value = selectedValue;
 
-// BUTTON: EPISODE COMPLETED (TRUE OR FALSE BOOLEAN VALUE)
+// INPUT FORM: EPISODE COMPLETED BUTTONS (TRUE OR FALSE BOOLEAN VALUE)
 // This is a required section of the user input form (see next function submitForm)
 
 // Create a global variable to store user selected value 
@@ -152,6 +179,10 @@ let episodeCompleted = null;
 function episodeCompletedButton(value) {
   episodeCompleted = value === true; 
   console.log(episodeCompleted); // Log boolean value to console to check it works
+
+  // Apply value of episode completed button to hidden input element  
+  const episodeCompletedInput = document.getElementById("episodeCompletedInput");
+  episodeCompletedInput.value = episodeCompleted ? "true" : "false";
 
   // store button values in separate variables 
   const yesButton = document.getElementById("episodeCompletedTrue");
@@ -177,15 +208,4 @@ function submitForm() {
   if (episodeCompleted === null) {
     alert("Please select whether you completed the episode.");
     return false; // Prevent form submission
-  } else { // if value is not null, then allow form submission 
-    return true; // 
-  }
-}
-
-// BUTTON: TEST FUNCTION
-// Used this to check if user interaction worked correctly on buttons 
-
-function buttonClick() {
-  // Add your button click functionality here
-  alert("Button clicked!");
-}
+}}
