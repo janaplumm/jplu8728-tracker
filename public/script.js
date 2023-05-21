@@ -8,14 +8,14 @@ form.addEventListener("submit", function(event) {
   event.preventDefault();
 
   // Log out each user input value 
-  console.log(form.elements.podcastName.value);
-  console.log(form.elements.postcastGenre.value);
-  console.log(form.elements.podcastHosts.value);
-  console.log(form.elements.episodeTitle.value);
-  console.log(form.elements.episodeHours.value);
-  console.log(form.elements.episodeMinutes.value);
-  console.log(form.elements.episodeCompleted.value);
-  console.log(form.elements.rating.value);
+  // console.log(form.elements.podcastName.value);
+  // console.log(form.elements.postcastGenre.value);
+  // console.log(form.elements.podcastHosts.value);
+  // console.log(form.elements.episodeTitle.value);
+  // console.log(form.elements.episodeHours.value);
+  // console.log(form.elements.episodeMinutes.value);
+  // console.log(form.elements.episodeCompleted.value);
+  // console.log(form.elements.rating.value);
 
   addPodcastEpisode(
     form.elements.podcastName.value,
@@ -27,6 +27,29 @@ form.addEventListener("submit", function(event) {
     form.elements.episodeCompleted.value,
     form.elements.rating.value,
   )
+
+  // Reset the form once it is submitted 
+  form.reset();
+
+  // Reset episode completed button
+  episodeCompleted = null; 
+  const episodeCompletedInput = document.getElementById("episodeCompletedInput");
+  episodeCompletedInput.value = "";
+
+  const yesButton = document.getElementById("episodeCompletedTrue");
+  const noButton = document.getElementById("episodeCompletedFalse");
+  yesButton.style.backgroundColor = "";
+  noButton.style.backgroundColor = "";
+
+  // Reset star rating
+  const stars = document.querySelectorAll(".star");
+  const ratingInput = document.querySelector('[name="rating"]');
+  ratingInput.value = "0";
+  stars.forEach((star) => {
+    star.innerHTML = "&#9734;"; // Unicode representing empty star
+  });
+
+  console.log(podcastList);
 })
 
 // Create an array that holds all the podcast items
@@ -51,8 +74,6 @@ function addPodcastEpisode(name, genre, hosts, title, hours, minutes, completed,
   // Add object to the array 
   podcastList.push(episode)
 }
-
-console.log(podcastList);
 
 // BUTTON: TEST FUNCTION
 // Used this to check if user interaction worked correctly on buttons 
