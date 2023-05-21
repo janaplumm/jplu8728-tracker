@@ -152,6 +152,21 @@ let episodeCompleted = null;
 function episodeCompletedButton(value) {
   episodeCompleted = value === true; 
   console.log(episodeCompleted); // Log boolean value to console to check it works
+
+  // store button values in separate variables 
+  const yesButton = document.getElementById("episodeCompletedTrue");
+  const noButton = document.getElementById("episodeCompletedFalse");
+  
+  // Apply visual indicator for user to see their button selection 
+  if (episodeCompleted) {
+    // User selected 'yes'
+    yesButton.style.backgroundColor = "#EDFFB6"; // Change color of 'yes' button
+    noButton.style.backgroundColor = ""; // Revert color of 'no' button
+  } else {
+    // User selected 'no'
+    yesButton.style.backgroundColor = ""; // Revert color of 'yes' button
+    noButton.style.backgroundColor = "#FFB6C8"; // Change color of 'no' button
+  }
 }
 
 // Use a function to check if user has selected either button in order to submit the form 
@@ -163,7 +178,6 @@ function submitForm() {
   } else { // if value is not null, then allow form submission 
     return true; // 
   }
-  
 }
 
 // BUTTON: TEST FUNCTION
