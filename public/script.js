@@ -1,18 +1,3 @@
-// BUTTON: EPISODE COMPLETED (TRUE OR FALSE BOOLEAN VALUE)
-
-function episodeCompletedButton(value) {
-  const episodeCompleted = value === true; // Compare with the boolean value true
-  console.log(episodeCompleted); // Use the boolean value as needed
-}
-
-// BUTTON: TEST FUNCTION
-// Used this to check if user interaction worked correctly on buttons 
-
-function buttonClick() {
-  // Add your button click functionality here
-  alert("Button clicked!");
-}
-
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
 
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
@@ -157,3 +142,34 @@ for (let i = 0; i < options.length; i++) {
 // Set the selected value
 selectElement.value = selectedValue;
 
+// BUTTON: EPISODE COMPLETED (TRUE OR FALSE BOOLEAN VALUE)
+// This is a required section of the user input form
+
+// Create a global variable to store user selected value 
+let episodeCompleted = null; 
+
+// Use a function to store user selected value if user clicks on 'yes' or 'no' button 
+function episodeCompletedButton(value) {
+  episodeCompleted = value === true; 
+  console.log(episodeCompleted); // Log boolean value to console to check it works
+}
+
+// Use a function to check if user has selected either button in order to submit the form 
+function submitForm() {
+  // Check if value is still null, in which case user is alerted to make a selection 
+  if (episodeCompleted === null) {
+    alert("Please select whether you completed the episode.");
+    return false; // Prevent form submission
+  } else { // if value is not null, then allow form submission 
+    return true; // 
+  }
+  
+}
+
+// BUTTON: TEST FUNCTION
+// Used this to check if user interaction worked correctly on buttons 
+
+function buttonClick() {
+  // Add your button click functionality here
+  alert("Button clicked!");
+}
