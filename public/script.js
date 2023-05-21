@@ -178,7 +178,7 @@ let episodeCompleted = null;
 // Use a function to store user selected value if user clicks on 'yes' or 'no' button 
 function episodeCompletedButton(value) {
   episodeCompleted = value === true; 
-  console.log(episodeCompleted); // Log boolean value to console to check it works
+  // console.log(episodeCompleted); // Log boolean value to console to check it works
 
   // Apply value of episode completed button to hidden input element  
   const episodeCompletedInput = document.getElementById("episodeCompletedInput");
