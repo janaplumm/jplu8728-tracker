@@ -6,6 +6,8 @@ const formlist = document.querySelector("#tracking-list");
 form.addEventListener("submit", function(event) {
   // Block the default submission behaviour 
   event.preventDefault();
+
+  // Log out each user input value 
   console.log(form.elements.podcastName.value);
   console.log(form.elements.postcastGenre.value);
   console.log(form.elements.podcastHosts.value);
@@ -14,8 +16,43 @@ form.addEventListener("submit", function(event) {
   console.log(form.elements.episodeMinutes.value);
   console.log(form.elements.episodeCompleted.value);
   console.log(form.elements.rating.value);
-  form.reset();
-});
+
+  addPodcastEpisode(
+    form.elements.podcastName.value,
+    form.elements.postcastGenre.value,
+    form.elements.podcastHosts.value,
+    form.elements.episodeTitle.value,
+    form.elements.episodeHours.value,
+    form.elements.episodeMinutes.value,
+    form.elements.episodeCompleted.value,
+    form.elements.rating.value,
+  )
+})
+
+// Create an array that holds all the podcast items
+const podcastList = [];
+
+// Function contains the object that is going to be added to the array with each form submission 
+function addPodcastEpisode(name, genre, hosts, title, hours, minutes, completed, rating) {
+
+  let episode = {
+    name,
+    genre,
+    hosts,
+    title, 
+    hours, 
+    minutes,
+    completed, 
+    rating,
+    id: Date.now(),
+    date: new Date().toISOString()
+  }
+
+  // Add object to the array 
+  podcastList.push(episode)
+}
+
+console.log(podcastList);
 
 // BUTTON: TEST FUNCTION
 // Used this to check if user interaction worked correctly on buttons 
@@ -26,7 +63,6 @@ function buttonClick() {
 }
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
-
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
 
 function openEpisodePopup() {
@@ -44,7 +80,6 @@ function openEpisodePopup() {
     // add-podcast-popup is visible, leave as is
     addEpisodePopup.style.display = "block";
   }
-
   // test functionality with console
   //console.log(openEpisodePopup)
 }
@@ -142,8 +177,7 @@ stars.forEach((star) => {
   });
 });
 
-// INPUT FORM: DROPDOWN MENU FEATURE
-
+// INPUT FORM: DROPDOWN MENU FEATURE 
 // This code sorts the genre list alphabetically to keep 'Comedy' in order
 
 // Get the select element
