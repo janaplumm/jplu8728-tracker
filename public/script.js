@@ -143,7 +143,7 @@ for (let i = 0; i < options.length; i++) {
 selectElement.value = selectedValue;
 
 // BUTTON: EPISODE COMPLETED (TRUE OR FALSE BOOLEAN VALUE)
-// This is a required section of the user input form
+// This is a required section of the user input form (see next function submitForm)
 
 // Create a global variable to store user selected value 
 let episodeCompleted = null; 
@@ -168,6 +168,8 @@ function episodeCompletedButton(value) {
     noButton.style.backgroundColor = "#FFB6C8"; // Change color of 'no' button
   }
 }
+
+// INPUT FORM SUBMISSION: CHECK THAT EPISODE COMPLETED SELECTION MADE BY USER
 
 // Use a function to check if user has selected either button in order to submit the form 
 function submitForm() {
