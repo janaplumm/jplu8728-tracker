@@ -1,11 +1,19 @@
-// BUTTON CLICK FUNCTIONS
+// BUTTON: EPISODE COMPLETED (TRUE OR FALSE BOOLEAN VALUE)
+
+function episodeCompletedButton(value) {
+  const episodeCompleted = value === true; // Compare with the boolean value true
+  console.log(episodeCompleted); // Use the boolean value as needed
+}
+
+// BUTTON: TEST FUNCTION
+// Used this to check if user interaction worked correctly on buttons 
 
 function buttonClick() {
   // Add your button click functionality here
   alert("Button clicked!");
 }
 
-// OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
+// POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
 
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
 
@@ -45,7 +53,7 @@ function closeEpisodePopup() {
   //console.log(closeEpisodePopup)
 }
 
-// OPEN AND CLOSE SHOW-DETAILS-POPUP FUNCTIONS
+// POP-UPS: OPEN AND CLOSE SHOW-DETAILS-POPUP FUNCTIONS
 
 function openDetailsPopup() {
   // get the show-details -popup window via ID
@@ -85,7 +93,7 @@ function closeDetailsPopup() {
   //console.log(closeDetailsPopup)
 }
 
-// INPUT FORM STAR RATING FEATURE
+// INPUT FORM: STAR RATING FEATURE
 
 // Select and store all 'star' class name elements
 const stars = document.querySelectorAll(".star");
@@ -122,103 +130,30 @@ stars.forEach((star) => {
   });
 });
 
-// INPUT FORM DROPDOWN MENU FEATURE
+// INPUT FORM: DROPDOWN MENU FEATURE
 
 // This code sorts the genre list alphabetically to keep 'Investigative Journalism' in order
 
 // Get the select element
-var selectElement = document.getElementById("podcastGenre");
+const selectElement = document.getElementById("podcastGenre");
 
 // Sort the options alphabetically
-var options = Array.from(selectElement.options);
+const options = Array.from(selectElement.options);
 options.sort(function (a, b) {
   return a.text.localeCompare(b.text);
 });
 
 // Get the selected value
-var selectedValue = selectElement.value;
+const selectedValue = selectElement.value;
 
 // Clear the select element
 selectElement.innerHTML = "";
 
 // Insert the sorted options back into the select element
-for (var i = 0; i < options.length; i++) {
+for (let i = 0; i < options.length; i++) {
   selectElement.appendChild(options[i]);
 }
 
 // Set the selected value
 selectElement.value = selectedValue;
 
-// TASK LIST CODE FROM REPLIT
-
-const form = document.getElementById("add-podcast-form");
-const trackingList = document.getElementById("tracking-list");
-// get the close button image element
-const submitForm = document.getElementById("add-button");
-let podcastList = [];
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  addEpisode(
-    form.elements.podcastName.value,
-    form.elements.postcastGenre.value,
-    form.elements.podcastHosts.value,
-    form.elements.episodeTitle.value,
-    form.elements.episodeHours.value,
-    form.elements.episodeMinutes.value,
-    form.elements.episodeCompleted.value,
-    form.elements.rating.value
-  );
-});
-
-function displayEpisode(episode) {
-  let item = document.createElement("li");
-  item.setAttribute("data-id", episode.id);
-  item.innerHTML = `<p><strong>${episode.name}<br>${episode.type}<br>${episode.rate}<br>${episode.time}<br>${episode.client}</strong></p>`;
-  podcastList.appendChild(item);
-  form.reset();
-  // Setup delete button DOM elements
-  let delButton = document.createElement("button");
-  let delButtonText = document.createTextNode("Delete");
-  delButton.appendChild(delButtonText);
-  item.appendChild(delButton); // Adds a delete button to every task
-  // Listen for when the delete button is clicked
-  delButton.addEventListener("click", function (event) {
-    item.remove(); // Remove the task item from the page when button clicked
-    // Because we used 'let' to define the item, this will delete the right element
-    // Loop through the array and remove the element corresponding with the list item
-    podcastList.forEach(function (taskArrayElement, taskArrayindex) {
-      if (task.id == item.getAttribute("data-id")) {
-        podcastList.splice(taskArrayindex, 1);
-      }
-    });
-  });
-}
-
-function addEpisode(
-  name,
-  genre,
-  hosts,
-  title,
-  hours,
-  minutes,
-  completed,
-  rating
-) {
-  let episode = {
-    name,
-    genre,
-    hosts,
-    title,
-    hours,
-    minutes,
-    completed,
-    rating,
-    id: Date.now(),
-    date: new Date().toISOString(),
-  };
-  podcastList.push(episode);
-  displayEpisode(episode);
-}
-
-console.log(addEpisode);

@@ -123,11 +123,11 @@
                         <h4 id="episode-completed-title">Episode Completed*</h4>
                         <div class="episode-completed-container">
                             <!-- Used buttons instead of radio input type -->
-                            <button type="button" id="episodeCompletedTrue" name="episodeCompleted" value="yes"
-                                onclick="buttonClick()"><span id="yes-emoji">👍</span> Yes</button>
-                            <!-- Used span tags to isolate emoji from text for CSS management -->
-                            <button type="button" id="episodeCompletedFalse" name="episodeCompleted" value="no"
-                                onclick="buttonClick()"><span id="no-emoji">👎</span> No</button>
+                            <!-- This information is translated to a javascript function that evaluates if the boolean value is true or false -->
+                            <button type="button" id="episodeCompletedTrue" name="episodeCompleted" value="true"
+                                onclick="episodeCompletedButton(true)"><span id="yes-emoji">👍</span> Yes</button>
+                            <button type="button" id="episodeCompletedFalse" name="episodeCompleted" value="false"
+                                onclick="episodeCompletedButton(false)"><span id="no-emoji">👎</span> No</button>
                         </div>
                         <!-- Episode rating selection -->
                         <h4 id="episode-completed-title">Rate Episode</h4>
