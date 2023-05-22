@@ -75,14 +75,14 @@ function displayPodcastEpisode(episode) {
       <div class="podcast-list-item-info">
         <div class="podcast-list-item-heading">
           <h3 class="podcast-title">${episode.name}</h3>
-          <img class="green-tick-complete" src="images/green-tick-emoji.png" alt="Green tick emoji indicating completion">
+          <img class="green-tick-complete" img src='${images['green-tick-emoji']}' alt="Green tick emoji indicating completion">
         </div>
         <p class="episode-title">${episode.title}</p>
         <div class="tracking-rating">${generateStarRating(episode.rating)}</div>
       </div>
     </div>
     <div class="podcast-list-item-del">
-      <img id="trash-icon-button" src="images/trash-emoji.png" alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+      <img id="trash-icon-button" img src='${images['trash-emoji']}' alt="Trash emoji representing delete functionality">
     </div>
   `;
 
