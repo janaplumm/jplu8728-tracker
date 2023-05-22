@@ -56,6 +56,47 @@ form.addEventListener("submit", function(event) {
   console.log(podcastList);
 })
 
+// EPISODE ITEM DISPLAY
+// Function that displays the Episode Item(s) in the Podcast List 
+
+function displayPodcastEpisode(episode) {
+  // Create variable that links to HTML list element
+  let episodeItem = document.createElement("li");
+  episodeItem.className = "podcast-list-item-container";
+
+  // Create the inner HTML structure for the episode item
+  episodeItem.innerHTML = `
+    <div class="podcast-list-item-details">
+      <img class="podcast-list-item-genre-img" src="images/journalism-emoji.png" alt="Investigative journalist emoji">
+      <div class="podcast-list-item-info">
+        <div class="podcast-list-item-heading">
+          <h3 class="podcast-title">${episode.name}</h3>
+          <img class="green-tick-complete" src="images/green-tick-emoji.png" alt="Green tick emoji indicating completion">
+        </div>
+        <p class="episode-title">${episode.title}</p>
+        <div class="tracking-rating">${generateStarRating(episode.rating)}</div>
+      </div>
+    </div>
+    <div class="podcast-list-item-del">
+      <img id="trash-icon-button" src="images/trash-emoji.png" alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+    </div>
+  `;
+
+  // Append the episode item to the podcast list
+  let podcastList = document.querySelector("#podcast-list");
+  podcastList.appendChild(episodeItem);
+}
+
+// Function to generate star rating HTML based on the given rating
+function generateStarRating(rating) {
+  let stars = '';
+  for (let i = 0; i < rating; i++) {
+    stars += '⭐';
+  }
+  return stars;
+}
+
+
 // PODCAST ARRAY & OBJECT CREATION
 // Create an array that holds all the podcast items
 const podcastList = [];
