@@ -1,3 +1,6 @@
+import images from './images/*.png';
+console.log(images)
+
 // FORM SUBMISSION HANDLING
 // Used this from unit content Scrimba JS Objects - Input and event handling 
 
