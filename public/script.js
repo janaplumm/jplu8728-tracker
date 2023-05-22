@@ -1,19 +1,22 @@
 // IMPORT IMAGES
 // Used Rob's code from https://github.com/robdongas/deco2017-task-tracker/commit/b070dc4ff3d621b124326d04366782299a4961c8
 
-// FORM SUBMISSION HANDLING
-// Used this from unit content Scrimba JS Objects - Input and event handling 
+import images from "./images/*.png";
+console.log(images);
 
-// Create variables that use HTML elements 
+// FORM SUBMISSION HANDLING
+// Used this from unit content Scrimba JS Objects - Input and event handling
+
+// Create variables that use HTML elements
 const form = document.getElementById("add-podcast-form");
 const formlist = document.querySelector("#podcast-list");
 
-// Event Listener to listen for form submission 
-form.addEventListener("submit", function(event) {
-  // Block the default submission behaviour 
+// Event Listener to listen for form submission
+form.addEventListener("submit", function (event) {
+  // Block the default submission behaviour
   event.preventDefault();
 
-  // Log out each user input value 
+  // Log out each user input value
   // console.log(form.elements.podcastName.value);
   // console.log(form.elements.postcastGenre.value);
   // console.log(form.elements.podcastHosts.value);
@@ -32,15 +35,17 @@ form.addEventListener("submit", function(event) {
     form.elements.episodeHours.value,
     form.elements.episodeMinutes.value,
     form.elements.episodeCompleted.value,
-    form.elements.rating.value,
-  )
+    form.elements.rating.value
+  );
 
-  // Reset the form once it is submitted 
+  // Reset the form once it is submitted
   form.reset();
 
   // Reset episode completed button
-  episodeCompleted = null; 
-  const episodeCompletedInput = document.getElementById("episodeCompletedInput");
+  episodeCompleted = null;
+  const episodeCompletedInput = document.getElementById(
+    "episodeCompletedInput"
+  );
   episodeCompletedInput.value = "";
 
   const yesButton = document.getElementById("episodeCompletedTrue");
@@ -57,10 +62,10 @@ form.addEventListener("submit", function(event) {
   });
 
   console.log(podcastList);
-})
+});
 
 // EPISODE ITEM DISPLAY
-// Function that displays the Episode Item(s) in the Podcast List 
+// Function that displays the Episode Item(s) in the Podcast List
 
 function displayPodcastEpisode(episode) {
   // Create variable that links to HTML list element
@@ -92,47 +97,55 @@ function displayPodcastEpisode(episode) {
 
 // Function to generate star rating HTML based on the given rating
 function generateStarRating(rating) {
-  let stars = '';
+  let stars = "";
   for (let i = 0; i < rating; i++) {
-    stars += '⭐';
+    stars += "⭐";
   }
   return stars;
 }
-
 
 // PODCAST ARRAY & OBJECT CREATION
 // Create an array that holds all the podcast items
 const podcastList = [];
 
-// Function contains the object that is going to be added to the array with each form submission 
-function addPodcastEpisode(name, genre, hosts, title, hours, minutes, completed, rating) {
-
+// Function contains the object that is going to be added to the array with each form submission
+function addPodcastEpisode(
+  name,
+  genre,
+  hosts,
+  title,
+  hours,
+  minutes,
+  completed,
+  rating
+) {
   let episode = {
     name,
     genre,
     hosts,
-    title, 
-    hours, 
+    title,
+    hours,
     minutes,
-    completed, 
+    completed,
     rating,
     id: Date.now(),
-    date: new Date().toISOString()
-  }
+    date: new Date().toISOString(),
+  };
 
-  // Add object to the array 
+  // Add object to the array
   podcastList.push(episode);
   // Call the displayPodcastEpisode function in order for this to be visual on the HTML page
-  displayPodcastEpisode(episode)
+  displayPodcastEpisode(episode);
 }
 
 // BUTTON: TEST FUNCTION
-// Used this to check if user interaction worked correctly on buttons 
+// Used this to check if user interaction worked correctly on buttons
 
 function buttonClick() {
   // Add your button click functionality here
   alert("Button clicked!");
 }
+
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
@@ -171,6 +184,7 @@ function closeEpisodePopup() {
   // test functionality with console
   //console.log(closeEpisodePopup)
 }
+
 
 // POP-UPS: OPEN AND CLOSE SHOW-DETAILS-POPUP FUNCTIONS
 
@@ -249,7 +263,7 @@ stars.forEach((star) => {
   });
 });
 
-// INPUT FORM: DROPDOWN MENU FEATURE 
+// INPUT FORM: DROPDOWN MENU FEATURE
 // This code sorts the genre list alphabetically to keep 'Comedy' in order
 
 // Get the select element
@@ -278,23 +292,25 @@ selectElement.value = selectedValue;
 // INPUT FORM: EPISODE COMPLETED BUTTONS (TRUE OR FALSE BOOLEAN VALUE)
 // This is a required section of the user input form (see next function submitForm)
 
-// Create a global variable to store user selected value 
-let episodeCompleted = null; 
+// Create a global variable to store user selected value
+let episodeCompleted = null;
 
-// Use a function to store user selected value if user clicks on 'yes' or 'no' button 
+// Use a function to store user selected value if user clicks on 'yes' or 'no' button
 function episodeCompletedButton(value) {
-  episodeCompleted = value === true; 
+  episodeCompleted = value === true;
   // console.log(episodeCompleted); // Log boolean value to console to check it works
 
-  // Apply value of episode completed button to hidden input element  
-  const episodeCompletedInput = document.getElementById("episodeCompletedInput");
+  // Apply value of episode completed button to hidden input element
+  const episodeCompletedInput = document.getElementById(
+    "episodeCompletedInput"
+  );
   episodeCompletedInput.value = episodeCompleted ? "true" : "false";
 
-  // store button values in separate variables 
+  // store button values in separate variables
   const yesButton = document.getElementById("episodeCompletedTrue");
   const noButton = document.getElementById("episodeCompletedFalse");
-  
-  // Apply visual indicator for user to see their button selection 
+
+  // Apply visual indicator for user to see their button selection
   if (episodeCompleted) {
     // User selected 'yes'
     yesButton.style.backgroundColor = "#EDFFB6"; // Change color of 'yes' button
@@ -308,10 +324,11 @@ function episodeCompletedButton(value) {
 
 // INPUT FORM SUBMISSION: CHECK THAT EPISODE COMPLETED SELECTION MADE BY USER
 
-// Use a function to check if user has selected either button in order to submit the form 
+// Use a function to check if user has selected either button in order to submit the form
 function submitCheck() {
-  // Check if value is still null, in which case user is alerted to make a selection 
+  // Check if value is still null, in which case user is alerted to make a selection
   if (episodeCompleted === null) {
     alert("Please select whether you completed the episode.");
     return false; // Prevent form submission
-}}
+  }
+}

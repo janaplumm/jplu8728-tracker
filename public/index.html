@@ -48,13 +48,13 @@
                 </section>
                 <!-- iPod controls container with shuffle buttons, show details and add podcast buttons -->
                 <section class="iPod-controls">
-                    <button id="show-details-button" onclick="openDetailsPopup()">Show Details</button>
-                    <button id="add-episode-button" onclick="openEpisodePopup()">Add Episode</button>
-                    <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma and added an onclick function -->
+                    <button id="show-details-button">Show Details</button>
+                    <button id="add-episode-button">Add Episode</button>
+                    <!-- Instead of a button, I added an image of the shuffle controls I designed in Figma -->
                     <img id="left-shuffle-button" src="./images/Left_Shuffle.png"
-                        alt="Button in the shape of a left shuffle icon" onclick="buttonClick()">
+                        alt="Button in the shape of a left shuffle icon">
                     <img id="right-shuffle-button" src="./images/Right_Shuffle.png"
-                        alt="Button in the shape of a right shuffle icon" onclick="buttonClick()">
+                        alt="Button in the shape of a right shuffle icon">
                 </section>
                 <!-- iPod body container that holds the frame of a classic iPod -->
                 <section class="iPod-body">
@@ -68,11 +68,11 @@
                 <section class="podcast-popup-container">
                     <!-- Close pop-up button -->
                     <!-- Adding class and ID selectors for css and javascript purposes -->
-                    <img class="close-popup-button" id="close-episode-popup" src="./images/cancel-button.png"
-                        alt="Button with a cross to close pop-up window" onclick="closeEpisodePopup()">
+                    <img class="close-popup-button" id="close-popup" src="./images/cancel-button.png"
+                        alt="Button with a cross to close pop-up window">
                     <!-- Input form that user fills out to add a new podcast episode -->
                     <!-- Check if all required items have been submitted -->
-                    <form id="add-podcast-form" onsubmit="return submitCheck()">
+                    <form id="add-podcast-form">
                         <!-- Podcast name input -->
                         <label for="podcastName">Podcast Name*</label>
                         <!-- Added placeholder for better usability -->
@@ -128,10 +128,8 @@
                         <div class="episode-completed-container">
                             <!-- Used buttons instead of radio input type -->
                             <!-- This information is translated to a javascript function that evaluates if the boolean value is true or false -->
-                            <button type="button" id="episodeCompletedTrue" value="true"
-                                onclick="episodeCompletedButton(true)"><span id="yes-emoji">👍</span> Yes</button>
-                            <button type="button" id="episodeCompletedFalse" value="false"
-                                onclick="episodeCompletedButton(false)"><span id="no-emoji">👎</span> No</button>
+                            <button type="button" id="episodeCompletedTrue" value="true"><span id="yes-emoji">👍</span> Yes</button>
+                            <button type="button" id="episodeCompletedFalse" value="false"><span id="no-emoji">👎</span> No</button>
                         </div>
                         <!-- Episode rating selection -->
                         <h4 id="episode-completed-title">Rate Episode</h4>
@@ -161,7 +159,7 @@
                         <!-- Close pop-up button -->
                         <!-- Adding class and ID selectors for css and javascript purposes -->
                         <img class="close-popup-button" id="close-details-popup" src="./images/cancel-button.png"
-                            alt="Button with a cross to close pop-up window" onclick="closeDetailsPopup()">
+                            alt="Button with a cross to close pop-up window">
                         <!-- Podcast name input by user for this podcast episode item -->
                         <section id="podcast-details-name">
                             <h3 class="show-details-heading">Podcast Name</h3>
@@ -217,7 +215,7 @@
             <!-- Created a separate element for the scrollbar to avoid the borders clashing and for easier scroll function -->
             <ul id="podcast-list" class="podcast-list">
                 <!-- Divided the list element into multiple div elements for easier CSS management -->
-                <li class="podcast-list-item-container" onclick="buttonClick()">
+                <li class="podcast-list-item-container">
                     <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
                     <div class="podcast-list-item-details">
                         <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
@@ -237,11 +235,11 @@
                     <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
                     <div class="podcast-list-item-del">
                         <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                            alt="Trash emoji representing delete functionality">
                     </div>
                 </li>
 
-                <li class="podcast-list-item-container" onclick="buttonClick()">
+                <li class="podcast-list-item-container">
                     <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
                     <div class="podcast-list-item-details">
                         <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
@@ -261,11 +259,11 @@
                     <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
                     <div class="podcast-list-item-del">
                         <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                            alt="Trash emoji representing delete functionality">
                     </div>
                 </li>
 
-                <li class="podcast-list-item-container" onclick="buttonClick()">
+                <li class="podcast-list-item-container">
                     <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
                     <div class="podcast-list-item-details">
                         <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
@@ -285,11 +283,11 @@
                     <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
                     <div class="podcast-list-item-del">
                         <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                            alt="Trash emoji representing delete functionality">
                     </div>
                 </li>
 
-                <li class="podcast-list-item-container" onclick="buttonClick()">
+                <li class="podcast-list-item-container">
                     <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
                     <div class="podcast-list-item-details">
                         <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
@@ -309,11 +307,11 @@
                     <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
                     <div class="podcast-list-item-del">
                         <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                            alt="Trash emoji representing delete functionality">
                     </div>
                 </li>
 
-                <li class="podcast-list-item-container" onclick="buttonClick()">
+                <li class="podcast-list-item-container">
                     <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
                     <div class="podcast-list-item-details">
                         <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
@@ -333,11 +331,11 @@
                     <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
                     <div class="podcast-list-item-del">
                         <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                            alt="Trash emoji representing delete functionality">
                     </div>
                 </li>
 
-                <li class="podcast-list-item-container" onclick="buttonClick()">
+                <li class="podcast-list-item-container">
                     <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
                     <div class="podcast-list-item-details">
                         <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
@@ -357,7 +355,7 @@
                     <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
                     <div class="podcast-list-item-del">
                         <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality" onclick="buttonClick()">
+                            alt="Trash emoji representing delete functionality">
                     </div>
                 </li>
 
@@ -371,7 +369,7 @@
     </footer>
 
     <!-- Link to the javascript file -->
-    <script type="module" src="script.js"></script>
+    <script type="module" src="./script.js"></script>
 
 </body>
 
