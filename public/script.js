@@ -138,15 +138,6 @@ function addPodcastEpisode(
   displayPodcastEpisode(episode);
 }
 
-// BUTTON: TEST FUNCTION
-// Used this to check if user interaction worked correctly on buttons
-
-function buttonClick() {
-  // Add your button click functionality here
-  alert("Button clicked!");
-}
-
-
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
 
@@ -169,22 +160,20 @@ function openEpisodePopup() {
   //console.log(openEpisodePopup)
 }
 
-function closeEpisodePopup() {
-  // get the close button image element
-  const closeEpisodeButton = document.getElementById("close-episode-popup");
+document.getElementById("add-episode-button").addEventListener("click", openEpisodePopup);
 
+function closeEpisodePopup() {
   // get the add-podcast-popup window via ID
   const addEpisodePopup = document.getElementById("add-podcast-popup");
 
   // add event listener that listens for user clicks and hides the pop-up window
-  closeEpisodeButton.addEventListener("click", function () {
-    addEpisodePopup.style.display = "none";
-  });
+  addEpisodePopup.style.display = "none";
 
   // test functionality with console
   //console.log(closeEpisodePopup)
 }
 
+document.getElementById("close-episode-popup").addEventListener("click", closeEpisodePopup);
 
 // POP-UPS: OPEN AND CLOSE SHOW-DETAILS-POPUP FUNCTIONS
 
@@ -205,26 +194,25 @@ function openDetailsPopup() {
     addDetailsPopup.style.display = "block";
     //console.log("show details popup hidden")
   }
-
+  
   // test functionality with console
   //console.log(openDetailsPopup)
 }
 
-function closeDetailsPopup() {
-  // get the close button image element
-  const closeDetailsButton = document.getElementById("close-details-popup");
+document.getElementById("show-details-button").addEventListener("click", openDetailsPopup);
 
+function closeDetailsPopup() {
   // get the show-details-popup window via ID
   const showDetailsPopup = document.getElementById("show-details-popup");
 
   // add event listener that listens for user clicks and hides the pop-up window
-  closeDetailsButton.addEventListener("click", function () {
-    showDetailsPopup.style.display = "none";
-  });
+  showDetailsPopup.style.display = "none";
 
   // test functionality with console
   //console.log(closeDetailsPopup)
 }
+
+document.getElementById("close-details-popup").addEventListener("click", closeDetailsPopup);
 
 // INPUT FORM: STAR RATING FEATURE
 
