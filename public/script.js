@@ -2,18 +2,18 @@
 // Used Rob's code from https://github.com/robdongas/deco2017-task-tracker/commit/b070dc4ff3d621b124326d04366782299a4961c8
 
 import images from "./images/*.png";
-// console.log(images);
+//console.log(images);
 
 // FORM SUBMISSION HANDLING
 // Used this from unit content Scrimba JS Objects - Input and event handling
 
 // Create variables that use HTML elements
 const form = document.getElementById("add-podcast-form");
-const formlist = document.querySelector("#podcast-list");
+const podcastlist = document.querySelector("#podcast-list");
 
 // Event Listener to listen for form submission
 form.addEventListener("submit", function (event) {
-  // Block the default submission behaviour
+  // Block the default submission behaviour to handle submission manually 
   event.preventDefault();
 
   // Check that episode completed buttons have been clicked otherwise alert user
@@ -61,17 +61,22 @@ form.addEventListener("submit", function (event) {
 });
 
 // EPISODE ITEM DISPLAY
-// Function that displays the Episode Item(s) in the Podcast List
+// Function that fetches and displays the Episode Item(s) in the Podcast List from localStorage
 
-function displayPodcastEpisode(episode) {
-  // Create variable that links to HTML list element
+function displayPodcasts(episode) {
+  podcastlist.innerHTML = "";
+
+
+  // Create new list item and populate with content 
   let episodeItem = document.createElement("li");
   episodeItem.className = "podcast-list-item-container";
-
+  // Data attribute for ID
+  episodeItem.setAttribute("data-id", episode.id);
+  
   // Create the inner HTML structure for the episode item
   episodeItem.innerHTML = `
     <div class="podcast-list-item-details">
-      <img class="podcast-list-item-genre-img" src=images["comedy-emoji"] alt="Investigative journalist emoji">
+    <img class="podcast-list-item-genre-img" src="" alt="">
       <div class="podcast-list-item-info">
         <div class="podcast-list-item-heading">
           <h3 class="podcast-title">${episode.name}</h3>
@@ -87,8 +92,7 @@ function displayPodcastEpisode(episode) {
   `;
 
   // Append the episode item to the podcast list
-  let podcastList = document.querySelector("#podcast-list");
-  podcastList.appendChild(episodeItem);
+  podcastlist.appendChild(episodeItem);
 }
 
 // Function to generate star rating HTML based on the given rating
@@ -98,6 +102,72 @@ function generateStarRating(rating) {
     stars += "⭐";
   }
   return stars;
+}
+
+// GENRE IMAGE SELECTION 
+// Used Rob's code from https://github.com/robdongas/deco2017-task-tracker/commit/b070dc4ff3d621b124326d04366782299a4961c8
+
+function genreImage(genre) {
+    // Create a variable that is returned at the end 
+    let image = new Image();
+
+    // Set the genre image source based on the genre category using switch case
+  switch (genre) {
+    case "advice":
+      image.src = images['advice-emoji'];
+      image.alt = "Emoji of person holding up arm for help";
+      break;
+    case "arts":
+      image.src = images['arts-emoji'];
+      image.alt = "Emoji of theatre masks";
+      break;
+    case "business":
+      image.src = images['business-emoji'];
+      image.alt = "Emoji of face with dollar signs for eyes";
+      break;
+    case "comedy":
+      image.src = images['comedy-emoji'];
+      image.alt = "Emoji of face crying tears laughing";
+      break;
+    case "educational":
+      image.src = images['education-emoji'];
+      image.alt = "Emoji of books stacked on top of each other";
+      break;
+    case "health":
+      image.src = images['health-emoji'];
+      image.alt = "Emoji of green apple";
+      break;
+    case "history":
+      image.src = images['history-emoji'];
+      image.alt = "Emoji of an ancient human hut";
+      break;
+    case "investigative":
+      image.src = images['journalism-emoji'];
+      image.alt = "Emoji of detective person";
+      break;
+    case "news":
+      image.src = images['news-emoji'];
+      image.alt = "Emoji of world globe";
+      break;
+    case "popculture":
+      image.src = images['pop-culture-emoji'];
+      image.alt = "Emoji of popcorn box";
+      break;
+    case "science":
+      image.src = images['science-emoji'];
+      image.alt = "Emoji of DNA strand";
+      break;
+    case "technology":
+      image.src = images['technology-emoji'];
+      image.alt = "Emoji of robot face";
+      break;
+    case "truecrime":
+      image.src = images['crime-emoji'];
+      image.alt = "Emoji of skull";
+      break;
+  }
+
+  return image;
 }
 
 // PODCAST ARRAY & OBJECT CREATION
@@ -116,6 +186,7 @@ function addPodcastEpisode(
   completed,
   rating
 ) {
+
   let episode = {
     name,
     genre,
@@ -129,10 +200,13 @@ function addPodcastEpisode(
     date: new Date().toISOString(),
   };
 
+  // Fetch and parse podcast array from localStorage
+  let localPodcasts = JSON.parse(localStorage.getItem(''))
+
   // Add object to the array
   podcastList.push(episode);
   // Call the displayPodcastEpisode function in order for this to be visual on the HTML page
-  displayPodcastEpisode(episode);
+  displayPodcasts(episode);
 }
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
