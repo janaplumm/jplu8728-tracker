@@ -16,17 +16,13 @@ form.addEventListener("submit", function (event) {
   // Block the default submission behaviour
   event.preventDefault();
 
-  // Log out each user input value
-  // console.log(form.elements.podcastName.value);
-  // console.log(form.elements.postcastGenre.value);
-  // console.log(form.elements.podcastHosts.value);
-  // console.log(form.elements.episodeTitle.value);
-  // console.log(form.elements.episodeHours.value);
-  // console.log(form.elements.episodeMinutes.value);
-  // console.log(form.elements.episodeCompleted.value);
-  // console.log(form.elements.rating.value);
+  // Check that episode completed buttons have been clicked otherwise alert user
+  if (episodeCompleted === null) {
+    alert("Please select whether you completed the episode.");
+    return; // Prevent further execution of the submission logic
+  }
 
-  // Once form is submitted, this data is added to the addPodcastEpisode function, which contains object
+  // Once form is successfully submitted, this data is added to the addPodcastEpisode function, which contains this new object
   addPodcastEpisode(
     form.elements.podcastName.value,
     form.elements.postcastGenre.value,
@@ -61,7 +57,7 @@ form.addEventListener("submit", function (event) {
     star.innerHTML = "&#9734;"; // Unicode representing empty star
   });
 
-  console.log(podcastList);
+  //console.log(podcastList);
 });
 
 // EPISODE ITEM DISPLAY
@@ -322,15 +318,3 @@ yesButton.addEventListener("click", function() {
 noButton.addEventListener("click", function() {
   episodeCompletedButton(false);
 });
-
-
-// INPUT FORM SUBMISSION: CHECK THAT EPISODE COMPLETED SELECTION MADE BY USER
-
-// Use a function to check if user has selected either button in order to submit the form
-function submitCheck() {
-  // Check if value is still null, in which case user is alerted to make a selection
-  if (episodeCompleted === null) {
-    alert("Please select whether you completed the episode.");
-    return false; // Prevent form submission
-  }
-}
