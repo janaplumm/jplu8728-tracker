@@ -1,8 +1,11 @@
 // FORM SUBMISSION HANDLING
 // Used this from unit content Scrimba JS Objects - Input and event handling 
+
+// Create variables that use HTML elements 
 const form = document.getElementById("add-podcast-form");
 const formlist = document.querySelector("#tracking-list");
 
+// Event Listener to listen for form submission 
 form.addEventListener("submit", function(event) {
   // Block the default submission behaviour 
   event.preventDefault();
@@ -17,6 +20,7 @@ form.addEventListener("submit", function(event) {
   // console.log(form.elements.episodeCompleted.value);
   // console.log(form.elements.rating.value);
 
+  // Once form is submitted, this data is added to the addPodcastEpisode function, which contains object
   addPodcastEpisode(
     form.elements.podcastName.value,
     form.elements.postcastGenre.value,
@@ -52,6 +56,7 @@ form.addEventListener("submit", function(event) {
   console.log(podcastList);
 })
 
+// PODCAST ARRAY & OBJECT CREATION
 // Create an array that holds all the podcast items
 const podcastList = [];
 
@@ -72,7 +77,9 @@ function addPodcastEpisode(name, genre, hosts, title, hours, minutes, completed,
   }
 
   // Add object to the array 
-  podcastList.push(episode)
+  podcastList.push(episode);
+  // Call the displayPodcastEpisode function in order for this to be visual on the HTML page
+  displayPodcastEpisode(episode)
 }
 
 // BUTTON: TEST FUNCTION
