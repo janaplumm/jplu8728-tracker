@@ -63,7 +63,7 @@ form.addEventListener("submit", function (event) {
 // EPISODE ITEM DISPLAY
 // Function that fetches and displays the Episode Item(s) in the Podcast List from localStorage
 
-function displayPodcasts(episode) {
+function displayPodcasts() {
   podcastlist.innerHTML = "";
 
 
@@ -172,9 +172,6 @@ function genreImage(genre) {
 
 // PODCAST ARRAY & OBJECT CREATION
 
-// Create an array that holds all the podcast items
-const podcastList = [];
-
 // Function contains the object that is going to be added to the array with each form submission
 function addPodcastEpisode(
   name,
@@ -201,12 +198,27 @@ function addPodcastEpisode(
   };
 
   // Fetch and parse podcast array from localStorage
-  let localPodcasts = JSON.parse(localStorage.getItem(''))
+  let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
 
-  // Add object to the array
-  podcastList.push(episode);
-  // Call the displayPodcastEpisode function in order for this to be visual on the HTML page
-  displayPodcasts(episode);
+  // Conditional statement to check if localStorage is empty or contains elements
+  if (localPodcasts == null) {
+    localPodcasts = [episode];
+  } else {
+    // Check existing podcast episode(s)
+    // If existing element found matches the ID, then log out error message
+    if (localPodcasts.find(element => element.id === episode)) {
+      console.log("Episode ID already exists.");
+      // Else add element to local episodes array
+    } else {
+      localPodcasts.push(episode);
+    }
+  }
+
+  // Set new item in localStorage object and convert value within array to string 
+  localStorage.setItem("episodes", JSON.stringify(localPodcasts));
+
+  // Call the function that visibly displays multiple podcast episode elements 
+  displayPodcasts();
 }
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
