@@ -1,3 +1,6 @@
+// IMPORT IMAGES
+// Used Rob's code from https://github.com/robdongas/deco2017-task-tracker/commit/b070dc4ff3d621b124326d04366782299a4961c8
+
 import images from './images/*.png';
 console.log(images)
 
@@ -6,7 +9,7 @@ console.log(images)
 
 // Create variables that use HTML elements 
 const form = document.getElementById("add-podcast-form");
-const formlist = document.querySelector("#tracking-list");
+const formlist = document.querySelector("#podcast-list");
 
 // Event Listener to listen for form submission 
 form.addEventListener("submit", function(event) {
@@ -70,7 +73,7 @@ function displayPodcastEpisode(episode) {
   // Create the inner HTML structure for the episode item
   episodeItem.innerHTML = `
     <div class="podcast-list-item-details">
-      <img class="podcast-list-item-genre-img" src="images/journalism-emoji.png" alt="Investigative journalist emoji">
+      <img class="podcast-list-item-genre-img" src=images["comedy-emoji"] alt="Investigative journalist emoji">
       <div class="podcast-list-item-info">
         <div class="podcast-list-item-heading">
           <h3 class="podcast-title">${episode.name}</h3>
