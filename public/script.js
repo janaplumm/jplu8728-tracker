@@ -1,9 +1,6 @@
 // IMPORT IMAGES
 // Used Rob's code from https://github.com/robdongas/deco2017-task-tracker/commit/b070dc4ff3d621b124326d04366782299a4961c8
 
-import images from './images/*.png';
-console.log(images)
-
 // FORM SUBMISSION HANDLING
 // Used this from unit content Scrimba JS Objects - Input and event handling 
 
