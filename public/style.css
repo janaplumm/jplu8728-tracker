@@ -483,7 +483,6 @@ li {
   border: 1px solid #000000;
 }
 
-
 /* Ensuring that the list item details and delete button are on the same line rather than split up */
 .podcast-list-item-container {
   display: flex;
@@ -544,7 +543,7 @@ li {
 }
 
 /* Styling for the star rating */
-.podcast-rating {
+.episode-rating {
   margin-top: 0.5rem;
   font-size: 18px;
 }

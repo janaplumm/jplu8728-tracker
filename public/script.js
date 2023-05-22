@@ -2,7 +2,7 @@
 // Used Rob's code from https://github.com/robdongas/deco2017-task-tracker/commit/b070dc4ff3d621b124326d04366782299a4961c8
 
 import images from "./images/*.png";
-console.log(images);
+// console.log(images);
 
 // FORM SUBMISSION HANDLING
 // Used this from unit content Scrimba JS Objects - Input and event handling
@@ -57,7 +57,7 @@ form.addEventListener("submit", function (event) {
     star.innerHTML = "&#9734;"; // Unicode representing empty star
   });
 
-  //console.log(podcastList);
+  console.log(podcastList);
 });
 
 // EPISODE ITEM DISPLAY
@@ -78,7 +78,7 @@ function displayPodcastEpisode(episode) {
           <img class="green-tick-complete" img src='${images['green-tick-emoji']}' alt="Green tick emoji indicating completion">
         </div>
         <p class="episode-title">${episode.title}</p>
-        <div class="tracking-rating">${generateStarRating(episode.rating)}</div>
+        <div class="episode-rating">${generateStarRating(episode.rating)}</div>
       </div>
     </div>
     <div class="podcast-list-item-del">
