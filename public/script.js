@@ -105,6 +105,7 @@ function generateStarRating(rating) {
 }
 
 // PODCAST ARRAY & OBJECT CREATION
+
 // Create an array that holds all the podcast items
 const podcastList = [];
 
@@ -309,6 +310,19 @@ function episodeCompletedButton(value) {
     noButton.style.backgroundColor = "#FFB6C8"; // Change color of 'no' button
   }
 }
+
+// Event listeners applied to get triggered by 'yes' or 'no' button clicks
+const yesButton = document.getElementById("episodeCompletedTrue");
+const noButton = document.getElementById("episodeCompletedFalse");
+
+yesButton.addEventListener("click", function() {
+  episodeCompletedButton(true);
+});
+
+noButton.addEventListener("click", function() {
+  episodeCompletedButton(false);
+});
+
 
 // INPUT FORM SUBMISSION: CHECK THAT EPISODE COMPLETED SELECTION MADE BY USER
 
