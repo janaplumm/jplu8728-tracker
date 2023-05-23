@@ -1,5 +1,5 @@
 // IMPORT IMAGES
-// Used Rob's code from https://github.com/robdongas/deco2017-task-tracker/commit/b070dc4ff3d621b124326d04366782299a4961c8
+// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
 
 import images from "./images/*.png";
 //console.log(images);
@@ -60,7 +60,75 @@ form.addEventListener("submit", function (event) {
   console.log(podcastList);
 });
 
+// GENRE IMAGE SELECTION
+// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
+
+function genreImage(genre) {
+  // Create a variable that is returned at the end
+  let genreImage = { src: null, alt: null };
+
+  // Set the genre image source based on the genre category using switch case
+  switch (genre) {
+    case "advice":
+      genreImage.src = images["advice-emoji"];
+      genreImage.alt = "Emoji of person holding up arm for help";
+      break;
+    case "arts":
+      genreImage.src = images["arts-emoji"];
+      genreImage.alt = "Emoji of theatre masks";
+      break;
+    case "business":
+      genreImage.src = images["business-emoji"];
+      genreImage.alt = "Emoji of face with dollar signs for eyes";
+      break;
+    case "comedy":
+      genreImage.src = images["comedy-emoji"];
+      genreImage.alt = "Emoji of face crying tears laughing";
+      break;
+    case "educational":
+      genreImage.src = images["education-emoji"];
+      genreImage.alt = "Emoji of books stacked on top of each other";
+      break;
+    case "health":
+      genreImage.src = images["health-emoji"];
+      genreImage.alt = "Emoji of green apple";
+      break;
+    case "history":
+      genreImage.src = images["history-emoji"];
+      genreImage.alt = "Emoji of an ancient human hut";
+      break;
+    case "investigative":
+      genreImage.src = images["journalism-emoji"];
+      genreImage.alt = "Emoji of detective person";
+      break;
+    case "news":
+      genreImage.src = images["news-emoji"];
+      genreImage.alt = "Emoji of world globe";
+      break;
+    case "popculture":
+      genreImage.src = images["pop-culture-emoji"];
+      genreImage.alt = "Emoji of popcorn box";
+      break;
+    case "science":
+      genreImage.src = images["science-emoji"];
+      genreImage.alt = "Emoji of DNA strand";
+      break;
+    case "technology":
+      genreImage.src = images["technology-emoji"];
+      genreImage.alt = "Emoji of robot face";
+      break;
+    case "truecrime":
+      genreImage.src = images["crime-emoji"];
+      genreImage.alt = "Emoji of skull";
+      break;
+  }
+  
+  // Return the variable to use in other functions
+  return genreImage;
+}
+
 // EPISODE ITEM DISPLAY
+// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
 // Function that fetches and displays the Episode Item(s) in the Podcast List from localStorage
 
 function displayPodcasts() {
@@ -80,10 +148,12 @@ function displayPodcasts() {
       // Data attribute for ID
       episodeItem.setAttribute("data-id", episode.id);
 
+      let genreImg = genreImage(episode.genre);
+
       // Create the inner HTML structure for the episode item
       episodeItem.innerHTML = `
         <div class="podcast-list-item-details">
-          <img class="podcast-list-item-genre-img" src="" alt="">
+          <img class="podcast-list-item-genre-img" src='${genreImg.src}' alt='${genreImg.alt}'>
           <div class="podcast-list-item-info">
             <div class="podcast-list-item-heading">
               <h3 class="podcast-title">${episode.name}</h3>
@@ -111,72 +181,6 @@ function generateStarRating(rating) {
     stars += "⭐";
   }
   return stars;
-}
-
-// GENRE IMAGE SELECTION
-// Used Rob's code from https://github.com/robdongas/deco2017-task-tracker/commit/b070dc4ff3d621b124326d04366782299a4961c8
-
-function genreImage(genre) {
-  // Create a variable that is returned at the end
-  let image = new Image();
-
-  // Set the genre image source based on the genre category using switch case
-  switch (genre) {
-    case "advice":
-      image.src = images["advice-emoji"];
-      image.alt = "Emoji of person holding up arm for help";
-      break;
-    case "arts":
-      image.src = images["arts-emoji"];
-      image.alt = "Emoji of theatre masks";
-      break;
-    case "business":
-      image.src = images["business-emoji"];
-      image.alt = "Emoji of face with dollar signs for eyes";
-      break;
-    case "comedy":
-      image.src = images["comedy-emoji"];
-      image.alt = "Emoji of face crying tears laughing";
-      break;
-    case "educational":
-      image.src = images["education-emoji"];
-      image.alt = "Emoji of books stacked on top of each other";
-      break;
-    case "health":
-      image.src = images["health-emoji"];
-      image.alt = "Emoji of green apple";
-      break;
-    case "history":
-      image.src = images["history-emoji"];
-      image.alt = "Emoji of an ancient human hut";
-      break;
-    case "investigative":
-      image.src = images["journalism-emoji"];
-      image.alt = "Emoji of detective person";
-      break;
-    case "news":
-      image.src = images["news-emoji"];
-      image.alt = "Emoji of world globe";
-      break;
-    case "popculture":
-      image.src = images["pop-culture-emoji"];
-      image.alt = "Emoji of popcorn box";
-      break;
-    case "science":
-      image.src = images["science-emoji"];
-      image.alt = "Emoji of DNA strand";
-      break;
-    case "technology":
-      image.src = images["technology-emoji"];
-      image.alt = "Emoji of robot face";
-      break;
-    case "truecrime":
-      image.src = images["crime-emoji"];
-      image.alt = "Emoji of skull";
-      break;
-  }
-
-  return image;
 }
 
 // PODCAST ARRAY & OBJECT CREATION
