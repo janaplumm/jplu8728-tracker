@@ -13,7 +13,7 @@ const podcastlist = document.querySelector("#podcast-list");
 
 // Event Listener to listen for form submission
 form.addEventListener("submit", function (event) {
-  // Block the default submission behaviour to handle submission manually 
+  // Block the default submission behaviour to handle submission manually
   event.preventDefault();
 
   // Check that episode completed buttons have been clicked otherwise alert user
@@ -64,35 +64,44 @@ form.addEventListener("submit", function (event) {
 // Function that fetches and displays the Episode Item(s) in the Podcast List from localStorage
 
 function displayPodcasts() {
+  // Clear the list
   podcastlist.innerHTML = "";
 
+  // Fetch episode element from localStorage using same variable name as in addPodcastEpisode (these do not clash due to scope)
+  let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
 
-  // Create new list item and populate with content 
-  let episodeItem = document.createElement("li");
-  episodeItem.className = "podcast-list-item-container";
-  // Data attribute for ID
-  episodeItem.setAttribute("data-id", episode.id);
-  
-  // Create the inner HTML structure for the episode item
-  episodeItem.innerHTML = `
-    <div class="podcast-list-item-details">
-    <img class="podcast-list-item-genre-img" src="" alt="">
-      <div class="podcast-list-item-info">
-        <div class="podcast-list-item-heading">
-          <h3 class="podcast-title">${episode.name}</h3>
-          <img class="green-tick-complete" img src='${images['green-tick-emoji']}' alt="Green tick emoji indicating completion">
+  // Check if element is not empty and if not execute the code within to create new list item
+  if (localPodcasts !== null) {
+    // Loop through the array to check each element within
+    localPodcasts.forEach((episode) => {
+      // Create new list item and populate with content
+      let episodeItem = document.createElement("li");
+      episodeItem.className = "podcast-list-item-container";
+      // Data attribute for ID
+      episodeItem.setAttribute("data-id", episode.id);
+
+      // Create the inner HTML structure for the episode item
+      episodeItem.innerHTML = `
+        <div class="podcast-list-item-details">
+          <img class="podcast-list-item-genre-img" src="" alt="">
+          <div class="podcast-list-item-info">
+            <div class="podcast-list-item-heading">
+              <h3 class="podcast-title">${episode.name}</h3>
+              <img class="green-tick-complete" img src='${images["green-tick-emoji"]}' alt="Green tick emoji indicating completion"> 
+            </div>
+            <p class="episode-title">${episode.title}</p>
+            <div class="episode-rating">${generateStarRating(episode.rating)}</div>
+          </div>
         </div>
-        <p class="episode-title">${episode.title}</p>
-        <div class="episode-rating">${generateStarRating(episode.rating)}</div>
-      </div>
-    </div>
-    <div class="podcast-list-item-del">
-      <img id="trash-icon-button" img src='${images['trash-emoji']}' alt="Trash emoji representing delete functionality">
-    </div>
-  `;
+        <div class="podcast-list-item-del">
+          <img id="trash-icon-button" img src='${images["trash-emoji"]}' alt="Trash emoji representing delete functionality">
+        </div>
+      `;
 
-  // Append the episode item to the podcast list
-  podcastlist.appendChild(episodeItem);
+      // Append the episode item to the podcast list
+      podcastlist.appendChild(episodeItem);
+    }); // Closing bracket for loop statement
+  } // Closing bracket for if statement
 }
 
 // Function to generate star rating HTML based on the given rating
@@ -104,65 +113,65 @@ function generateStarRating(rating) {
   return stars;
 }
 
-// GENRE IMAGE SELECTION 
+// GENRE IMAGE SELECTION
 // Used Rob's code from https://github.com/robdongas/deco2017-task-tracker/commit/b070dc4ff3d621b124326d04366782299a4961c8
 
 function genreImage(genre) {
-    // Create a variable that is returned at the end 
-    let image = new Image();
+  // Create a variable that is returned at the end
+  let image = new Image();
 
-    // Set the genre image source based on the genre category using switch case
+  // Set the genre image source based on the genre category using switch case
   switch (genre) {
     case "advice":
-      image.src = images['advice-emoji'];
+      image.src = images["advice-emoji"];
       image.alt = "Emoji of person holding up arm for help";
       break;
     case "arts":
-      image.src = images['arts-emoji'];
+      image.src = images["arts-emoji"];
       image.alt = "Emoji of theatre masks";
       break;
     case "business":
-      image.src = images['business-emoji'];
+      image.src = images["business-emoji"];
       image.alt = "Emoji of face with dollar signs for eyes";
       break;
     case "comedy":
-      image.src = images['comedy-emoji'];
+      image.src = images["comedy-emoji"];
       image.alt = "Emoji of face crying tears laughing";
       break;
     case "educational":
-      image.src = images['education-emoji'];
+      image.src = images["education-emoji"];
       image.alt = "Emoji of books stacked on top of each other";
       break;
     case "health":
-      image.src = images['health-emoji'];
+      image.src = images["health-emoji"];
       image.alt = "Emoji of green apple";
       break;
     case "history":
-      image.src = images['history-emoji'];
+      image.src = images["history-emoji"];
       image.alt = "Emoji of an ancient human hut";
       break;
     case "investigative":
-      image.src = images['journalism-emoji'];
+      image.src = images["journalism-emoji"];
       image.alt = "Emoji of detective person";
       break;
     case "news":
-      image.src = images['news-emoji'];
+      image.src = images["news-emoji"];
       image.alt = "Emoji of world globe";
       break;
     case "popculture":
-      image.src = images['pop-culture-emoji'];
+      image.src = images["pop-culture-emoji"];
       image.alt = "Emoji of popcorn box";
       break;
     case "science":
-      image.src = images['science-emoji'];
+      image.src = images["science-emoji"];
       image.alt = "Emoji of DNA strand";
       break;
     case "technology":
-      image.src = images['technology-emoji'];
+      image.src = images["technology-emoji"];
       image.alt = "Emoji of robot face";
       break;
     case "truecrime":
-      image.src = images['crime-emoji'];
+      image.src = images["crime-emoji"];
       image.alt = "Emoji of skull";
       break;
   }
@@ -183,7 +192,6 @@ function addPodcastEpisode(
   completed,
   rating
 ) {
-
   let episode = {
     name,
     genre,
@@ -206,7 +214,7 @@ function addPodcastEpisode(
   } else {
     // Check existing podcast episode(s)
     // If existing element found matches the ID, then log out error message
-    if (localPodcasts.find(element => element.id === episode)) {
+    if (localPodcasts.find((element) => element.id === episode)) {
       console.log("Episode ID already exists.");
       // Else add element to local episodes array
     } else {
@@ -214,10 +222,10 @@ function addPodcastEpisode(
     }
   }
 
-  // Set new item in localStorage object and convert value within array to string 
+  // Set new item in localStorage object and convert value within array to string
   localStorage.setItem("episodes", JSON.stringify(localPodcasts));
 
-  // Call the function that visibly displays multiple podcast episode elements 
+  // Call the function that visibly displays multiple podcast episode elements
   displayPodcasts();
 }
 
@@ -243,7 +251,9 @@ function openEpisodePopup() {
   //console.log(openEpisodePopup)
 }
 
-document.getElementById("add-episode-button").addEventListener("click", openEpisodePopup);
+document
+  .getElementById("add-episode-button")
+  .addEventListener("click", openEpisodePopup);
 
 function closeEpisodePopup() {
   // get the add-podcast-popup window via ID
@@ -256,7 +266,9 @@ function closeEpisodePopup() {
   //console.log(closeEpisodePopup)
 }
 
-document.getElementById("close-episode-popup").addEventListener("click", closeEpisodePopup);
+document
+  .getElementById("close-episode-popup")
+  .addEventListener("click", closeEpisodePopup);
 
 // POP-UPS: OPEN AND CLOSE SHOW-DETAILS-POPUP FUNCTIONS
 
@@ -277,12 +289,14 @@ function openDetailsPopup() {
     addDetailsPopup.style.display = "block";
     //console.log("show details popup hidden")
   }
-  
+
   // test functionality with console
   //console.log(openDetailsPopup)
 }
 
-document.getElementById("show-details-button").addEventListener("click", openDetailsPopup);
+document
+  .getElementById("show-details-button")
+  .addEventListener("click", openDetailsPopup);
 
 function closeDetailsPopup() {
   // get the show-details-popup window via ID
@@ -295,7 +309,9 @@ function closeDetailsPopup() {
   //console.log(closeDetailsPopup)
 }
 
-document.getElementById("close-details-popup").addEventListener("click", closeDetailsPopup);
+document
+  .getElementById("close-details-popup")
+  .addEventListener("click", closeDetailsPopup);
 
 // INPUT FORM: STAR RATING FEATURE
 
@@ -397,10 +413,10 @@ function episodeCompletedButton(value) {
 const yesButton = document.getElementById("episodeCompletedTrue");
 const noButton = document.getElementById("episodeCompletedFalse");
 
-yesButton.addEventListener("click", function() {
+yesButton.addEventListener("click", function () {
   episodeCompletedButton(true);
 });
 
-noButton.addEventListener("click", function() {
+noButton.addEventListener("click", function () {
   episodeCompletedButton(false);
 });
