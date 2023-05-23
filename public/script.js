@@ -159,7 +159,7 @@ function displayPodcasts() {
         <div class="podcast-list-item-details">
           <img id="podcast-list-item-genre-img" src='${genreImg.src}' alt='${genreImg.alt}'>
           <div class="podcast-list-item-info">
-            <h3 id="podcast-list-title">${episode.name}</h3>
+            <h3 id="podcast-list-title">${episode.name} ${greenTick(episode.completed)}</h3>
             <p id="episode-list-title">${episode.title}</p>
             <div id="episode-list-rating">${ratingMessage(episode.rating)}</div>
           </div>
@@ -191,6 +191,15 @@ function ratingMessage(rating) {
 
   // Output message
   return ratingMessage;
+}
+
+// Function to generate green tick emoji if user completed episode 
+function greenTick(completed) {
+  if (completed) {
+    return "&#x2705;"; // Green tick emoji unicode
+  } else {
+    return ""; // Empty string
+  }
 }
 
 // PODCAST ARRAY & OBJECT CREATION
