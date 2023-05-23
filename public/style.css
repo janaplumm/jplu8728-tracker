@@ -113,29 +113,31 @@ header {
   transform: translate(1rem, 24rem);
 }
 
-/* Styling for iPod display heading that holds the genre image, podcast title and green tick */
-.iPod-display-heading {
-  display: flex;
-  flex-direction: row;
-  margin: 1rem;
-}
-
 /* Styling for iPod display genre image */
 .iPod-display-genre-img {
   width: 6.25rem;
   height: 6.25rem;
 }
 
-/* Styling for iPod display details that holds episode title and rating */
+/* Styling for iPod display details that holds podcast and episode title and rating */
 .iPod-display-details {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1rem;
 }
 
-.iPod-display-rating {
+/* Styling for individual elements within display */
+#iPod-display-podcast-title {
+  margin-bottom: 1rem;
+}
+
+#iPod-display-episode-title {
+  margin-bottom: 1rem;
+}
+
+#iPod-display-rating {
   font-size: 24px;
-  margin-top: 1rem;
 }
 
 /* Styling for iPod frame made up of photo of an iPod classic */
@@ -505,7 +507,9 @@ li {
   display: flex;
   align-items: center;
   width: 38.75rem;
-  height: 7rem;
+  /* Adding minimum height requirement as well as auto to adjust for more text */
+  min-height: 7rem;
+  height: auto;
   background: #C8B6FF;
   border: 2px solid #000000;
   border-radius: 20px 0px 0px 20px;
@@ -513,7 +517,7 @@ li {
 }
 
 /* Styling for the genre image  */
-.podcast-list-item-genre-img {
+#podcast-list-item-genre-img {
   width: 4rem;
   height: 4rem;
   margin: 0.5rem;
@@ -529,23 +533,21 @@ li {
   margin-left: 0.5rem;
 }
 
-/* Styling the podcast title and green tick emoji  */
-.podcast-list-item-heading {
-  display: flex;
+#podcast-list-title {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-grow: 1;
 }
 
-/* Styling for the green tick emoji signifying that the user finished listening to the podcast episode  */
-.green-tick-complete {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-left: 0.5rem;
+#episode-list-title {
   margin-bottom: 0.5rem;
+  flex-grow: 1;
 }
 
 /* Styling for the star rating */
-.episode-rating {
-  margin-top: 0.5rem;
+#episode-list-rating {
   font-size: 18px;
+  margin-bottom: 0.5rem;
 }
 
 /* Styling for the container holding the delete button in the form of a trash emoji */
@@ -554,7 +556,8 @@ li {
   align-items: center;
   justify-content: center;
   width: 5.625rem;
-  height: 7rem;
+  min-height: 7rem;
+  height: auto;
   background: #C8B6FF;
   border: 2px solid #000000;
   border-radius: 0px 20px 20px 0px;

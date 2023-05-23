@@ -30,20 +30,14 @@
         <article class="left-container">
             <!-- Created a container section that holds all the iPod elements to control in CSS with transform -->
             <section class="iPod">
-                <!-- iPod display container with genre image, heading, episode title and rating -->
+                <!-- iPod display container with genre image and details -->
                 <section class="iPod-display">
                     <img class="iPod-display-genre-img" src="./images/journalism-emoji.png"
                         alt="Investigative journalist emoji">
-                    <div class="iPod-display-heading">
-                        <!-- Using podcast-title as a class to share with the tracking list item -->
-                        <h3 class="podcast-title">Serial</h3>
-                        <img class="green-tick-complete" src="./images/green-tick-emoji.png"
-                            alt="Green tick emoji indicating completion">
-                    </div>
                     <div class="iPod-display-details">
-                        <!-- Using episode-title as a class to share with the tracking list item -->
-                        <p class="episode-title">Serial S01 - Ep. 1: The Alibi</p>
-                        <div class="iPod-display-rating">⭐⭐⭐⭐</div>
+                        <h3 id="iPod-display-podcast-title">Serial <span id="green-tick">&#x2705;</span></h3>
+                        <p id="iPod-display-episode-title">Serial S01 - Ep. 1: The Alibi</p>
+                        <div id="iPod-display-rating">⭐⭐⭐⭐</div>
                     </div>
                 </section>
                 <!-- iPod controls container with shuffle buttons, show details and add podcast buttons -->
@@ -218,18 +212,13 @@
                 <li class="podcast-list-item-container">
                     <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
                     <div class="podcast-list-item-details">
-                        <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
+                        <img id="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
                             alt="Investigative journalist emoji">
-                        <!-- Tracking list item info holds all the text-based context of the tracking item -->
+                        <!-- Separate container to hold the text information -->
                         <div class="podcast-list-item-info">
-                            <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
-                            <div class="podcast-list-item-heading">
-                                <h3 class="podcast-title">Serial</h3>
-                                <img class="green-tick-complete" src="./images/green-tick-emoji.png"
-                                    alt="Green tick emoji indicating completion">
-                            </div>
-                            <p class="episode-title">Serial S01 - Ep. 1: The Alibi</p>
-                            <div class="episode-rating">⭐⭐⭐⭐</div>
+                            <h3 id="podcast-list-title">Serial <span id="green-tick">&#x2705;</span></h3>
+                            <p id="episode-list-title">Serial S01 - Ep. 1: The Alibi</p>
+                            <div id="episode-list-rating">⭐⭐⭐⭐</div>
                         </div>
                     </div>
                     <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
@@ -238,127 +227,6 @@
                             alt="Trash emoji representing delete functionality">
                     </div>
                 </li>
-
-                <li class="podcast-list-item-container">
-                    <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
-                    <div class="podcast-list-item-details">
-                        <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
-                            alt="Investigative journalist emoji">
-                        <!-- Tracking list item info holds all the text-based context of the tracking item -->
-                        <div class="podcast-list-item-info">
-                            <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
-                            <div class="podcast-list-item-heading">
-                                <h3 class="podcast-title">Serial</h3>
-                                <img class="green-tick-complete" src="./images/green-tick-emoji.png"
-                                    alt="Green tick emoji indicating completion">
-                            </div>
-                            <p class="episode-title">Serial S01 - Ep. 1: The Alibi</p>
-                            <div class="episode-rating">⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                    <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
-                    <div class="podcast-list-item-del">
-                        <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality">
-                    </div>
-                </li>
-
-                <li class="podcast-list-item-container">
-                    <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
-                    <div class="podcast-list-item-details">
-                        <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
-                            alt="Investigative journalist emoji">
-                        <!-- Tracking list item info holds all the text-based context of the tracking item -->
-                        <div class="podcast-list-item-info">
-                            <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
-                            <div class="podcast-list-item-heading">
-                                <h3 class="podcast-title">Serial</h3>
-                                <img class="green-tick-complete" src="./images/green-tick-emoji.png"
-                                    alt="Green tick emoji indicating completion">
-                            </div>
-                            <p class="episode-title">Serial S01 - Ep. 1: The Alibi</p>
-                            <div class="episode-rating">⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                    <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
-                    <div class="podcast-list-item-del">
-                        <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality">
-                    </div>
-                </li>
-
-                <li class="podcast-list-item-container">
-                    <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
-                    <div class="podcast-list-item-details">
-                        <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
-                            alt="Investigative journalist emoji">
-                        <!-- Tracking list item info holds all the text-based context of the tracking item -->
-                        <div class="podcast-list-item-info">
-                            <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
-                            <div class="podcast-list-item-heading">
-                                <h3 class="podcast-title">Serial</h3>
-                                <img class="green-tick-complete" src="./images/green-tick-emoji.png"
-                                    alt="Green tick emoji indicating completion">
-                            </div>
-                            <p class="episode-title">Serial S01 - Ep. 1: The Alibi</p>
-                            <div class="episode-rating">⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                    <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
-                    <div class="podcast-list-item-del">
-                        <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality">
-                    </div>
-                </li>
-
-                <li class="podcast-list-item-container">
-                    <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
-                    <div class="podcast-list-item-details">
-                        <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
-                            alt="Investigative journalist emoji">
-                        <!-- Tracking list item info holds all the text-based context of the tracking item -->
-                        <div class="podcast-list-item-info">
-                            <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
-                            <div class="podcast-list-item-heading">
-                                <h3 class="podcast-title">Serial</h3>
-                                <img class="green-tick-complete" src="./images/green-tick-emoji.png"
-                                    alt="Green tick emoji indicating completion">
-                            </div>
-                            <p class="episode-title">Serial S01 - Ep. 1: The Alibi</p>
-                            <div class="episode-rating">⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                    <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
-                    <div class="podcast-list-item-del">
-                        <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality">
-                    </div>
-                </li>
-
-                <li class="podcast-list-item-container">
-                    <!-- Tracking list item details holds the genre image, podcast title, green tick, episode title and rating -->
-                    <div class="podcast-list-item-details">
-                        <img class="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
-                            alt="Investigative journalist emoji">
-                        <!-- Tracking list item info holds all the text-based context of the tracking item -->
-                        <div class="podcast-list-item-info">
-                            <!-- Tracking list item heading holds the podcast title and the green tick emoji to signify completion -->
-                            <div class="podcast-list-item-heading">
-                                <h3 class="podcast-title">Serial</h3>
-                                <img class="green-tick-complete" src="./images/green-tick-emoji.png"
-                                    alt="Green tick emoji indicating completion">
-                            </div>
-                            <p class="episode-title">Serial S01 - Ep. 1: The Alibi</p>
-                            <div class="episode-rating">⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                    <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
-                    <div class="podcast-list-item-del">
-                        <img id="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality">
-                    </div>
-                </li>
-
             </ul>
         </article>
 

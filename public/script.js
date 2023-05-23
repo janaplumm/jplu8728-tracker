@@ -155,10 +155,7 @@ function displayPodcasts() {
         <div class="podcast-list-item-details">
           <img class="podcast-list-item-genre-img" src='${genreImg.src}' alt='${genreImg.alt}'>
           <div class="podcast-list-item-info">
-            <div class="podcast-list-item-heading">
-              <h3 class="podcast-title">${episode.name}</h3>
-              <img class="green-tick-complete" img src='${images["green-tick-emoji"]}' alt="Green tick emoji indicating completion"> 
-            </div>
+            <h3 class="podcast-title">${episode.name}</h3>
             <p class="episode-title">${episode.title}</p>
             <div class="episode-rating">${generateStarRating(episode.rating)}</div>
           </div>
