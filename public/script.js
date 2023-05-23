@@ -22,6 +22,9 @@ form.addEventListener("submit", function (event) {
     return; // Prevent further execution of the submission logic
   }
 
+  // Since episode completion is determined by buttons, this value needs to be assigned to a new variable, which is then added into the object creation
+  const completed = episodeCompleted;
+
   // Once form is successfully submitted, this data is added to the addPodcastEpisode function, which contains this new object
   addPodcastEpisode(
     form.elements.podcastName.value,
@@ -30,9 +33,11 @@ form.addEventListener("submit", function (event) {
     form.elements.episodeTitle.value,
     form.elements.episodeHours.value,
     form.elements.episodeMinutes.value,
-    form.elements.episodeCompleted.value,
+    completed,
     form.elements.rating.value
   );
+
+  //console.log(addPodcastEpisode);
 
   // Reset the form once it is submitted
   form.reset();
@@ -57,7 +62,6 @@ form.addEventListener("submit", function (event) {
     star.innerHTML = "&#9734;"; // Unicode representing empty star
   });
 
-  console.log(podcastList);
 });
 
 // GENRE IMAGE SELECTION
@@ -389,23 +393,21 @@ selectElement.value = selectedValue;
 // INPUT FORM: EPISODE COMPLETED BUTTONS (TRUE OR FALSE BOOLEAN VALUE)
 // This is a required section of the user input form (see next function submitForm)
 
-// Create a global variable to store user selected value
+// Global variable for episodeCompleted 
+
 let episodeCompleted = null;
 
-// Use a function to store user selected value if user clicks on 'yes' or 'no' button
+// Global variables for yes and no buttons 
+const yesButton = document.getElementById("episodeCompletedTrue");
+const noButton = document.getElementById("episodeCompletedFalse");
+
+// Use a function to store user selected value if user clicks on 'yes' or 'no' button (and style buttons)
 function episodeCompletedButton(value) {
-  episodeCompleted = value === true;
-  // console.log(episodeCompleted); // Log boolean value to console to check it works
-
-  // Apply value of episode completed button to hidden input element
-  const episodeCompletedInput = document.getElementById(
-    "episodeCompletedInput"
-  );
-  episodeCompletedInput.value = episodeCompleted ? "true" : "false";
-
-  // store button values in separate variables
-  const yesButton = document.getElementById("episodeCompletedTrue");
-  const noButton = document.getElementById("episodeCompletedFalse");
+  // Assign variable the value
+  episodeCompleted = value;
+  // Log boolean value to console to check it works
+  console.log(episodeCompleted);
+  console.log(typeof episodeCompleted);
 
   // Apply visual indicator for user to see their button selection
   if (episodeCompleted) {
@@ -420,9 +422,6 @@ function episodeCompletedButton(value) {
 }
 
 // Event listeners applied to get triggered by 'yes' or 'no' button clicks
-const yesButton = document.getElementById("episodeCompletedTrue");
-const noButton = document.getElementById("episodeCompletedFalse");
-
 yesButton.addEventListener("click", function () {
   episodeCompletedButton(true);
 });
