@@ -153,11 +153,11 @@ function displayPodcasts() {
       // Create the inner HTML structure for the episode item
       episodeItem.innerHTML = `
         <div class="podcast-list-item-details">
-          <img class="podcast-list-item-genre-img" src='${genreImg.src}' alt='${genreImg.alt}'>
+          <img id="podcast-list-item-genre-img" src='${genreImg.src}' alt='${genreImg.alt}'>
           <div class="podcast-list-item-info">
-            <h3 class="podcast-title">${episode.name}</h3>
-            <p class="episode-title">${episode.title}</p>
-            <div class="episode-rating">${generateStarRating(episode.rating)}</div>
+            <h3 id="podcast-list-title">${episode.name}</h3>
+            <p id="episode-list-title">${episode.title}</p>
+            <div id="episode-list-rating">${ratingMessage(episode.rating)}</div>
           </div>
         </div>
         <div class="podcast-list-item-del">
@@ -172,12 +172,21 @@ function displayPodcasts() {
 }
 
 // Function to generate star rating HTML based on the given rating
-function generateStarRating(rating) {
-  let stars = "";
-  for (let i = 0; i < rating; i++) {
-    stars += "⭐";
+function ratingMessage(rating) {
+  // Create empty message variable
+  let ratingMessage = "";
+
+  // Check if rating is equal to 0 and otherwise assign stars to rating value
+  if (rating == 0) {
+    ratingMessage = "No rating"
+  } else {
+    for (let i = 0; i < rating; i++) {
+      ratingMessage += "⭐";
+    }
   }
-  return stars;
+
+  // Output message
+  return ratingMessage;
 }
 
 // PODCAST ARRAY & OBJECT CREATION
