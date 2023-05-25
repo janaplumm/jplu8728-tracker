@@ -165,18 +165,39 @@ function displayPodcasts() {
           </div>
         </div>
         <div class="podcast-list-item-del">
-          <img id="trash-icon-button" img src='${images["trash-emoji"]}' alt="Trash emoji representing delete functionality">
+          <img class="trash-icon-button" img src='${images["trash-emoji"]}' alt="Trash emoji representing delete functionality">
         </div>
       `;
 
       // Append the episode item to the podcast list
       podcastlist.appendChild(episodeItem);
-    }); // Closing bracket for loop statement
-  } // Closing bracket for if statement
+
+      // Assign class trash icon emoji as delete button
+      let delButton = episodeItem.querySelector(".trash-icon-button");
+
+      // Create event listener that listens out for any click events on this button 
+      delButton.addEventListener("click", function () {
+        
+        // Once clicked, loop through all podcast items to find matching ID and remove it from the array
+        localPodcasts.forEach(function (episodeArrayElement, episodeArrayIndex) {
+          if (episodeArrayElement.id == episodeItem.getAttribute("data-id")) {
+            localPodcasts.splice(episodeArrayIndex, 1)
+          }
+        }) // Closing bracket for delete loop statement
+
+        // Update localStorage with the newly spliced array (converted to a JSON string)
+        localStorage.setItem("episodes", JSON.stringify(localPodcasts))
+
+        // Remove the episode item from the page
+        episodeItem.remove();
+
+      }) // Closing bracket for delete event listener
+    }) // Closing bracket for local podcasts loop statement
+  } // Closing bracket for local podcasts if statement
 }
 
 // Calling the displayPodcasts function when the user loads the HTML page in order for their local storage data to appear instantly 
-window.addEventListener('load', displayPodcasts);
+window.addEventListener("load", displayPodcasts);
 
 // Function to generate star rating HTML based on the given rating
 function ratingMessage(rating) {

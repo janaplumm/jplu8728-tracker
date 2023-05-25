@@ -570,7 +570,7 @@ li {
 }
 
 /* Styling for the trash emoji image representing the delete functionality for the user */
-#trash-icon-button {
+.trash-icon-button {
   width: 4rem;
   height: 4rem;
 }
