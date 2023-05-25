@@ -61,7 +61,6 @@ form.addEventListener("submit", function (event) {
   stars.forEach((star) => {
     star.innerHTML = "&#9734;"; // Unicode representing empty star
   });
-
 });
 
 // GENRE IMAGE SELECTION
@@ -126,7 +125,7 @@ function genreImage(genre) {
       genreImage.alt = "Emoji of skull";
       break;
   }
-  
+
   // Return the variable to use in other functions
   return genreImage;
 }
@@ -157,52 +156,64 @@ function displayPodcasts() {
       // Create the inner HTML structure for the episode item
       episodeItem.innerHTML = `
         <div class="podcast-list-item-details">
-          <img id="podcast-list-item-genre-img" src='${genreImg.src}' alt='${genreImg.alt}'>
+          <img id="podcast-list-item-genre-img" src='${genreImg.src}' alt='${
+        genreImg.alt
+      }'>
           <div class="podcast-list-item-info">
-            <h3 id="podcast-list-title">${episode.name} ${greenTick(episode.completed)}</h3>
+            <h3 id="podcast-list-title">${episode.name} ${greenTick(
+        episode.completed
+      )}</h3>
             <p id="episode-list-title">${episode.title}</p>
             <div id="episode-list-rating">${ratingMessage(episode.rating)}</div>
           </div>
         </div>
         <div class="podcast-list-item-del">
-          <img class="trash-icon-button" img src='${images["trash-emoji"]}' alt="Trash emoji representing delete functionality">
+          <img class="trash-icon-button" img src='${
+            images["trash-emoji"]
+          }' alt="Trash emoji representing delete functionality">
         </div>
       `;
 
       // Append the episode item to the podcast list
       podcastlist.appendChild(episodeItem);
 
+      // When user clicks on an episode item, this is displayed in the iPod display 
+      episodeItem.addEventListener("click", function () {
+        // Call iPodDisplay function to display specific episode 
+        iPodDisplay(episode);
+      });
+
       // Assign class trash icon emoji as delete button
       let delButton = episodeItem.querySelector(".trash-icon-button");
 
-      // Create event listener that listens out for any click events on this button 
+      // Create event listener that listens out for any click events on this button
       delButton.addEventListener("click", function () {
+        // Show confirmation dialog to prevent user from accidentally deleting
+        const confirmDelete = confirm(
+          "Are you sure you want to delete this episode?"
+        );
 
-        // Show confirmation dialog to prevent user from accidentally deleting 
-        const confirmDelete = confirm("Are you sure you want to delete this episode?");
-        
         // Once confirmed, loop through all podcast items to find matching ID and remove it from the array
         if (confirmDelete) {
-          localPodcasts.forEach(function (episodeArrayElement, episodeArrayIndex) {
+          localPodcasts.forEach(function (
+            episodeArrayElement,
+            episodeArrayIndex
+          ) {
             if (episodeArrayElement.id == episodeItem.getAttribute("data-id")) {
-              localPodcasts.splice(episodeArrayIndex, 1)
+              localPodcasts.splice(episodeArrayIndex, 1);
             }
-          }) // Closing bracket for delete loop statement
+          }); // Closing bracket for delete loop statement
 
           // Update localStorage with the newly spliced array (converted to a JSON string)
-          localStorage.setItem("episodes", JSON.stringify(localPodcasts))
+          localStorage.setItem("episodes", JSON.stringify(localPodcasts));
 
           // Remove the episode item from the page
           episodeItem.remove();
-
-        } // Closing bracket for confirm delete if statement 
+        } // Closing bracket for confirm delete if statement
       }); // Closing bracket for delete event listener
     }); // Closing bracket for local podcasts loop statement
   } // Closing bracket for local podcasts if statement
 }
-
-// Calling the displayPodcasts function when the user loads the HTML page in order for their local storage data to appear instantly 
-window.addEventListener("load", displayPodcasts);
 
 // Function to generate star rating HTML based on the given rating
 function ratingMessage(rating) {
@@ -211,7 +222,7 @@ function ratingMessage(rating) {
 
   // Check if rating is equal to 0 and otherwise assign stars to rating value
   if (rating == 0) {
-    ratingMessage = "No rating"
+    ratingMessage = "No rating";
   } else {
     for (let i = 0; i < rating; i++) {
       ratingMessage += "⭐";
@@ -222,13 +233,37 @@ function ratingMessage(rating) {
   return ratingMessage;
 }
 
-// Function to generate green tick emoji if user completed episode 
+// Function to generate green tick emoji if user completed episode
 function greenTick(completed) {
   if (completed) {
     return "&#x2705;"; // Green tick emoji unicode
   } else {
     return ""; // Empty string
   }
+}
+
+// Calling the displayPodcasts function when the user loads the HTML page in order for their local storage data to appear instantly
+window.addEventListener("load", displayPodcasts);
+
+// IPOD DISPLAY
+// Used similar structure of displayPodcast function 
+
+function iPodDisplay(episode) {
+  // Create a new variable that links to the HTML iPod display 
+  let displayItem = document.querySelector(".iPod-display");
+
+  // Get images via the genreImage function
+  let genreImg = genreImage(episode.genre);
+
+  // Similar to displayPodcast function, manipulate DOM elements using innerHTML property 
+  displayItem.innerHTML = `
+    <img class="iPod-display-genre-img" src="${genreImg.src}" alt="${genreImg.alt}">
+    <div class="iPod-display-details">
+      <h3 id="iPod-display-podcast-title">${episode.name} ${greenTick(episode.completed)}</h3>
+      <p id="iPod-display-episode-title">${episode.title}</p>
+      <div id="iPod-display-rating">${ratingMessage(episode.rating)}</div>
+    </div>
+  `;
 }
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
@@ -381,11 +416,11 @@ selectElement.value = selectedValue;
 // INPUT FORM: EPISODE COMPLETED BUTTONS (TRUE OR FALSE BOOLEAN VALUE)
 // This is a required section of the user input form (see next function submitForm)
 
-// Global variable for episodeCompleted 
+// Global variable for episodeCompleted
 
 let episodeCompleted = null;
 
-// Global variables for yes and no buttons 
+// Global variables for yes and no buttons
 const yesButton = document.getElementById("episodeCompletedTrue");
 const noButton = document.getElementById("episodeCompletedFalse");
 
