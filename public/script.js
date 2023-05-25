@@ -177,22 +177,27 @@ function displayPodcasts() {
 
       // Create event listener that listens out for any click events on this button 
       delButton.addEventListener("click", function () {
+
+        // Show confirmation dialog to prevent user from accidentally deleting 
+        const confirmDelete = confirm("Are you sure you want to delete this episode?");
         
-        // Once clicked, loop through all podcast items to find matching ID and remove it from the array
-        localPodcasts.forEach(function (episodeArrayElement, episodeArrayIndex) {
-          if (episodeArrayElement.id == episodeItem.getAttribute("data-id")) {
-            localPodcasts.splice(episodeArrayIndex, 1)
-          }
-        }) // Closing bracket for delete loop statement
+        // Once confirmed, loop through all podcast items to find matching ID and remove it from the array
+        if (confirmDelete) {
+          localPodcasts.forEach(function (episodeArrayElement, episodeArrayIndex) {
+            if (episodeArrayElement.id == episodeItem.getAttribute("data-id")) {
+              localPodcasts.splice(episodeArrayIndex, 1)
+            }
+          }) // Closing bracket for delete loop statement
 
-        // Update localStorage with the newly spliced array (converted to a JSON string)
-        localStorage.setItem("episodes", JSON.stringify(localPodcasts))
+          // Update localStorage with the newly spliced array (converted to a JSON string)
+          localStorage.setItem("episodes", JSON.stringify(localPodcasts))
 
-        // Remove the episode item from the page
-        episodeItem.remove();
+          // Remove the episode item from the page
+          episodeItem.remove();
 
-      }) // Closing bracket for delete event listener
-    }) // Closing bracket for local podcasts loop statement
+        } // Closing bracket for confirm delete if statement 
+      }); // Closing bracket for delete event listener
+    }); // Closing bracket for local podcasts loop statement
   } // Closing bracket for local podcasts if statement
 }
 
