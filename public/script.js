@@ -175,6 +175,9 @@ function displayPodcasts() {
   } // Closing bracket for if statement
 }
 
+// Calling the displayPodcasts function when the user loads the HTML page in order for their local storage data to appear instantly 
+window.addEventListener('load', displayPodcasts);
+
 // Function to generate star rating HTML based on the given rating
 function ratingMessage(rating) {
   // Create empty message variable
