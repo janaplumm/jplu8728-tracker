@@ -264,6 +264,20 @@ function iPodDisplay(episode) {
       <div id="iPod-display-rating">${ratingMessage(episode.rating)}</div>
     </div>
   `;
+
+  // To make it obvious which list item is selected, CSS active will be used 
+  
+  // Remove the "active" class from all episode items in the list 
+  let episodeItems = document.querySelectorAll(".podcast-list-item-container");
+  episodeItems.forEach((item) => {
+    item.classList.remove("active");
+  });
+
+  // Add the "active" class to the episode item in the iPod display
+  let currentEpisodeItem = document.querySelector(`[data-id="${episode.id}"]`);
+  if (currentEpisodeItem) {
+    currentEpisodeItem.classList.add("active");
+  }
 }
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS

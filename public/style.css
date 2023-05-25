@@ -492,7 +492,9 @@ li {
 .podcast-list-item-container {
   display: flex;
   margin-top: 1rem;
-  padding-right: 1rem;
+  background-color: white; 
+  border: 2px solid #000000;
+  border-radius: 20px 20px 20px 20px;
   /* Added padding to the right to create space with the scrollbar */
   /* Applied smooth hovering transition effect for playfulness */
   transition: transform 0.5s cubic-bezier(0.25, 0.5, 0.25, 1.5), filter 0.5s;
@@ -505,6 +507,10 @@ li {
   /* Filter is smoother than box shadow */
 }
 
+.podcast-list-item-container.active {
+  background-color: #C8B6FF; 
+}
+
 /* Styling for the container holding the individual podcast information  */
 .podcast-list-item-details {
   display: flex;
@@ -513,8 +519,7 @@ li {
   /* Adding minimum height requirement as well as auto to adjust for more text */
   min-height: 7rem;
   height: auto;
-  background: #C8B6FF;
-  border: 2px solid #000000;
+  border-right: 2px solid #000000;
   border-radius: 20px 0px 0px 20px;
   cursor: pointer;
 }
@@ -561,12 +566,7 @@ li {
   width: 5.625rem;
   min-height: 7rem;
   height: auto;
-  background: #C8B6FF;
-  border: 2px solid #000000;
-  border-radius: 0px 20px 20px 0px;
   cursor: pointer;
-  transform: translate(-0.1rem, 0rem);
-  /* Shifting the container slightly to the left for the border lines to overlap */
 }
 
 /* Styling for the trash emoji image representing the delete functionality for the user */
