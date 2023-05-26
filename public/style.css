@@ -473,21 +473,15 @@ li {
   transform: translate(10rem, 1.8rem);
 }
 
-/* Scrollbar width */
+/* Used code from this Codepen to style scrollbar https://codepen.io/devstreak/pen/dMYgeO */
 #podcast-list::-webkit-scrollbar {
-  width: 1.25rem;
-}
-
-/* Scrollbar track */
-#podcast-list::-webkit-scrollbar-track {
-  border: 1px solid #000000;
-  background: white;
+	width: 1.25rem;
+	background-color: #F5F5F5;
 }
 
 /* Scrollbar handle */
 #podcast-list::-webkit-scrollbar-thumb {
   background: #D9D9D9;
-  border: 1px solid #000000;
 }
 
 /* Ensuring that the list item details and delete button are on the same line rather than split up */
