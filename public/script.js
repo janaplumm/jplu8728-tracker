@@ -22,7 +22,7 @@ form.addEventListener("submit", function (event) {
     return; // Prevent further execution of the submission logic
   }
 
-  // Check that user has rated the episode 
+  // Check that user has rated the episode
   if (form.elements.rating.value === "0") {
     alert("Please rate the episode.");
     return; // Prevent further execution of the submission logic
@@ -145,7 +145,7 @@ function displayPodcasts() {
 
   // Check if element is not empty and if not execute the code within to create new list item
   if (localPodcasts !== null) {
-    // Reverse array order to display the latest podcast episode additions for more logical order 
+    // Reverse array order to display the latest podcast episode additions for more logical order
     localPodcasts = localPodcasts.reverse();
     // Loop through the array to check each element within
     localPodcasts.forEach((episode) => {
@@ -155,14 +155,12 @@ function displayPodcasts() {
       // Data attribute for ID
       episodeItem.setAttribute("data-id", episode.id);
 
-      let genreImg = genreImage(episode.genre);
-
       // Create the inner HTML structure for the episode item
       episodeItem.innerHTML = `
         <div class="podcast-list-item-details">
-          <img id="podcast-list-item-genre-img" src='${genreImg.src}' alt='${
-        genreImg.alt
-      }'>
+          <img id="podcast-list-item-genre-img" src='${
+            genreImage(episode.genre).src
+          }' alt='${genreImage(episode.genre).alt}'>
           <div class="podcast-list-item-info">
             <h3 id="podcast-list-title">${episode.name} ${greenTick(
         episode.completed
@@ -181,17 +179,22 @@ function displayPodcasts() {
       // Append the episode item to the podcast list
       podcastlist.appendChild(episodeItem);
 
-      // When user clicks on an episode item, this is displayed in the iPod display 
+      // When user clicks on an episode item, this is displayed in the iPod display
       episodeItem.addEventListener("click", function () {
-        // Call iPodDisplay function to display specific episode 
+        // Call iPodDisplay function to display specific episode within the iPod 
         iPodDisplay(episode);
+        // Load this data also into the show details popup 
+        showEpisodeDetails(episode);
       });
-
     }); // Closing bracket for local podcasts loop statement
   } // Closing bracket for local podcasts if statement
 
-  // Automatically show the first item in the array within the iPod Display when page loads
-  iPodDisplay(localPodcasts[0]);
+  // Automatically show the first item in the array within the iPod Display and Show Details pop-up when page loads
+  if (localPodcasts.length > 0) {
+    let firstEpisode = localPodcasts[0];
+    iPodDisplay(localPodcasts[0]);
+    showEpisodeDetails(localPodcasts[0]);
+  }
 }
 
 // Function to generate star rating HTML based on the given rating
@@ -202,11 +205,11 @@ function ratingMessage(rating) {
   // For loop that evaluates how many stars are displayed
   for (let i = 0; i < rating; i++) {
     ratingMessage += "⭐";
-    }
+  }
 
   // Output message
   return ratingMessage;
-  }
+}
 
 // Function to generate green tick emoji if user completed episode
 function greenTick(completed) {
@@ -220,13 +223,15 @@ function greenTick(completed) {
 // Calling the displayPodcasts function when the user loads the HTML page in order for their local storage data to appear instantly
 window.addEventListener("load", displayPodcasts);
 
-// EPISODE ITEM DELETION 
-// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js 
+// EPISODE ITEM DELETION
+// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
 
 // Moved the delete logic to a separate function to control iPod Display (if first element of array is deleted, update with new first element)
 function deleteEpisode(episodeItem) {
   // Show confirmation dialog to prevent user from accidentally deleting
-  const confirmDelete = confirm("Are you sure you want to delete this episode?");
+  const confirmDelete = confirm(
+    "Are you sure you want to delete this episode?"
+  );
 
   // Once confirmed, loop through all podcast items to find matching ID and remove it from the array
   if (confirmDelete) {
@@ -244,9 +249,9 @@ function deleteEpisode(episodeItem) {
 
     // Check if the deleted item was the first item in the array
     if (localPodcasts.length > 0) {
-    // Get the new last episode from the updated array
+      // Get the new last episode from the updated array
       const newLastEpisode = localPodcasts[localPodcasts.length - 1];
-    // Update the iPod display to show the new last episode
+      // Update the iPod display to show the new last episode
       iPodDisplay(newLastEpisode);
     }
   }
@@ -258,7 +263,7 @@ podcastlist.addEventListener("click", function (event) {
 
   // Check if the clicked element has the class "trash-icon-button"
   if (target.classList.contains("trash-icon-button")) {
-    // Find the closest ancestor element of the clicked element 
+    // Find the closest ancestor element of the clicked element
     const episodeItem = target.closest(".podcast-list-item-container");
 
     // Call the deleteEpisode() function with the episode item to remove it from localStorage and the page
@@ -267,28 +272,29 @@ podcastlist.addEventListener("click", function (event) {
 });
 
 // IPOD DISPLAY
-// Used similar structure of displayPodcast function 
+// Used similar structure of displayPodcast function
 
 function iPodDisplay(episode) {
-  // Create a new variable that links to the HTML iPod display 
+  // Create a new variable that links to the HTML iPod display
   let displayItem = document.querySelector(".iPod-display");
 
-  // Get images via the genreImage function
-  let genreImg = genreImage(episode.genre);
-
-  // Similar to displayPodcast function, manipulate DOM elements using innerHTML property 
+  // Similar to displayPodcast function, manipulate DOM elements using innerHTML property
   displayItem.innerHTML = `
-    <img class="iPod-display-genre-img" src="${genreImg.src}" alt="${genreImg.alt}">
+    <img class="iPod-display-genre-img" src="${
+      genreImage(episode.genre).src
+    }" alt="${genreImage(episode.genre).alt}">
     <div class="iPod-display-details">
-      <h3 id="iPod-display-podcast-title">${episode.name} ${greenTick(episode.completed)}</h3>
+      <h3 id="iPod-display-podcast-title">${episode.name} ${greenTick(
+    episode.completed
+  )}</h3>
       <p id="iPod-display-episode-title">${episode.title}</p>
       <div id="iPod-display-rating">${ratingMessage(episode.rating)}</div>
     </div>
   `;
 
-  // To make it obvious which list item is selected, CSS active will be used 
+  // To make it obvious which list item is selected, CSS active will be used
 
-  // Remove the "active" class from all episode items in the list 
+  // Remove the "active" class from all episode items in the list
   let episodeItems = document.querySelectorAll(".podcast-list-item-container");
   episodeItems.forEach((item) => {
     item.classList.remove("active");
@@ -300,8 +306,8 @@ function iPodDisplay(episode) {
     currentEpisodeItem.classList.add("active");
   }
 
-   // Set the currentEpisode variable to the displayed episode which will be used for the shuffle button functions
-   currentEpisode = episode;
+  // Set the currentEpisode variable to the displayed episode which will be used for the shuffle button functions
+  currentEpisode = episode;
 }
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
@@ -491,8 +497,8 @@ noButton.addEventListener("click", function () {
   episodeCompletedButton(false);
 });
 
-// IPOD SHUFFLE LEFT AND RIGHT BUTTONS 
-// Lets user move through the list of elements as an additional functionality 
+// IPOD SHUFFLE LEFT AND RIGHT BUTTONS
+// Lets user move through the list of elements as an additional functionality
 
 // Define currentEpisode globally so it can be accessed by multiple functions
 let currentEpisode;
@@ -503,8 +509,10 @@ function shuffleLeft() {
 
   // Check if the localPodcasts variable is not empty and if there are episodes on the left side of the current episode
   if (localPodcasts !== null && currentEpisode) {
-    let currentIndex = localPodcasts.findIndex((episode) => episode.id === currentEpisode.id);
-    
+    let currentIndex = localPodcasts.findIndex(
+      (episode) => episode.id === currentEpisode.id
+    );
+
     if (currentIndex > 0) {
       // Update the current episode with the previous episode
       currentEpisode = localPodcasts[currentIndex - 1];
@@ -521,8 +529,10 @@ function shuffleRight() {
 
   // Check if the localPodcasts variable is not empty and if there are episodes on the right side of the current episode
   if (localPodcasts !== null && currentEpisode) {
-    let currentIndex = localPodcasts.findIndex((episode) => episode.id === currentEpisode.id);
-    
+    let currentIndex = localPodcasts.findIndex(
+      (episode) => episode.id === currentEpisode.id
+    );
+
     if (currentIndex < localPodcasts.length - 1) {
       // Update the current episode with the next episode
       currentEpisode = localPodcasts[currentIndex + 1];
@@ -534,9 +544,105 @@ function shuffleRight() {
 }
 
 // Add event listeners to the shuffle buttons
-// Reverse the order because array is in reverse 
-document.getElementById('left-shuffle-button').addEventListener('click', shuffleRight);
-document.getElementById('right-shuffle-button').addEventListener('click', shuffleLeft);
+// Reverse the order because array is in reverse
+document
+  .getElementById("left-shuffle-button")
+  .addEventListener("click", shuffleRight);
+document
+  .getElementById("right-shuffle-button")
+  .addEventListener("click", shuffleLeft);
+
+// SHOW DETAILS POP-UP FEATURE
+
+function showEpisodeDetails(episode) {
+  // Create a new variable that links to the show details content container
+  let showEpisode = document.getElementById("show-details-content");
+
+  // Create a variable that will hold the proper genre (not shortcut value)
+  let episodeGenre; 
+
+  // Use switch case for clean conditional statements depending on episode genre
+  switch(episode.genre) {
+    case "advice":
+      episodeGenre = "Advice & Self-Help";
+      break;
+    case "arts":
+      episodeGenre = "Arts & Entertainment";
+      break;
+    case "business":
+      episodeGenre = "Business & Finance";
+      break;
+    case "comedy":
+      episodeGenre = "Comedy";
+      break;
+    case "educational":
+      episodeGenre = "Educational";
+      break;
+    case "health":
+      episodeGenre = "Health & Wellness";
+      break;
+    case "history":
+      episodeGenre = "History & Culture";
+      break;
+    case "investigative":
+      episodeGenre = "Investigative Journalism";
+      break;
+    case "news":
+      episodeGenre = "News & Politics";
+      break;
+    case "popculture":
+      episodeGenre = "Pop Culture";
+      break;
+    case "science":
+      episodeGenre = "Science";
+      break;
+    case "technology":
+      episodeGenre = "Technology";
+      break;
+    case "truecrime":
+      episodeGenre = "True Crime";
+      break;
+  }
+
+  // Similar to displayPodcast function, manipulate DOM elements using innerHTML property
+  showEpisode.innerHTML = `
+    <section id="podcast-details-name">
+      <h3 class="show-details-heading">Podcast Name</h3>
+      <p id="podcast-input-name">${episode.name}</p>
+    </section>
+      <section id="podcast-details-genre">
+        <div class="show-details-subheading">
+          <h3 class="show-details-heading">Podcast Genre</h3>
+          <p id="podcast-input-genre">${episodeGenre}</p>
+        </div>
+      <div class="show-details-image">
+      <img class="show-details-genre-img" src="${genreImage(episode.genre).src}" 
+      alt="${genreImage(episode.genre).alt}">
+      </div>
+      </section>
+      <section id="podcast-details-hosts">
+        <h3 class="show-details-heading">Podcast Host(s)</h3>
+        <p id="podcast-input-hosts">${episode.hosts}</p>
+      </section>
+      <section id="episode-details-title">
+        <h3 class="show-details-heading">Episode Title</h3>
+        <p id="episode-input-title">${episode.title}</p>
+      </section>
+      <section id="episode-details-duration">
+        <h3 class="show-details-heading">Episode Duration</h3>
+        <p id="episode-input-duration">${episode.hours} hour(s) ${episode.minutes} minute(s)</p>
+      </section>
+      <section id="episode-details-complete">
+        <h3 class="show-details-heading">Episode Completed</h3>
+        <p id="episode-input-complete">Yes ✅ on 21 April 2023</p>
+      </section>
+      <section id="episode-details-rating">
+        <h3 class="show-details-heading">Episode Rating</h3>
+        <p id="episode-input-rating">${ratingMessage(episode.rating)}</p>
+      </section>
+      <button type="button" id="delete-button">Delete Episode</button>
+  `;
+}
 
 // PODCAST ARRAY & OBJECT CREATION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
