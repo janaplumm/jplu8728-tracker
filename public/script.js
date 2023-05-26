@@ -185,35 +185,6 @@ function displayPodcasts() {
         iPodDisplay(episode);
       });
 
-      // Assign class trash icon emoji as delete button
-      let delButton = episodeItem.querySelector(".trash-icon-button");
-
-      // Create event listener that listens out for any click events on this button
-      delButton.addEventListener("click", function () {
-        // Show confirmation dialog to prevent user from accidentally deleting
-        const confirmDelete = confirm(
-          "Are you sure you want to delete this episode?"
-        );
-
-        // Once confirmed, loop through all podcast items to find matching ID and remove it from the array
-        if (confirmDelete) {
-          localPodcasts.forEach(function (
-            episodeArrayElement,
-            episodeArrayIndex
-          ) {
-            if (episodeArrayElement.id == episodeItem.getAttribute("data-id")) {
-              localPodcasts.splice(episodeArrayIndex, 1);
-            }
-          }); // Closing bracket for delete loop statement
-
-          // Update localStorage with the newly spliced array (converted to a JSON string)
-          localStorage.setItem("episodes", JSON.stringify(localPodcasts));
-
-          // Remove the episode item from the page
-          episodeItem.remove();
-
-        } // Closing bracket for confirm delete if statement
-      }); // Closing bracket for delete event listener
     }); // Closing bracket for local podcasts loop statement
   } // Closing bracket for local podcasts if statement
 
@@ -246,6 +217,52 @@ function greenTick(completed) {
 
 // Calling the displayPodcasts function when the user loads the HTML page in order for their local storage data to appear instantly
 window.addEventListener("load", displayPodcasts);
+
+// EPISODE ITEM DELETION 
+// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js 
+
+// Moved the delete logic to a separate function to control iPod Display (if first element of array is deleted, update with new first element)
+function deleteEpisode(episodeItem) {
+  // Show confirmation dialog to prevent user from accidentally deleting
+  const confirmDelete = confirm("Are you sure you want to delete this episode?");
+
+  // Once confirmed, loop through all podcast items to find matching ID and remove it from the array
+  if (confirmDelete) {
+    let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
+
+    localPodcasts = localPodcasts.filter((episode) => {
+      return episode.id != episodeItem.getAttribute("data-id");
+    });
+
+    // Update localStorage with the updated array (converted to a JSON string)
+    localStorage.setItem("episodes", JSON.stringify(localPodcasts));
+
+    // Remove the episode item from the page
+    episodeItem.remove();
+
+    // Check if the deleted item was the first item in the array
+    if (localPodcasts.length > 0) {
+    // Get the new last episode from the updated array
+      const newLastEpisode = localPodcasts[localPodcasts.length - 1];
+    // Update the iPod display to show the new last episode
+      iPodDisplay(newLastEpisode);
+    }
+  }
+}
+
+// Update the delete button event listener outside the displayPodcasts() function
+podcastlist.addEventListener("click", function (event) {
+  const target = event.target;
+
+  // Check if the clicked element has the class "trash-icon-button"
+  if (target.classList.contains("trash-icon-button")) {
+    // Find the closest ancestor element of the clicked element 
+    const episodeItem = target.closest(".podcast-list-item-container");
+
+    // Call the deleteEpisode() function with the episode item to remove it from localStorage and the page
+    deleteEpisode(episodeItem);
+  }
+});
 
 // IPOD DISPLAY
 // Used similar structure of displayPodcast function 
