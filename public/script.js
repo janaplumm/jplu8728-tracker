@@ -211,6 +211,7 @@ function displayPodcasts() {
 
           // Remove the episode item from the page
           episodeItem.remove();
+
         } // Closing bracket for confirm delete if statement
       }); // Closing bracket for delete event listener
     }); // Closing bracket for local podcasts loop statement
@@ -225,18 +226,14 @@ function ratingMessage(rating) {
   // Create empty message variable
   let ratingMessage = "";
 
-  // Check if rating is equal to 0 and otherwise assign stars to rating value
-  if (rating == 0) {
-    ratingMessage = "No rating";
-  } else {
-    for (let i = 0; i < rating; i++) {
-      ratingMessage += "⭐";
+  // For loop that evaluates how many stars are displayed
+  for (let i = 0; i < rating; i++) {
+    ratingMessage += "⭐";
     }
-  }
 
   // Output message
   return ratingMessage;
-}
+  }
 
 // Function to generate green tick emoji if user completed episode
 function greenTick(completed) {
