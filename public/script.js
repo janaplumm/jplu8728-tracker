@@ -473,8 +473,8 @@ function episodeCompletedButton(value) {
   // Assign variable the value
   episodeCompleted = value;
   // Log boolean value to console to check it works
-  console.log(episodeCompleted);
-  console.log(typeof episodeCompleted);
+  // console.log(episodeCompleted);
+  // console.log(typeof episodeCompleted);
 
   // Apply visual indicator for user to see their button selection
   if (episodeCompleted) {
@@ -630,7 +630,7 @@ function showEpisodeDetails(episode) {
       </section>
       <section id="episode-details-duration">
         <h3 class="show-details-heading">Episode Duration</h3>
-        <p id="episode-input-duration">${episode.hours} hour(s) ${episode.minutes} minute(s)</p>
+        <p id="episode-input-duration">${episodeDuration(episode)}</p>
       </section>
       <section id="episode-details-complete">
         <h3 class="show-details-heading">Episode Completed</h3>
@@ -642,6 +642,39 @@ function showEpisodeDetails(episode) {
       </section>
       <button type="button" id="delete-button">Delete Episode</button>
   `;
+}
+
+// Function that determines the output message depending on user input for hours and minutes
+
+function episodeDuration(episode) {
+  // Convert strings to numbers using ParseInt
+  let durationHours = parseInt(episode.hours);
+  let durationMinutes = parseInt(episode.minutes);
+  let durationMessage;
+
+  // Use switch statements to determine the message given the user input for hours and minutes
+  switch (true) {
+    case durationHours == 0 && durationMinutes == 0:
+      durationMessage = `Duration is 0 hours and 0 minutes`;
+      break;
+    case durationHours == 0 && durationMinutes == 1:
+      durationMessage = `${durationMinutes} minute`;
+      break;
+    case durationHours == 0 && durationMinutes > 1:
+      durationMessage = `${durationMinutes} minutes`;
+      break;
+    case durationHours == 1 && durationMinutes == 0:
+      durationMessage = `${durationHours} hour`;
+      break;
+    case durationHours > 1 && durationMinutes == 0:
+      durationMessage = `${durationHours} hours`;
+      break;
+    case durationHours >= 1 && durationMinutes >= 1:
+      durationMessage = `${durationHours} hours and ${durationMinutes} minutes`;
+      break;
+  }
+
+  return durationMessage;
 }
 
 // PODCAST ARRAY & OBJECT CREATION
