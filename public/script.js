@@ -213,6 +213,9 @@ function displayPodcasts() {
       }); // Closing bracket for delete event listener
     }); // Closing bracket for local podcasts loop statement
   } // Closing bracket for local podcasts if statement
+
+  // Automatically show the first item in the array within the iPod Display when page loads
+  iPodDisplay(localPodcasts[0]);
 }
 
 // Function to generate star rating HTML based on the given rating
@@ -266,7 +269,7 @@ function iPodDisplay(episode) {
   `;
 
   // To make it obvious which list item is selected, CSS active will be used 
-  
+
   // Remove the "active" class from all episode items in the list 
   let episodeItems = document.querySelectorAll(".podcast-list-item-container");
   episodeItems.forEach((item) => {
