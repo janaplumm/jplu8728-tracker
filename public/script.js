@@ -45,13 +45,14 @@ form.addEventListener("submit", function (event) {
   // Reset the form once it is submitted
   form.reset();
 
-  // Reset episode completed button
+  // Clear the value of episodeCompleted from true or false to null
   episodeCompleted = null;
   const episodeCompletedInput = document.getElementById(
     "episodeCompletedInput"
   );
   episodeCompletedInput.value = "";
 
+  // Reset appearance of episode completed buttons
   const yesButton = document.getElementById("episodeCompletedTrue");
   const noButton = document.getElementById("episodeCompletedFalse");
   yesButton.style.backgroundColor = "";
