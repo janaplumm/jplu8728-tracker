@@ -143,6 +143,8 @@ function displayPodcasts() {
 
   // Check if element is not empty and if not execute the code within to create new list item
   if (localPodcasts !== null) {
+    // Reverse array order to display the latest podcast episode additions for more logical order 
+    localPodcasts = localPodcasts.reverse();
     // Loop through the array to check each element within
     localPodcasts.forEach((episode) => {
       // Create new list item and populate with content
