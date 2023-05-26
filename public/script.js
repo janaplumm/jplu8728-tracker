@@ -22,8 +22,11 @@ form.addEventListener("submit", function (event) {
     return; // Prevent further execution of the submission logic
   }
 
-  // Since episode completion is determined by buttons, this value needs to be assigned to a new variable, which is then added into the object creation
-  const completed = episodeCompleted;
+  // Check that user has rated the episode 
+  if (form.elements.rating.value === "0") {
+    alert("Please rate the episode.");
+    return; // Prevent further execution of the submission logic
+  }
 
   // Once form is successfully submitted, this data is added to the addPodcastEpisode function, which contains this new object
   addPodcastEpisode(
@@ -33,7 +36,7 @@ form.addEventListener("submit", function (event) {
     form.elements.episodeTitle.value,
     form.elements.episodeHours.value,
     form.elements.episodeMinutes.value,
-    completed,
+    episodeCompleted,
     form.elements.rating.value
   );
 
@@ -54,9 +57,7 @@ form.addEventListener("submit", function (event) {
   yesButton.style.backgroundColor = "";
   noButton.style.backgroundColor = "";
 
-  // Reset star rating
-  const stars = document.querySelectorAll(".star");
-  const ratingInput = document.querySelector('[name="rating"]');
+  // Reset star rating to reflect empty stars
   ratingInput.value = "0";
   stars.forEach((star) => {
     star.innerHTML = "&#9734;"; // Unicode representing empty star
