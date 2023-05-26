@@ -425,11 +425,12 @@ button[type="button"]:hover {
   flex-flow: column nowrap;
   justify-content: center;
   margin-left: 2.5rem;
+  padding-right: 1rem;
 }
 
 /* Specific styling for heading margin spacing */
 .show-details-heading {
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   margin-bottom: 0.5rem;
 }
 
@@ -444,6 +445,22 @@ button[type="button"]:hover {
   height: 3rem;
   margin-left: 1rem;
   transform: translate(0rem, 2.2rem);
+}
+
+/* Limit line count for long podcast title names */
+#podcast-input-name {
+  display: -webkit-box;
+   -webkit-line-clamp: 2; /* Limit text to 2 lines */
+   -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Limit line count for long episode title names */
+#episode-input-title {
+  display: -webkit-box;
+   -webkit-line-clamp: 3; /* Limit text to 3 lines */
+   -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Specific styling for delete episode button */
