@@ -299,6 +299,9 @@ function iPodDisplay(episode) {
   if (currentEpisodeItem) {
     currentEpisodeItem.classList.add("active");
   }
+
+   // Set the currentEpisode variable to the displayed episode which will be used for the shuffle button functions
+   currentEpisode = episode;
 }
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
@@ -487,6 +490,53 @@ yesButton.addEventListener("click", function () {
 noButton.addEventListener("click", function () {
   episodeCompletedButton(false);
 });
+
+// IPOD SHUFFLE LEFT AND RIGHT BUTTONS 
+// Lets user move through the list of elements as an additional functionality 
+
+// Define currentEpisode globally so it can be accessed by multiple functions
+let currentEpisode;
+
+function shuffleLeft() {
+  // Retrieve the list of podcast episodes from the localStorage
+  let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
+
+  // Check if the localPodcasts variable is not empty and if there are episodes on the left side of the current episode
+  if (localPodcasts !== null && currentEpisode) {
+    let currentIndex = localPodcasts.findIndex((episode) => episode.id === currentEpisode.id);
+    
+    if (currentIndex > 0) {
+      // Update the current episode with the previous episode
+      currentEpisode = localPodcasts[currentIndex - 1];
+
+      // Display the previous episode in the iPod display
+      iPodDisplay(currentEpisode);
+    }
+  }
+}
+
+function shuffleRight() {
+  // Retrieve the list of podcast episodes from the local storage
+  let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
+
+  // Check if the localPodcasts variable is not empty and if there are episodes on the right side of the current episode
+  if (localPodcasts !== null && currentEpisode) {
+    let currentIndex = localPodcasts.findIndex((episode) => episode.id === currentEpisode.id);
+    
+    if (currentIndex < localPodcasts.length - 1) {
+      // Update the current episode with the next episode
+      currentEpisode = localPodcasts[currentIndex + 1];
+
+      // Display the next episode in the iPod display
+      iPodDisplay(currentEpisode);
+    }
+  }
+}
+
+// Add event listeners to the shuffle buttons
+// Reverse the order because array is in reverse 
+document.getElementById('left-shuffle-button').addEventListener('click', shuffleRight);
+document.getElementById('right-shuffle-button').addEventListener('click', shuffleLeft);
 
 // PODCAST ARRAY & OBJECT CREATION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
