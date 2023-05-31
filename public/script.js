@@ -727,3 +727,6 @@ function addPodcastEpisode(
   // Call the function that visibly displays multiple podcast episode elements
   displayPodcasts();
 }
+
+// Call the function to display example podcast episode element for anyone who loads the website for the first time
+addPodcastEpisode("Serial", "investigative", "Sarah Koenig", "Serial S01 - Ep.1: The Alibi", 1, 36, true, 4);

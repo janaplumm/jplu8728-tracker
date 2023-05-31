@@ -206,27 +206,9 @@
 
         <!-- Right container holds tracking list -->
         <article class="right-container">
-            <!-- Created a separate element for the scrollbar to avoid the borders clashing and for easier scroll function -->
+            <!-- Unordered list is empty as the content added via javascript code -->
             <ul id="podcast-list" class="podcast-list">
-                <!-- Divided the list element into multiple div elements for easier CSS management -->
                 <li class="podcast-list-item-container">
-                    <!-- Tracking list item details holds temp genre image, podcast title, green tick, episode title and rating -->
-                    <div class="podcast-list-item-details">
-                        <img id="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
-                            alt="Investigative journalist emoji">
-                        <!-- Separate container to hold the text information -->
-                        <div class="podcast-list-item-info">
-                            <h3 id="podcast-list-title">Serial <span id="green-tick">&#x2705;</span></h3>
-                            <p id="episode-list-title">Serial S01 - Ep. 1: The Alibi</p>
-                            <div id="episode-list-rating">⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                    <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
-                    <div class="podcast-list-item-del">
-                        <!-- Initially had img with id tag, but changed to class since multiple can exist -->
-                        <img class="trash-icon-button" src="./images/trash-emoji.png"
-                            alt="Trash emoji representing delete functionality">
-                    </div>
                 </li>
             </ul>
         </article>
