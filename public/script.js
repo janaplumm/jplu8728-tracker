@@ -344,7 +344,7 @@ function showEpisodeDetails(episode) {
       </section>
       <section id="episode-details-complete">
         <h3 class="show-details-heading">Episode Completed</h3>
-        <p id="episode-input-complete">Yes ✅ on 21 April 2023</p>
+        <p id="episode-input-complete">${episodeGreenTick(episode)}</p>
       </section>
       <section id="episode-details-rating">
         <h3 class="show-details-heading">Episode Rating</h3>
@@ -385,6 +385,24 @@ function episodeDuration(episode) {
   }
 
   return durationMessage;
+}
+
+// Function that determines the output message depending on user input for episode completed 
+
+function episodeGreenTick(episode) {
+  let completeMessage; 
+
+  // Received this code to convert the date input from prompting ChatGPT (see Figure)
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const completionDate = new Date(episode.date).toLocaleDateString(undefined, options);
+
+  if (episode.completed === true) {
+    completeMessage = "Yes ✅ on " + completionDate;
+  } else {
+    completeMessage = "No"
+  }
+
+  return completeMessage;
 }
 
 
