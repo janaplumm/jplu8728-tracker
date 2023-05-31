@@ -4,66 +4,6 @@
 import images from "./images/*.png";
 //console.log(images);
 
-// FORM SUBMISSION HANDLING
-// Used this from unit content Scrimba JS Objects - Input and event handling
-
-// Create variables that use HTML elements
-const form = document.getElementById("add-podcast-form");
-const podcastlist = document.querySelector("#podcast-list");
-
-// Event Listener to listen for form submission
-form.addEventListener("submit", function (event) {
-  // Block the default submission behaviour to handle submission manually
-  event.preventDefault();
-
-  // Check that episode completed buttons have been clicked otherwise alert user
-  if (episodeCompleted === null) {
-    alert("Please select whether you completed the episode.");
-    return; // Prevent further execution of the submission logic
-  }
-
-  // Check that user has rated the episode
-  if (form.elements.rating.value === "0") {
-    alert("Please rate the episode.");
-    return; // Prevent further execution of the submission logic
-  }
-
-  // Once form is successfully submitted, this data is added to the addPodcastEpisode function, which contains this new object
-  addPodcastEpisode(
-    form.elements.podcastName.value,
-    form.elements.postcastGenre.value,
-    form.elements.podcastHosts.value,
-    form.elements.episodeTitle.value,
-    form.elements.episodeHours.value,
-    form.elements.episodeMinutes.value,
-    episodeCompleted,
-    form.elements.rating.value
-  );
-
-  //console.log(addPodcastEpisode);
-
-  // Reset the form once it is submitted
-  form.reset();
-
-  // Clear the value of episodeCompleted from true or false to null
-  episodeCompleted = null;
-  const episodeCompletedInput = document.getElementById(
-    "episodeCompletedInput"
-  );
-  episodeCompletedInput.value = "";
-
-  // Reset appearance of episode completed buttons
-  const yesButton = document.getElementById("episodeCompletedTrue");
-  const noButton = document.getElementById("episodeCompletedFalse");
-  yesButton.style.backgroundColor = "";
-  noButton.style.backgroundColor = "";
-
-  // Reset star rating to reflect empty stars
-  ratingInput.value = "0";
-  stars.forEach((star) => {
-    star.innerHTML = "&#9734;"; // Unicode representing empty star
-  });
-});
 
 // GENRE IMAGE SELECTION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
@@ -132,144 +72,6 @@ function genreImage(genre) {
   return genreImage;
 }
 
-// EPISODE ITEM DISPLAY
-// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
-// Function that fetches and displays the Episode Item(s) in the Podcast List from localStorage
-
-function displayPodcasts() {
-  // Clear the list
-  podcastlist.innerHTML = "";
-
-  // Fetch episode element from localStorage using same variable name as in addPodcastEpisode (these do not clash due to scope)
-  let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
-
-  // Check if element is not empty and if not execute the code within to create new list item
-  if (localPodcasts !== null) {
-    // Reverse array order to display the latest podcast episode additions for more logical order
-    localPodcasts = localPodcasts.reverse();
-    // Loop through the array to check each element within
-    localPodcasts.forEach((episode) => {
-      // Create new list item and populate with content
-      let episodeItem = document.createElement("li");
-      episodeItem.className = "podcast-list-item-container";
-      // Data attribute for ID
-      episodeItem.setAttribute("data-id", episode.id);
-
-      // Create the inner HTML structure for the episode item
-      episodeItem.innerHTML = `
-        <div class="podcast-list-item-details">
-          <img id="podcast-list-item-genre-img" src='${
-            genreImage(episode.genre).src
-          }' alt='${genreImage(episode.genre).alt}'>
-          <div class="podcast-list-item-info">
-            <h3 id="podcast-list-title">${episode.name} ${greenTick(
-        episode.completed
-      )}</h3>
-            <p id="episode-list-title">${episode.title}</p>
-            <div id="episode-list-rating">${ratingMessage(episode.rating)}</div>
-          </div>
-        </div>
-        <div class="podcast-list-item-del">
-          <img class="trash-icon-button" img src='${
-            images["trash-emoji"]
-          }' alt="Trash emoji representing delete functionality">
-        </div>
-      `;
-
-      // Append the episode item to the podcast list
-      podcastlist.appendChild(episodeItem);
-
-      // When user clicks on an episode item, this is displayed in the iPod display
-      episodeItem.addEventListener("click", function () {
-        // Call iPodDisplay function to display specific episode within the iPod 
-        iPodDisplay(episode);
-        // Load this data also into the show details popup 
-        showEpisodeDetails(episode);
-      });
-    }); // Closing bracket for local podcasts loop statement
-  } // Closing bracket for local podcasts if statement
-
-  // Automatically show the first item in the array within the iPod Display and Show Details pop-up when page loads
-  if (localPodcasts.length > 0) {
-    let firstEpisode = localPodcasts[0];
-    iPodDisplay(localPodcasts[0]);
-    showEpisodeDetails(localPodcasts[0]);
-  }
-}
-
-// Function to generate star rating HTML based on the given rating
-function ratingMessage(rating) {
-  // Create empty message variable
-  let ratingMessage = "";
-
-  // For loop that evaluates how many stars are displayed
-  for (let i = 0; i < rating; i++) {
-    ratingMessage += "⭐";
-  }
-
-  // Output message
-  return ratingMessage;
-}
-
-// Function to generate green tick emoji if user completed episode
-function greenTick(completed) {
-  if (completed) {
-    return "&#x2705;"; // Green tick emoji unicode
-  } else {
-    return ""; // Empty string
-  }
-}
-
-// Calling the displayPodcasts function when the user loads the HTML page in order for their local storage data to appear instantly
-window.addEventListener("load", displayPodcasts);
-
-// EPISODE ITEM DELETION
-// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
-
-// Moved the delete logic to a separate function to control iPod Display (if first element of array is deleted, update with new first element)
-function deleteEpisode(episodeItem) {
-  // Show confirmation dialog to prevent user from accidentally deleting
-  const confirmDelete = confirm(
-    "Are you sure you want to delete this episode?"
-  );
-
-  // Once confirmed, loop through all podcast items to find matching ID and remove it from the array
-  if (confirmDelete) {
-    let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
-
-    localPodcasts = localPodcasts.filter((episode) => {
-      return episode.id != episodeItem.getAttribute("data-id");
-    });
-
-    // Update localStorage with the updated array (converted to a JSON string)
-    localStorage.setItem("episodes", JSON.stringify(localPodcasts));
-
-    // Remove the episode item from the page
-    episodeItem.remove();
-
-    // Check if the deleted item was the first item in the array
-    if (localPodcasts.length > 0) {
-      // Get the new last episode from the updated array
-      const newLastEpisode = localPodcasts[localPodcasts.length - 1];
-      // Update the iPod display to show the new last episode
-      iPodDisplay(newLastEpisode);
-    }
-  }
-}
-
-// Update the delete button event listener outside the displayPodcasts() function
-podcastlist.addEventListener("click", function (event) {
-  const target = event.target;
-
-  // Check if the clicked element has the class "trash-icon-button"
-  if (target.classList.contains("trash-icon-button")) {
-    // Find the closest ancestor element of the clicked element
-    const episodeItem = target.closest(".podcast-list-item-container");
-
-    // Call the deleteEpisode() function with the episode item to remove it from localStorage and the page
-    deleteEpisode(episodeItem);
-  }
-});
 
 // IPOD DISPLAY
 // Used similar structure of displayPodcast function
@@ -309,6 +111,7 @@ function iPodDisplay(episode) {
   // Set the currentEpisode variable to the displayed episode which will be used for the shuffle button functions
   currentEpisode = episode;
 }
+
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
@@ -394,110 +197,9 @@ document
   .getElementById("close-details-popup")
   .addEventListener("click", closeDetailsPopup);
 
-// INPUT FORM: STAR RATING FEATURE
-
-// Select and store all 'star' class name elements
-const stars = document.querySelectorAll(".star");
-// Select and store selected rating value
-const ratingInput = document.querySelector('[name="rating"]');
-
-// Loop over each star element
-stars.forEach((star) => {
-  // Event listener listens out for any user clicks
-  star.addEventListener("click", () => {
-    // When user clicks on a star, this value is selected and stored
-    const rating = star.getAttribute("data-rating");
-    const currentRating = ratingInput.value;
-
-    // Check for deselection of stars by the user to maintain correct value
-    if (currentRating === rating) {
-      // Deselect the current rating
-      ratingInput.value = "0";
-    } else {
-      // Select the clicked star
-      ratingInput.value = rating;
-    }
-
-    // Iterate over star elements
-    stars.forEach((s) => {
-      // Check if data-rating is less than or equal to updated ratingInput value
-      if (s.getAttribute("data-rating") <= ratingInput.value) {
-        s.innerHTML = "&#11088;"; // Unicode representing filled emoji star
-      } else {
-        s.innerHTML = "&#9734;"; // Unicode representing empty star
-      }
-    });
-    // console.log("Selected rating:", ratingInput.value);
-  });
-});
-
-// INPUT FORM: DROPDOWN MENU FEATURE
-// This code sorts the genre list alphabetically to keep 'Comedy' in order
-
-// Get the select element
-const selectElement = document.getElementById("podcastGenre");
-
-// Sort the options alphabetically
-const options = Array.from(selectElement.options);
-options.sort(function (a, b) {
-  return a.text.localeCompare(b.text);
-});
-
-// Get the selected value
-const selectedValue = selectElement.value;
-
-// Clear the select element
-selectElement.innerHTML = "";
-
-// Insert the sorted options back into the select element
-for (let i = 0; i < options.length; i++) {
-  selectElement.appendChild(options[i]);
-}
-
-// Set the selected value
-selectElement.value = selectedValue;
-
-// INPUT FORM: EPISODE COMPLETED BUTTONS (TRUE OR FALSE BOOLEAN VALUE)
-// This is a required section of the user input form (see next function submitForm)
-
-// Global variable for episodeCompleted
-
-let episodeCompleted = null;
-
-// Global variables for yes and no buttons
-const yesButton = document.getElementById("episodeCompletedTrue");
-const noButton = document.getElementById("episodeCompletedFalse");
-
-// Use a function to store user selected value if user clicks on 'yes' or 'no' button (and style buttons)
-function episodeCompletedButton(value) {
-  // Assign variable the value
-  episodeCompleted = value;
-  // Log boolean value to console to check it works
-  // console.log(episodeCompleted);
-  // console.log(typeof episodeCompleted);
-
-  // Apply visual indicator for user to see their button selection
-  if (episodeCompleted) {
-    // User selected 'yes'
-    yesButton.style.backgroundColor = "#EDFFB6"; // Change color of 'yes' button
-    noButton.style.backgroundColor = ""; // Revert color of 'no' button
-  } else {
-    // User selected 'no'
-    yesButton.style.backgroundColor = ""; // Revert color of 'yes' button
-    noButton.style.backgroundColor = "#FFB6C8"; // Change color of 'no' button
-  }
-}
-
-// Event listeners applied to get triggered by 'yes' or 'no' button clicks
-yesButton.addEventListener("click", function () {
-  episodeCompletedButton(true);
-});
-
-noButton.addEventListener("click", function () {
-  episodeCompletedButton(false);
-});
 
 // IPOD SHUFFLE LEFT AND RIGHT BUTTONS
+// Received this code from prompting ChatGPT (see Figure)
 // Lets user move through the list of elements as an additional functionality
 
 // Define currentEpisode globally so it can be accessed by multiple functions
@@ -676,6 +378,319 @@ function episodeDuration(episode) {
 
   return durationMessage;
 }
+
+
+// FORM SUBMISSION HANDLING
+// Used this code from unit content Scrimba JS Objects - Input and event handling
+
+// Create variables that use HTML elements
+const form = document.getElementById("add-podcast-form");
+const podcastlist = document.querySelector("#podcast-list");
+
+// Event Listener to listen for form submission
+form.addEventListener("submit", function (event) {
+  // Block the default submission behaviour to handle submission manually
+  event.preventDefault();
+
+  // Check that episode completed buttons have been clicked otherwise alert user
+  if (episodeCompleted === null) {
+    alert("Please select whether you completed the episode.");
+    return; // Prevent further execution of the submission logic
+  }
+
+  // Check that user has rated the episode
+  if (form.elements.rating.value === "0") {
+    alert("Please rate the episode.");
+    return; // Prevent further execution of the submission logic
+  }
+
+  // Once form is successfully submitted, this data is added to the addPodcastEpisode function, which contains this new object
+  addPodcastEpisode(
+    form.elements.podcastName.value,
+    form.elements.postcastGenre.value,
+    form.elements.podcastHosts.value,
+    form.elements.episodeTitle.value,
+    form.elements.episodeHours.value,
+    form.elements.episodeMinutes.value,
+    episodeCompleted,
+    form.elements.rating.value
+  );
+
+  //console.log(addPodcastEpisode);
+
+  // Reset the form once it is submitted
+  form.reset();
+
+  // Clear the value of episodeCompleted from true or false to null
+  episodeCompleted = null;
+  const episodeCompletedInput = document.getElementById(
+    "episodeCompletedInput"
+  );
+  episodeCompletedInput.value = "";
+
+  // Reset appearance of episode completed buttons
+  const yesButton = document.getElementById("episodeCompletedTrue");
+  const noButton = document.getElementById("episodeCompletedFalse");
+  yesButton.style.backgroundColor = "";
+  noButton.style.backgroundColor = "";
+
+  // Reset star rating to reflect empty stars
+  ratingInput.value = "0";
+  stars.forEach((star) => {
+    star.innerHTML = "&#9734;"; // Unicode representing empty star
+  });
+});
+
+
+// INPUT FORM: STAR RATING FEATURE
+// Received this code from prompting ChatGPT (see Figure)
+// This code converts the user rating value from 1 - 5 into star emojis
+
+// Select and store all 'star' class name elements
+const stars = document.querySelectorAll(".star");
+// Select and store selected rating value
+const ratingInput = document.querySelector('[name="rating"]');
+
+// Loop over each star element
+stars.forEach((star) => {
+  // Event listener listens out for any user clicks
+  star.addEventListener("click", () => {
+    // When user clicks on a star, this value is selected and stored
+    const rating = star.getAttribute("data-rating");
+    const currentRating = ratingInput.value;
+
+    // Check for deselection of stars by the user to maintain correct value
+    if (currentRating === rating) {
+      // Deselect the current rating
+      ratingInput.value = "0";
+    } else {
+      // Select the clicked star
+      ratingInput.value = rating;
+    }
+
+    // Iterate over star elements
+    stars.forEach((s) => {
+      // Check if data-rating is less than or equal to updated ratingInput value
+      if (s.getAttribute("data-rating") <= ratingInput.value) {
+        s.innerHTML = "&#11088;"; // Unicode representing filled emoji star
+      } else {
+        s.innerHTML = "&#9734;"; // Unicode representing empty star
+      }
+    });
+    // console.log("Selected rating:", ratingInput.value);
+  });
+});
+
+
+// INPUT FORM: DROPDOWN MENU FEATURE
+// Received this code from prompting ChatGPT (see Figure)
+// This code sorts the genre list alphabetically to keep 'Comedy' in order
+
+// Get the select element
+const selectElement = document.getElementById("podcastGenre");
+
+// Sort the options alphabetically
+const options = Array.from(selectElement.options);
+options.sort(function (a, b) {
+  return a.text.localeCompare(b.text);
+});
+
+// Get the selected value
+const selectedValue = selectElement.value;
+
+// Clear the select element
+selectElement.innerHTML = "";
+
+// Insert the sorted options back into the select element
+for (let i = 0; i < options.length; i++) {
+  selectElement.appendChild(options[i]);
+}
+
+// Set the selected value
+selectElement.value = selectedValue;
+
+
+// INPUT FORM: EPISODE COMPLETED BUTTONS (TRUE OR FALSE BOOLEAN VALUE)
+// This is a required section of the user input form (see next function submitForm)
+
+// Global variable for episodeCompleted
+
+let episodeCompleted = null;
+
+// Global variables for yes and no buttons
+const yesButton = document.getElementById("episodeCompletedTrue");
+const noButton = document.getElementById("episodeCompletedFalse");
+
+// Use a function to store user selected value if user clicks on 'yes' or 'no' button (and style buttons)
+function episodeCompletedButton(value) {
+  // Assign variable the value
+  episodeCompleted = value;
+  // Log boolean value to console to check it works
+  // console.log(episodeCompleted);
+  // console.log(typeof episodeCompleted);
+
+  // Apply visual indicator for user to see their button selection
+  if (episodeCompleted) {
+    // User selected 'yes'
+    yesButton.style.backgroundColor = "#EDFFB6"; // Change color of 'yes' button
+    noButton.style.backgroundColor = ""; // Revert color of 'no' button
+  } else {
+    // User selected 'no'
+    yesButton.style.backgroundColor = ""; // Revert color of 'yes' button
+    noButton.style.backgroundColor = "#FFB6C8"; // Change color of 'no' button
+  }
+}
+
+// Event listeners applied to get triggered by 'yes' or 'no' button clicks
+yesButton.addEventListener("click", function () {
+  episodeCompletedButton(true);
+});
+
+noButton.addEventListener("click", function () {
+  episodeCompletedButton(false);
+});
+
+
+// EPISODE ITEM DISPLAY
+// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
+// Function that fetches and displays the Episode Item(s) in the Podcast List from localStorage
+
+function displayPodcasts() {
+  // Clear the list
+  podcastlist.innerHTML = "";
+
+  // Fetch episode element from localStorage using same variable name as in addPodcastEpisode (these do not clash due to scope)
+  let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
+
+  // Check if element is not empty and if not execute the code within to create new list item
+  if (localPodcasts !== null) {
+    // Reverse array order to display the latest podcast episode additions for more logical order
+    localPodcasts = localPodcasts.reverse();
+    // Loop through the array to check each element within
+    localPodcasts.forEach((episode) => {
+      // Create new list item and populate with content
+      let episodeItem = document.createElement("li");
+      episodeItem.className = "podcast-list-item-container";
+      // Data attribute for ID
+      episodeItem.setAttribute("data-id", episode.id);
+
+      // Create the inner HTML structure for the episode item
+      episodeItem.innerHTML = `
+        <div class="podcast-list-item-details">
+          <img id="podcast-list-item-genre-img" src='${
+            genreImage(episode.genre).src
+          }' alt='${genreImage(episode.genre).alt}'>
+          <div class="podcast-list-item-info">
+            <h3 id="podcast-list-title">${episode.name} ${greenTick(
+        episode.completed
+      )}</h3>
+            <p id="episode-list-title">${episode.title}</p>
+            <div id="episode-list-rating">${ratingMessage(episode.rating)}</div>
+          </div>
+        </div>
+        <div class="podcast-list-item-del">
+          <img class="trash-icon-button" img src='${
+            images["trash-emoji"]
+          }' alt="Trash emoji representing delete functionality">
+        </div>
+      `;
+
+      // Append the episode item to the podcast list
+      podcastlist.appendChild(episodeItem);
+
+      // When user clicks on an episode item, this is displayed in the iPod display
+      episodeItem.addEventListener("click", function () {
+        // Call iPodDisplay function to display specific episode within the iPod 
+        iPodDisplay(episode);
+        // Load this data also into the show details popup 
+        showEpisodeDetails(episode);
+      });
+    }); // Closing bracket for local podcasts loop statement
+  } // Closing bracket for local podcasts if statement
+
+  // Automatically show the first item in the array within the iPod Display and Show Details pop-up when page loads
+  if (localPodcasts.length > 0) {
+    let firstEpisode = localPodcasts[0];
+    iPodDisplay(localPodcasts[0]);
+    showEpisodeDetails(localPodcasts[0]);
+  }
+}
+
+// Function to generate star rating HTML based on the given rating
+function ratingMessage(rating) {
+  // Create empty message variable
+  let ratingMessage = "";
+
+  // For loop that evaluates how many stars are displayed
+  for (let i = 0; i < rating; i++) {
+    ratingMessage += "⭐";
+  }
+
+  // Output message
+  return ratingMessage;
+}
+
+// Function to generate green tick emoji if user completed episode
+function greenTick(completed) {
+  if (completed) {
+    return "&#x2705;"; // Green tick emoji unicode
+  } else {
+    return ""; // Empty string
+  }
+}
+
+// Calling the displayPodcasts function when the user loads the HTML page in order for their local storage data to appear instantly
+window.addEventListener("load", displayPodcasts);
+
+
+// EPISODE ITEM DELETION
+// Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
+
+// Moved the delete logic to a separate function to control iPod Display (if first element of array is deleted, update with new first element)
+function deleteEpisode(episodeItem) {
+  // Show confirmation dialog to prevent user from accidentally deleting
+  const confirmDelete = confirm(
+    "Are you sure you want to delete this episode?"
+  );
+
+  // Once confirmed, loop through all podcast items to find matching ID and remove it from the array
+  if (confirmDelete) {
+    let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
+
+    localPodcasts = localPodcasts.filter((episode) => {
+      return episode.id != episodeItem.getAttribute("data-id");
+    });
+
+    // Update localStorage with the updated array (converted to a JSON string)
+    localStorage.setItem("episodes", JSON.stringify(localPodcasts));
+
+    // Remove the episode item from the page
+    episodeItem.remove();
+
+    // Check if the deleted item was the first item in the array
+    if (localPodcasts.length > 0) {
+      // Get the new last episode from the updated array
+      const newLastEpisode = localPodcasts[localPodcasts.length - 1];
+      // Update the iPod display to show the new last episode
+      iPodDisplay(newLastEpisode);
+    }
+  }
+}
+
+// Update the delete button event listener outside the displayPodcasts() function
+podcastlist.addEventListener("click", function (event) {
+  const target = event.target;
+
+  // Check if the clicked element has the class "trash-icon-button"
+  if (target.classList.contains("trash-icon-button")) {
+    // Find the closest ancestor element of the clicked element
+    const episodeItem = target.closest(".podcast-list-item-container");
+
+    // Call the deleteEpisode() function with the episode item to remove it from localStorage and the page
+    deleteEpisode(episodeItem);
+  }
+});
+
 
 // PODCAST ARRAY & OBJECT CREATION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
