@@ -1,5 +1,6 @@
 // IMPORT IMAGES
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
+// This generates a list of paths to access files by their type using * to add any file with .png extension 
 
 import images from "./images/*.png";
 //console.log(images);
@@ -7,6 +8,7 @@ import images from "./images/*.png";
 
 // GENRE IMAGE SELECTION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
+// This selects what image matches what genre 
 
 function genreImage(genre) {
   // Create a variable that is returned at the end
@@ -74,7 +76,8 @@ function genreImage(genre) {
 
 
 // IPOD DISPLAY
-// Used similar structure of displayPodcast function
+// Used similar code structure of displayPodcast function
+// This manipulates what episode data is shown in the iPod display depending on user selection 
 
 function iPodDisplay(episode) {
   // Create a new variable that links to the HTML iPod display
@@ -115,6 +118,7 @@ function iPodDisplay(episode) {
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
+// This opens and closes the pop-up windows depending on user action
 
 function openEpisodePopup() {
   // get the add-podcast-popup window via ID
@@ -153,6 +157,7 @@ function closeEpisodePopup() {
 document
   .getElementById("close-episode-popup")
   .addEventListener("click", closeEpisodePopup);
+
 
 // POP-UPS: OPEN AND CLOSE SHOW-DETAILS-POPUP FUNCTIONS
 
@@ -254,7 +259,10 @@ document
   .getElementById("right-shuffle-button")
   .addEventListener("click", shuffleLeft);
 
+
 // SHOW DETAILS POP-UP FEATURE
+// Used similar structure to genreImage function and displayPodcast function
+// This manipulates the episode data that is shown depending on user selection of list item 
 
 function showEpisodeDetails(episode) {
   // Create a new variable that links to the show details content container
@@ -382,6 +390,7 @@ function episodeDuration(episode) {
 
 // FORM SUBMISSION HANDLING
 // Used this code from unit content Scrimba JS Objects - Input and event handling
+// This triggers how the user input data is handled once the user submits an episode 
 
 // Create variables that use HTML elements
 const form = document.getElementById("add-podcast-form");
@@ -511,7 +520,7 @@ selectElement.value = selectedValue;
 
 
 // INPUT FORM: EPISODE COMPLETED BUTTONS (TRUE OR FALSE BOOLEAN VALUE)
-// This is a required section of the user input form (see next function submitForm)
+// This checks that the user selected either the 'yes' or 'no' button for episode completion 
 
 // Global variable for episodeCompleted
 
@@ -617,6 +626,7 @@ function displayPodcasts() {
 }
 
 // Function to generate star rating HTML based on the given rating
+
 function ratingMessage(rating) {
   // Create empty message variable
   let ratingMessage = "";
@@ -631,6 +641,7 @@ function ratingMessage(rating) {
 }
 
 // Function to generate green tick emoji if user completed episode
+
 function greenTick(completed) {
   if (completed) {
     return "&#x2705;"; // Green tick emoji unicode
@@ -645,6 +656,7 @@ window.addEventListener("load", displayPodcasts);
 
 // EPISODE ITEM DELETION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
+// This allows the user to visually delete a list item, as well as remove it permanently from localStorage
 
 // Moved the delete logic to a separate function to control iPod Display (if first element of array is deleted, update with new first element)
 function deleteEpisode(episodeItem) {
@@ -694,6 +706,7 @@ podcastlist.addEventListener("click", function (event) {
 
 // PODCAST ARRAY & OBJECT CREATION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
+// This handles how the user input data is stored in the backend server of localStorage 
 
 // Function contains the object that is going to be added to the array with each form submission
 function addPodcastEpisode(
