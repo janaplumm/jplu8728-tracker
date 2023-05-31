@@ -728,5 +728,17 @@ function addPodcastEpisode(
   displayPodcasts();
 }
 
-// Call the function to display example podcast episode element for anyone who loads the website for the first time
+// LOAD EXAMPLE EPISODE ELEMENT IF LOCALSTORAGE EMPTY 
+// Received this code from prompting ChatGPT (see Figure)
+
+// If local storage is empty when the page loads, then call the function to display example podcast episode element
+window.addEventListener("load", function() {
+  let localEpisodes = JSON.parse(this.localStorage.getItem("episodes"));
+
+  if (localEpisodes == null || localEpisodes.length === 0) {
+    // Call the function to display example podcast episode element for anyone who loads the website for the first time
 addPodcastEpisode("Serial", "investigative", "Sarah Koenig", "Serial S01 - Ep.1: The Alibi", 1, 36, true, 4);
+  }
+});
+
+
