@@ -110,14 +110,11 @@ The 'Show Details' pop-up prototype most closely resembles the original mockup d
 
 The original mockup design for the mobile version **keeps the iPod as the focal point** of the page with the list container below using **a one-column layout**. The episode items within the list are changed to a **vertical layout** compared to in the horizontal desktop version. For the pop-ups, a **blurry background** appears to help the users focus on the pop-ups. 
 
-<img src="/docs/iPhone-Mockup-1.png" alt="Overview mobile mockup" width="250" height="auto">
-
-<img src="/docs/iPhone-Mockup-2.png" alt="Overview mobile mockup" width="250" height="auto">
-
-<img src="/docs/iPhone-Mockup-3.png" alt="Overview mobile mockup" width="250" height="auto">
-
-![Image 1](/docs/iPhone-Mockup-1.pngg) ![Image 2](/docs/iPhone-Mockup-2.png) ![Image 3](/docs/iPhone-Mockup-3.png)
-
+<div>
+  <img src="/docs/iPhone-Mockup-1.png" alt="Overview mobile mockup" width="250" height="auto">
+  <img src="/docs/iPhone-Mockup-2.png" alt="Overview mobile mockup" width="250" height="auto">
+  <img src="/docs/iPhone-Mockup-3.png" alt="Overview mobile mockup" width="250" height="auto">
+</div>
 
 ### <u>Prototype Responsive Mobile</u>
 
