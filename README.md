@@ -75,30 +75,40 @@ As well as being able to delete an item from the list container via the trash em
 
 ### <u>Prototype Desktop: Overview </u>
 
-The prototype desktop design closely resembles the mockup with a few minor changes. 
+The prototype desktop design closely resembles the mockup with a few minor changes: 
 
 * **I swapped the iPod with the list container**, as it felt more logical when going from the desktop to mobile view. 
 * After receiving feedback on the mockup design, **I removed the bright green colour (#EDFFB6)** and only used the light purple (#C8B6FF) as an accent. This makes the aesthethic look more consistent. 
 * **Changed 'Add Podcast' to 'Add Episode'** on the iPod click wheel for clarity purposes.
 * Made the **scrollbar** in the list container more **minimal with no arrows**.
+* **Swapped the emoji image for 'History & Culture' genre** after doing user testing, as people felt the scroll was visually more interesting and relevant compared to the hut emoji. 
 
 ![Prototype Landing page](/docs/Desktop-Prototype-1.png)
 
 ### <u>Prototype Desktop: Add Episode Pop-up</u>
 
-Summary
+The prototype user input form has a few changes: 
+
+* **Swapped the placeholder text from Serial podcast to Hamish & Andy**, because there are multiple hosts, which gives the user a better example of what to enter for the 'Podcast Host(s) input. 
+* **Was unable to make the dropdown selection placeholder text grey** as in the mockup. However, this might be better for the user to understand it has a different function than typing. 
+* **Changed the section of the 'Episode Duration'** to **include labels** on the side of the fields, as the use of the temporary text within the field alone is not user-friendly and asks the user to remember what they just read.  
+* Also **shrunk the width of the 'Hours' and 'Minutes' fields** for consistency purposes. 
+* **Made all fields required**, including rating section, after testing with users and finding that people want to rate the episode and don't see the point in tracking unrated episodes. 
+* To maintain consistency with the updated minimal colour scheme, I **changed the colour of the 'Add Episode' submission button** from an aqua colour to the light green #EDFFB6 that used to be the background colour for the list container. This now **matches the colour of the 'Yes' button** for the 'Episode Completed' section. 
+* Also **changed the height of the submission button** to match the 'Yes' and 'No' button height. 
+* **'Yes' and 'No' buttons remain blank** and **only change colour to light green or light red when** the user has **selected** either button.  
 
 ![Prototype Landing page](/docs/Desktop-Prototype-2.png)
 
 ### <u>Prototype Desktop: Show Episode Details Pop-up</u>
 
-Summary
+The 'Show Details' pop-up prototype most closely resembles the original mockup designs. The **only changes made affected the delete button**, which matches the sizing of the submission button. I **added a confirmation alert for the delete function** so that the user has to confirm that they want to delete an episode to avoid accidental deletion.  
 
 ![Prototype Landing page](/docs/Desktop-Prototype-3.png)
 
 ### <u>Mockup Responsive Mobile</u>
 
-The original mockup design for the mobile version keeps the iPod as the focal point of the page with the list container below. The episode items within the list are changed to a vertical layout compared to in the horizontal desktop version. 
+The original mockup design for the mobile version **keeps the iPod as the focal point** of the page with the list container below using **a one-column layout**. The episode items within the list are changed to a **vertical layout** compared to in the horizontal desktop version. For the pop-ups, a **blurry background** appears to help the users focus on the pop-ups. 
 
 <img src="/docs/iPhone-Mockup-1.png" alt="Overview mobile mockup" width="250" height="auto">
 
@@ -108,11 +118,16 @@ The original mockup design for the mobile version keeps the iPod as the focal po
 
 ### <u>Prototype Responsive Mobile</u>
 
-The mobile prototype design is similar to the mockup. The **episode items** within the list container are **larger than in the mockup**, which helps with **legibility**. 
+The mobile prototype design is similar to the mockup with two main amendments: 
+
+* The **episode items** within the list container are **larger than in the mockup**, which helps with **legibility**. 
+* **Removed the blur background effect**, as it was difficult to implement, and also did not have the same effect when designing the mockups.
 
 <img src="/docs/iPhone-Prototype-1.png" alt="Overview mobile mockup" width="250" height="auto">
 <img src="/docs/iPhone-Prototype-2.png" alt="Overview mobile mockup" width="250" height="auto">
 <img src="/docs/iPhone-Prototype-3.png" alt="Overview mobile mockup" width="250" height="auto">
+
+<br>
 
 #### <u>Code Reflections</u>
 
@@ -138,9 +153,13 @@ a.skip-main:focus {
 }
 ```
 
+<br>
+
 ## Closing Words 
 
 Overall, creating this prototype website was quite a **difficult**, but also very **rewarding process**. It taught me to look beyond the materials taught during the lectures and tutorials and to work on my **problem solving skills**. The **responsiveness** was one of the trickier concepts to get my head around, but thanks to this final assignment, I feel a greater level of understanding of it than before. For my next website, I would consider **more planning**, such as considering more **accessibility** and **responsiveness** before coding, and I also would take more care in **structuring the CSS**, like creating more common elements to avoid having to re-use a lot of code. I also look forward to learning more about **JavaScript** in Advanced Web Design, as I purposefully avoided it for this assignment in order to challenge and strengthen my **HTML and CSS understanding**. 
+
+<br>
 
 ## References
 
