@@ -922,4 +922,12 @@ footer {
     border-top: 2px solid #000000;
   }
 
+  /* FOOTER RESPONSIVENESS */
+  
+  /* Styling to create some invisible spacing at the bottom */
+  footer {
+    height: 2rem;
+    transform: translate(0rem, 6rem);
+  }
+
 }
