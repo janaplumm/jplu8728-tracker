@@ -35,9 +35,9 @@
                     <img class="iPod-display-genre-img" src="./images/journalism-emoji.png"
                         alt="Investigative journalist emoji">
                     <div class="iPod-display-details">
-                        <h3 id="iPod-display-podcast-title">Serial <span id="green-tick">&#x2705;</span></h3>
-                        <p id="iPod-display-episode-title">Serial S01 - Ep. 1: The Alibi</p>
-                        <div id="iPod-display-rating">⭐⭐⭐⭐</div>
+                        <h3 id="iPod-display-podcast-title"> <span id="green-tick">&#x2705;</span></h3>
+                        <p id="iPod-display-episode-title"></p>
+                        <div id="iPod-display-rating"></div>
                     </div>
                 </section>
                 <!-- iPod controls container with shuffle buttons, show details and add podcast buttons -->
@@ -122,8 +122,10 @@
                         <div class="episode-completed-container">
                             <!-- Used buttons instead of radio input type -->
                             <!-- This information is translated to a javascript function that evaluates if the boolean value is true or false -->
-                            <button type="button" id="episodeCompletedTrue" value="true"><span id="yes-emoji">👍</span> Yes</button>
-                            <button type="button" id="episodeCompletedFalse" value="false"><span id="no-emoji">👎</span> No</button>
+                            <button type="button" id="episodeCompletedTrue" value="true"><span id="yes-emoji">👍</span>
+                                Yes</button>
+                            <button type="button" id="episodeCompletedFalse" value="false"><span id="no-emoji">👎</span>
+                                No</button>
                         </div>
                         <!-- Episode rating selection -->
                         <h4 id="episode-completed-title">Rate Episode*</h4>
@@ -150,21 +152,21 @@
                 <section class="podcast-popup-container">
                     <!-- Specific show details content container holding the podcast episode item data -->
                     <!-- Close pop-up button -->
-                        <!-- Adding class and ID selectors for css and javascript purposes -->
-                        <img class="close-popup-button" id="close-details-popup" src="./images/cancel-button.png"
-                            alt="Button with a cross to close pop-up window">
+                    <!-- Adding class and ID selectors for css and javascript purposes -->
+                    <img class="close-popup-button" id="close-details-popup" src="./images/cancel-button.png"
+                        alt="Button with a cross to close pop-up window">
                     <section id="show-details-content">
                         <!-- Podcast name input by user for this podcast episode item -->
                         <section id="podcast-details-name">
                             <h3 class="show-details-heading">Podcast Name</h3>
-                            <p id="podcast-input-name">Hamish & Andy</p>
+                            <p id="podcast-input-name"></p>
                         </section>
                         <!-- Podcast genre input by user for this podcast episode item -->
                         <section id="podcast-details-genre">
                             <!-- Separate divs for genre text and image for CSS styling purposes -->
                             <div class="show-details-subheading">
                                 <h3 class="show-details-heading">Podcast Genre</h3>
-                                <p id="podcast-input-genre">Comedy</p>
+                                <p id="podcast-input-genre"></p>
                             </div>
                             <div class="show-details-image">
                                 <img class="show-details-genre-img" src="./images/journalism-emoji.png"
@@ -174,27 +176,27 @@
                         <!-- Podcast hosts input by user for this podcast episode item -->
                         <section id="podcast-details-hosts">
                             <h3 class="show-details-heading">Podcast Host(s)</h3>
-                            <p id="podcast-input-hosts">Hamish Blake, Andy Lee</p>
+                            <p id="podcast-input-hosts"></p>
                         </section>
                         <!-- Episode details input by user for this podcast episode item -->
                         <section id="episode-details-title">
                             <h3 class="show-details-heading">Episode Title</h3>
-                            <p id="episode-input-title">Hamish & Andy 2023 Ep 211</p>
+                            <p id="episode-input-title"></p>
                         </section>
                         <!-- Episode duration input by user for this podcast episode item -->
                         <section id="episode-details-duration">
                             <h3 class="show-details-heading">Episode Duration</h3>
-                            <p id="episode-input-duration">41 min.</p>
+                            <p id="episode-input-duration"></p>
                         </section>
                         <!-- Episode completed input by user for this podcast episode item -->
                         <section id="episode-details-complete">
                             <h3 class="show-details-heading">Episode Completed</h3>
-                            <p id="episode-input-complete">Yes ✅ on 21 April 2023</p>
+                            <p id="episode-input-complete"></p>
                         </section>
                         <!-- Episode ratings input by user for this podcast episode item -->
                         <section id="episode-details-rating">
                             <h3 class="show-details-heading">Episode Rating</h3>
-                            <p id="episode-input-rating">⭐⭐⭐⭐ </p>
+                            <p id="episode-input-rating"></p>
                         </section>
                         <!-- Delete episode item button -->
                         <button type="button" class="show-details-delete-button">Delete Episode</button>
@@ -209,6 +211,23 @@
             <!-- Unordered list is empty as the content added via javascript code -->
             <ul id="podcast-list" class="podcast-list">
                 <li class="podcast-list-item-container">
+                    <!-- Tracking list item details holds temp genre image, podcast title, green tick, episode title and rating -->
+                    <div class="podcast-list-item-details">
+                        <img id="podcast-list-item-genre-img" src="./images/journalism-emoji.png"
+                            alt="Investigative journalist emoji">
+                        <!-- Separate container to hold the text information -->
+                        <div class="podcast-list-item-info">
+                            <h3 id="podcast-list-title"> <span id="green-tick">&#x2705;</span></h3>
+                            <p id="episode-list-title"></p>
+                            <div id="episode-list-rating"></div>
+                        </div>
+                    </div>
+                    <!-- Tracking list item delete holds the trash icon button to delete a podcast tracking item -->
+                    <div class="podcast-list-item-del">
+                        <!-- Initially had img with id tag, but changed to class since multiple can exist -->
+                        <img class="trash-icon-button" src="./images/trash-emoji.png"
+                            alt="Trash emoji representing delete functionality">
+                    </div>
                 </li>
             </ul>
         </article>
