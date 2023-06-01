@@ -133,6 +133,8 @@ The mobile prototype design is similar to the mockup with two main amendments:
 
 #### <u>Code Reflections</u>
 
+Podfetch is built using **HTML, CSS and JavaScript**. From the 'Introduction to Web Design' unit, **I had good fundamental HTML and CSS skills**, which I was able to apply on my own for this prototype. The **majority of the Javascript code is based on tutorial content** from this unit, particularly from the interactive task list code. For some additional functionality based on my designs, I sought out **coding examples from the internet** and **prompted ChatGPT** for specific coding assistance. 
+
 * Text 1
 * Text 2
 * Text 3 
@@ -159,7 +161,7 @@ a.skip-main:focus {
 
 ## Closing Words 
 
-Overall, creating this prototype website was quite a **difficult**, but also very **rewarding process**. It taught me to look beyond the materials taught during the lectures and tutorials and to work on my **problem solving skills**. The **responsiveness** was one of the trickier concepts to get my head around, but thanks to this final assignment, I feel a greater level of understanding of it than before. For my next website, I would consider **more planning**, such as considering more **accessibility** and **responsiveness** before coding, and I also would take more care in **structuring the CSS**, like creating more common elements to avoid having to re-use a lot of code. I also look forward to learning more about **JavaScript** in Advanced Web Design, as I purposefully avoided it for this assignment in order to challenge and strengthen my **HTML and CSS understanding**. 
+Overall, creating this prototype website was a **very challenging, but also rewarding experience**. After inititally struggling with understanding JavaScript and DOM manipulation, **I now feel confident in my applying my knowledge and skills**. While I did not work with APIs or JS libraries for this project, I understand their purposes. Similarly, **I know more about setting up my own backend server than I did before**. The Scrimba recordings were an incredibly useful asset during this unit, and in hindsight, I would have used them more often in the beginning to get a faster grip on the fundamentals. Before this unit, I was not confident in my abilities to code my own portfolio. I did not know how to work with GitHub or VS Code. **Moving forward, I want to experiment more with JavaScript and Web Design in my own time and work on a portfolio that I can host using GitHub**. 
 
 <br>
 
