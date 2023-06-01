@@ -350,8 +350,11 @@ function showEpisodeDetails(episode) {
         <h3 class="show-details-heading">Episode Rating</h3>
         <p id="episode-input-rating">${ratingMessage(episode.rating)}</p>
       </section>
-      <button type="button" id="delete-button">Delete Episode</button>
+      <button type="button" class="show-details-delete-button" data-id="${episode.id}">Delete Episode</button>
   `;
+
+  // Added data-id attribute to delete button to link to unique ID and use for deletion purposes
+
 }
 
 // Function that determines the output message depending on user input for hours and minutes
@@ -616,9 +619,8 @@ function displayPodcasts() {
           </div>
         </div>
         <div class="podcast-list-item-del">
-          <img class="trash-icon-button" img src='${
-            images["trash-emoji"]
-          }' alt="Trash emoji representing delete functionality">
+          <img class="trash-icon-button" img src='${images["trash-emoji"]}' 
+          alt="Trash emoji representing delete functionality">
         </div>
       `;
 
@@ -707,17 +709,36 @@ function deleteEpisode(episodeItem) {
   }
 }
 
-// Update the delete button event listener outside the displayPodcasts() function
-podcastlist.addEventListener("click", function (event) {
+// Event listener for both delete buttons (trash emoji in list elements and delete button in show details popup)
+document.addEventListener("click", function (event) {
+  // Assigns the clicked element to the target variable 
   const target = event.target;
 
-  // Check if the clicked element has the class "trash-icon-button"
-  if (target.classList.contains("trash-icon-button")) {
-    // Find the closest ancestor element of the clicked element
-    const episodeItem = target.closest(".podcast-list-item-container");
+  // Check if the clicked element has the class "trash-icon-button" or "show-details-delete-button"
+  if (target.classList.contains("trash-icon-button") || target.classList.contains("show-details-delete-button")) {
+    // Declare variable for episode item 
+    let episodeItem;
 
-    // Call the deleteEpisode() function with the episode item to remove it from localStorage and the page
-    deleteEpisode(episodeItem);
+    // Nested conditional statements to check which button was clicked 
+    if (target.classList.contains("trash-icon-button")) {
+      // If trash emoji was clicked, find closest ancestor element and assign to episodeItem 
+      episodeItem = target.closest(".podcast-list-item-container");
+    } else {
+      // If delete button in show details pop-up was clicked, retrieve value (episode ID) and assign to episodeItem
+      // I resorted to adding the data attribute to the HTML, as I was unable to delete the item using the target.closest method
+      const episodeId = target.getAttribute("data-id");
+      episodeItem = document.querySelector(`.podcast-list-item-container[data-id="${episodeId}"]`);
+    }
+
+    // If episodeItem is valid (not null) then delete episode by calling deleteEpisode() function
+    if (episodeItem) {
+      // Remove episodeItem from localStorage and the page
+      deleteEpisode(episodeItem);
+      // Close pop-up window if deleted via delete button 
+      if (target.classList.contains("show-details-delete-button")) {
+        closeDetailsPopup();
+      }
+    }
   }
 });
 

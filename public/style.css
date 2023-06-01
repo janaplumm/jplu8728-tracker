@@ -240,7 +240,7 @@ header {
 
 /* Styling for add and delete episode buttons across both popups */
 #add-button,
-#delete-button {
+.show-details-delete-button {
   box-sizing: border-box;
   width: 25rem;
   height: 2.5rem;
@@ -464,7 +464,7 @@ button[type="button"]:hover {
 }
 
 /* Specific styling for delete episode button */
-#delete-button {
+.show-details-delete-button {
   background: #FFB6C8;
 }
 
