@@ -609,14 +609,76 @@ footer {
   html {
     overflow-x: auto;
   }
+
 }
 
-/* Max-width 400px */
-@media (max-width: 25rem) {
+/* Max-width 512px */
+@media (max-width: 32rem) {
+
+  /* RESPONSIVE LAYOUT */
 
   /* Responsive layout - makes a one column layout instead of a two-column layout */
   .left-container,
   .right-container {
     flex: 100%;
   }
+
+  /* FONT SIZE RESPONSIVENESS */
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3,
+  h4,
+  p,
+  button {
+    font-size: 16px;
+  }
+
+  /* IPOD RESPONSIVENESS */
+
+  /* Responsive iPod image sizing */
+  #iPod-photo {
+    width: 20rem;
+    height: 32rem;
+  }
+
+  /* Styling for iPod display container that holds the tracking item details */
+  .iPod-display {
+    width: 17rem;
+    height: 13rem;
+    border: 6px solid #000000;
+    border-radius: 8px;
+    transform: translate(0.8rem, 17.8rem);
+  }
+
+  .iPod-display-genre-img {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #iPod-display-podcast-title,
+  #iPod-display-episode-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limit text to 2 lines */
+    -webkit-box-orient: vertical;
+    text-align: center;
+    overflow: hidden;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #iPod-display-rating {
+    font-size: 18px;
+  }
+
+
 }
