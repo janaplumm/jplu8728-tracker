@@ -705,6 +705,13 @@ function deleteEpisode(episodeItem) {
       const newLastEpisode = localPodcasts[localPodcasts.length - 1];
       // Update the iPod display to show the new last episode
       iPodDisplay(newLastEpisode);
+      // If localPodcasts holds no items, then remove any data being displayed in the iPod and in Show Details pop-up
+    } else if (localPodcasts.length == 0) {
+        let displayiPod = document.querySelector(".iPod-display");
+        let displayDetails = document.getElementById("show-details-content");
+        
+        displayiPod.innerHTML = ``;
+        displayDetails.innerHTML = ``;
     }
   }
 }
