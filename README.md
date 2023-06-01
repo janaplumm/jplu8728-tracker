@@ -123,9 +123,11 @@ The mobile prototype design is similar to the mockup with two main amendments:
 * The **episode items** within the list container are **larger than in the mockup**, which helps with **legibility**. 
 * **Removed the blur background effect**, as it was difficult to implement, and also did not have the same effect when designing the mockups.
 
-<img src="/docs/iPhone-Prototype-1.png" alt="Overview mobile mockup" width="250" height="auto">
-<img src="/docs/iPhone-Prototype-2.png" alt="Overview mobile mockup" width="250" height="auto">
-<img src="/docs/iPhone-Prototype-3.png" alt="Overview mobile mockup" width="250" height="auto">
+<div>
+  <img src="/docs/iPhone-Prototype-1.png" alt="Overview mobile mockup" width="250" height="auto">
+  <img src="/docs/iPhone-Prototype-2.png" alt="Overview mobile mockup" width="250" height="auto">
+  <img src="/docs/iPhone-Prototype-3.png" alt="Overview mobile mockup" width="250" height="auto">
+</div>
 
 <br>
 
