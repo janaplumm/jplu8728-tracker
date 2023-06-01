@@ -22,27 +22,27 @@ Podfetch works with a backend web server using **Node.js** and **Express**. The 
 
 ### <u>Steps</u>
 
-#####1. Clone the GitHub Repository
+##### 1. Clone the GitHub Repository
 Use your terminal to clone the repository to your local machine
 ```HTML
 git clone https://github.com/janaplumm/jplu8728-tracker.git
 ```
-#####2. Install Node.js
+##### 2. Install Node.js
 Download the Installer from the [Node.js Website](https://nodejs.org) and install Node.js and npm (Node Package Manager). Verify that the installation was successful. 
 ```HTML
 node --version
 ```
-#####3. Install Dependencies
+##### 3. Install Dependencies
 In the root directory of the cloned GitHub repository, install the Express framework. 
 ```HTML
 npm install express
 ```
-#####4. Start the Server 
+##### 4. Start the Server 
 Start the web server using the script defined in the package.json file. 
 ```HTML
 npm run start
 ```
-#####5. Open the Application 
+##### 5. Open the Application 
 Open your web browser and go to the localhost URL (port number may vary if port is taken). 
 ```HTML
 http://localhost:8888
@@ -52,6 +52,8 @@ http://localhost:8888
 
 
 ## 1. Podfetch: Overview
+
+Podfetch pays homage to the **company Apple** using a minimalistic interface and typography. The term 'Podcast' was coined in 2004 by journalist Ben Hammersley, who combined the words 'iPod' and 'Broadcast' (Yaman, 2016). Taking inspiration from this, the focal point of the application is a **silver iPod classic**. The use of **Apple emoji imagery** links to the **millennial target group** and should encourage users to engage with the app and podcasts. 
 
 ### <u>Mockup Desktop</u>
 
@@ -208,3 +210,5 @@ a.skip-main:focus {
 Overall, creating this prototype website was quite a **difficult**, but also very **rewarding process**. It taught me to look beyond the materials taught during the lectures and tutorials and to work on my **problem solving skills**. The **responsiveness** was one of the trickier concepts to get my head around, but thanks to this final assignment, I feel a greater level of understanding of it than before. For my next website, I would consider **more planning**, such as considering more **accessibility** and **responsiveness** before coding, and I also would take more care in **structuring the CSS**, like creating more common elements to avoid having to re-use a lot of code. I also look forward to learning more about **JavaScript** in Advanced Web Design, as I purposefully avoided it for this assignment in order to challenge and strengthen my **HTML and CSS understanding**. 
 
 ## References
+
+Yaman, İ. (2016). The Potential Benefits of Podcasts for Language Learning. Journal of Educational and Instructional Studies, 6(1), 60–66.
