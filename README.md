@@ -116,6 +116,9 @@ The original mockup design for the mobile version **keeps the iPod as the focal 
 
 <img src="/docs/iPhone-Mockup-3.png" alt="Overview mobile mockup" width="250" height="auto">
 
+![Image 1](/docs/iPhone-Mockup-1.pngg) ![Image 2](/docs/iPhone-Mockup-2.png) ![Image 3](/docs/iPhone-Mockup-3.png)
+
+
 ### <u>Prototype Responsive Mobile</u>
 
 The mobile prototype design is similar to the mockup with two main amendments: 
