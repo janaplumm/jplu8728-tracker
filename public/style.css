@@ -642,43 +642,229 @@ footer {
 
   /* IPOD RESPONSIVENESS */
 
+  .iPod {
+    transform: translate(4rem, -18rem);
+  }
+
   /* Responsive iPod image sizing */
   #iPod-photo {
     width: 20rem;
     height: 32rem;
   }
 
-  /* Styling for iPod display container that holds the tracking item details */
+  /* Responsive iPod display container sizing */
   .iPod-display {
     width: 17rem;
     height: 13rem;
     border: 6px solid #000000;
     border-radius: 8px;
-    transform: translate(0.8rem, 17.8rem);
+    transform: translate(0.8rem, 17rem);
   }
 
+  /* Responsive iPod genre image sizing */
   .iPod-display-genre-img {
     width: 4rem;
     height: 4rem;
     margin-bottom: 0.5rem;
   }
 
+  /* Responsive iPod display podcast and episode titles sizing */
   #iPod-display-podcast-title,
   #iPod-display-episode-title {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    /* Limit text to 2 lines */
-    -webkit-box-orient: vertical;
-    text-align: center;
-    overflow: hidden;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     margin-bottom: 0.5rem;
   }
 
+  /* Responsive iPod display rating sizing */
   #iPod-display-rating {
     font-size: 18px;
   }
 
+  /* Responsive iPod show details and add episode button sizing and positioning */
+  #show-details-button,
+  #add-episode-button {
+    font-size: 16px;
+    line-height: 1.2rem;
+  }
+
+  #show-details-button {
+    transform: translate(7.2rem, 19.6rem);
+  }
+
+  #add-episode-button {
+    transform: translate(3.2rem, 27.6rem);
+  }
+
+  /* Responsive iPod shuffle buttons sizing and positioning */
+  #left-shuffle-button,
+  #right-shuffle-button {
+    width: 2.5rem;
+    height: 1.5rem;
+  }
+
+  #left-shuffle-button {
+    transform: translate(-4.5rem, 24.6rem);
+  }
+
+  #right-shuffle-button {
+    transform: translate(0.7rem, 24.6rem);
+  }
+
+  /* POP-UP ELEMENTS RESPONSIVENESS */
+
+  /* Responsive pop-up container sizing and styling */
+  .podcast-popup-container {
+    position: absolute;
+    top: 8rem;
+    left: 3rem;
+    width: 21rem;
+    height: 40rem;
+    border-radius: 32px;
+  }
+
+  /* Responsive close button sizing and styling */
+  .close-popup-button {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
+  }
+
+  /* Responsive add and delete buttons sizing and styling */
+  #add-button,
+  .show-details-delete-button {
+    width: 17rem;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid #000000;
+    border-radius: 10px;
+  }
+
+  /* ADD PODCAST POP-UP RESPONSIVENESS */
+
+  /* Responsive form padding */
+  #add-podcast-form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* Responsive label styling */
+  label {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Responsive styling for temporary input text */
+  input[type="text"],
+  input[type="number"],
+  select {
+    font-size: 14px;
+  }
+
+  /* Responsive styling for input text form elements  */
+  input[type="text"],
+  select {
+    /* 'select' selects the dropdown menu styling */
+    width: 17rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Responsive styling for input number form elements  */
+  input[type="number"] {
+    box-sizing: border-box;
+    width: 4rem;
+    height: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  /* Responsive styling for hours and minutes form elements */
+  .episode-hours-container,
+  .episode-minutes-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 1.3rem;
+  }
+
+  /* Responsive styling for hours and minutes form labels */
+  .episode-hours-container label,
+  .episode-minutes-container label {
+    margin-right: 0.5rem;
+  }
+
+  /* Responsive styling for star rating form element */
+  .episode-completed-container {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Responsive styling for title elements duration and completed */
+  #episode-duration-title,
+  #episode-completed-title {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Responsive styling for the episode completed (yes) button */
+  #episodeCompletedTrue {
+    width: 11.25rem;
+    height: 2rem;
+  }
+
+  /* Responsive styling for the episode completed (yes) button */
+  #episodeCompletedFalse {
+    width: 11.25rem;
+    height: 2rem;
+    margin-left: 2.5rem;
+  }
+
+  /* Responsive font size for emoji thumbs up or down */
+  #yes-emoji,
+  #no-emoji {
+    font-size: 16px;
+  }
+
+  /* Responsive styling for the star rating container */
+  .star-rating-container {
+    box-sizing: border-box;
+    width: 17rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+  }
+
+  /* Responsive styling for the star sizes */
+  .star-rating-container #rating {
+    font-size: 18px;
+  }
+
+  /* Responsive font sizing for required text */
+  #required-text {
+    font-size: 14px;
+  }
+
+  /* SHOW DETAILS POP-UP RESPONSIVENESS */
+
+  /* Responsive styling for container holding content of episode item data */
+  #show-details-content {
+    margin-left: 2.5rem;
+    padding-right: 1rem;
+  }
+
+  /* Responsive styling heading margin spacing */
+  .show-details-heading {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Responsive styling for genre image */
+  .show-details-genre-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: translate(0rem, 1.2rem);
+  }
 
 }
