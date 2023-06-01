@@ -737,9 +737,13 @@ footer {
     width: 17rem;
     height: 2.5rem;
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border: 2px solid #000000;
     border-radius: 10px;
+  }
+
+  .show-details-delete-button {
+    margin-top: 1rem;
   }
 
   /* ADD PODCAST POP-UP RESPONSIVENESS */
@@ -768,7 +772,7 @@ footer {
   select {
     /* 'select' selects the dropdown menu styling */
     width: 17rem;
-    height: 2rem;
+    height: 2.2rem;
     margin-bottom: 0.5rem;
   }
 
@@ -843,7 +847,7 @@ footer {
 
   /* Responsive font sizing for required text */
   #required-text {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   /* SHOW DETAILS POP-UP RESPONSIVENESS */
@@ -852,6 +856,8 @@ footer {
   #show-details-content {
     margin-left: 2.5rem;
     padding-right: 1rem;
+    margin-left: 2rem;
+    padding-right: 1rem;
   }
 
   /* Responsive styling heading margin spacing */
@@ -859,12 +865,61 @@ footer {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
-  
+
   /* Responsive styling for genre image */
   .show-details-genre-img {
     width: 2.5rem;
     height: 2.5rem;
     transform: translate(0rem, 1.2rem);
+  }
+
+  /* TRACKING LIST ELEMENT RESPONSIVENESS */
+
+  /* Responsive sizing and positioning for container holding the list of podcast elements */
+  #podcast-list {
+    width: 19.5rem;
+    height: 32rem;
+    transform: translate(2.6rem, 1rem);
+  }
+
+  /* Responsive styling for individual items */
+  .podcast-list-item-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  /* Responsive styling for the container holding the individual podcast information  */
+  .podcast-list-item-details {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: auto;
+    padding: 1rem;
+    border-right: 0px;
+  }
+
+  /* Responsive styling for the genre image  */
+  #podcast-list-item-genre-img {
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem;
+  }
+
+  /* Responsive styling for the podcast and episode titles  */
+  .podcast-list-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.5rem;
+  }
+
+  /* Responsive styling for the container holding the delete button in the form of a trash emoji */
+  .podcast-list-item-del {
+    width: auto;
+    min-height: 6rem;
+    height: auto;
+    border-top: 2px solid #000000;
   }
 
 }
