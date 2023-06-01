@@ -1,14 +1,13 @@
 // IMPORT IMAGES
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
-// This generates a list of paths to access files by their type using * to add any file with .png extension 
+// This generates a list of paths to access files by their type using * to add any file with .png extension
 
 import images from "./images/*.png";
 //console.log(images);
 
-
 // GENRE IMAGE SELECTION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
-// This selects what image matches what genre 
+// This selects what image matches what genre
 
 function genreImage(genre) {
   // Create a variable that is returned at the end
@@ -74,10 +73,9 @@ function genreImage(genre) {
   return genreImage;
 }
 
-
 // IPOD DISPLAY
 // Used similar code structure of displayPodcast function
-// This manipulates what episode data is shown in the iPod display depending on user selection 
+// This manipulates what episode data is shown in the iPod display depending on user selection
 
 function iPodDisplay(episode) {
   // Create a new variable that links to the HTML iPod display
@@ -114,7 +112,6 @@ function iPodDisplay(episode) {
   // Set the currentEpisode variable to the displayed episode which will be used for the shuffle button functions
   currentEpisode = episode;
 }
-
 
 // POP-UPS: OPEN AND CLOSE ADD-EPISODE-POPUP FUNCTIONS
 // Used the code from https://www.washington.edu/accesscomputing/webd2/student/unit5/module2/lesson5.html as base for the code below
@@ -158,7 +155,6 @@ document
   .getElementById("close-episode-popup")
   .addEventListener("click", closeEpisodePopup);
 
-
 // POP-UPS: OPEN AND CLOSE SHOW-DETAILS-POPUP FUNCTIONS
 
 function openDetailsPopup() {
@@ -201,7 +197,6 @@ function closeDetailsPopup() {
 document
   .getElementById("close-details-popup")
   .addEventListener("click", closeDetailsPopup);
-
 
 // IPOD SHUFFLE LEFT AND RIGHT BUTTONS
 // Received this code from prompting ChatGPT (see Figure)
@@ -259,20 +254,19 @@ document
   .getElementById("right-shuffle-button")
   .addEventListener("click", shuffleLeft);
 
-
 // SHOW DETAILS POP-UP FEATURE
 // Used similar structure to genreImage function and displayPodcast function
-// This manipulates the episode data that is shown depending on user selection of list item 
+// This manipulates the episode data that is shown depending on user selection of list item
 
 function showEpisodeDetails(episode) {
   // Create a new variable that links to the show details content container
   let showEpisode = document.getElementById("show-details-content");
 
   // Create a variable that will hold the proper genre (not shortcut value)
-  let episodeGenre; 
+  let episodeGenre;
 
   // Use switch case for clean conditional statements depending on episode genre
-  switch(episode.genre) {
+  switch (episode.genre) {
     case "advice":
       episodeGenre = "Advice & Self-Help";
       break;
@@ -326,7 +320,9 @@ function showEpisodeDetails(episode) {
           <p id="podcast-input-genre">${episodeGenre}</p>
         </div>
       <div class="show-details-image">
-      <img class="show-details-genre-img" src="${genreImage(episode.genre).src}" 
+      <img class="show-details-genre-img" src="${
+        genreImage(episode.genre).src
+      }" 
       alt="${genreImage(episode.genre).alt}">
       </div>
       </section>
@@ -350,11 +346,12 @@ function showEpisodeDetails(episode) {
         <h3 class="show-details-heading">Episode Rating</h3>
         <p id="episode-input-rating">${ratingMessage(episode.rating)}</p>
       </section>
-      <button type="button" class="show-details-delete-button" data-id="${episode.id}">Delete Episode</button>
+      <button type="button" class="show-details-delete-button" data-id="${
+        episode.id
+      }">Delete Episode</button>
   `;
 
   // Added data-id attribute to delete button to link to unique ID and use for deletion purposes
-
 }
 
 // Function that determines the output message depending on user input for hours and minutes
@@ -390,28 +387,30 @@ function episodeDuration(episode) {
   return durationMessage;
 }
 
-// Function that determines the output message depending on user input for episode completed 
+// Function that determines the output message depending on user input for episode completed
 
 function episodeGreenTick(episode) {
-  let completeMessage; 
+  let completeMessage;
 
   // Received this code to convert the date input from prompting ChatGPT (see Figure)
-  const options = { day: 'numeric', month: 'long', year: 'numeric' };
-  const completionDate = new Date(episode.date).toLocaleDateString(undefined, options);
+  const options = { day: "numeric", month: "long", year: "numeric" };
+  const completionDate = new Date(episode.date).toLocaleDateString(
+    undefined,
+    options
+  );
 
   if (episode.completed === true) {
     completeMessage = "Yes ✅ on " + completionDate;
   } else {
-    completeMessage = "No"
+    completeMessage = "No";
   }
 
   return completeMessage;
 }
 
-
 // FORM SUBMISSION HANDLING
 // Used this code from unit content Scrimba JS Objects - Input and event handling
-// This triggers how the user input data is handled once the user submits an episode 
+// This triggers how the user input data is handled once the user submits an episode
 
 // Create variables that use HTML elements
 const form = document.getElementById("add-podcast-form");
@@ -471,7 +470,6 @@ form.addEventListener("submit", function (event) {
   });
 });
 
-
 // INPUT FORM: STAR RATING FEATURE
 // Received this code from prompting ChatGPT (see Figure)
 // This code converts the user rating value from 1 - 5 into star emojis
@@ -511,7 +509,6 @@ stars.forEach((star) => {
   });
 });
 
-
 // INPUT FORM: DROPDOWN MENU FEATURE
 // Received this code from prompting ChatGPT (see Figure)
 // This code sorts the genre list alphabetically to keep 'Comedy' in order
@@ -539,9 +536,8 @@ for (let i = 0; i < options.length; i++) {
 // Set the selected value
 selectElement.value = selectedValue;
 
-
 // INPUT FORM: EPISODE COMPLETED BUTTONS (TRUE OR FALSE BOOLEAN VALUE)
-// This checks that the user selected either the 'yes' or 'no' button for episode completion 
+// This checks that the user selected either the 'yes' or 'no' button for episode completion
 
 // Global variable for episodeCompleted
 
@@ -579,7 +575,6 @@ yesButton.addEventListener("click", function () {
 noButton.addEventListener("click", function () {
   episodeCompletedButton(false);
 });
-
 
 // EPISODE ITEM DISPLAY
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
@@ -629,9 +624,9 @@ function displayPodcasts() {
 
       // When user clicks on an episode item, this is displayed in the iPod display
       episodeItem.addEventListener("click", function () {
-        // Call iPodDisplay function to display specific episode within the iPod 
+        // Call iPodDisplay function to display specific episode within the iPod
         iPodDisplay(episode);
-        // Load this data also into the show details popup 
+        // Load this data also into the show details popup
         showEpisodeDetails(episode);
       });
     }); // Closing bracket for local podcasts loop statement
@@ -673,7 +668,6 @@ function greenTick(completed) {
 // Calling the displayPodcasts function when the user loads the HTML page in order for their local storage data to appear instantly
 window.addEventListener("load", displayPodcasts);
 
-
 // EPISODE ITEM DELETION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
 // This allows the user to visually delete a list item, as well as remove it permanently from localStorage
@@ -707,41 +701,46 @@ function deleteEpisode(episodeItem) {
       iPodDisplay(newLastEpisode);
       // If localPodcasts holds no items, then remove any data being displayed in the iPod and in Show Details pop-up
     } else if (localPodcasts.length == 0) {
-        let displayiPod = document.querySelector(".iPod-display");
-        let displayDetails = document.getElementById("show-details-content");
-        
-        displayiPod.innerHTML = ``;
-        displayDetails.innerHTML = ``;
+      let displayiPod = document.querySelector(".iPod-display");
+      let displayDetails = document.getElementById("show-details-content");
+
+      displayiPod.innerHTML = ``;
+      displayDetails.innerHTML = ``;
     }
   }
 }
 
 // Event listener for both delete buttons (trash emoji in list elements and delete button in show details popup)
 document.addEventListener("click", function (event) {
-  // Assigns the clicked element to the target variable 
+  // Assigns the clicked element to the target variable
   const target = event.target;
 
   // Check if the clicked element has the class "trash-icon-button" or "show-details-delete-button"
-  if (target.classList.contains("trash-icon-button") || target.classList.contains("show-details-delete-button")) {
-    // Declare variable for episode item 
+  if (
+    target.classList.contains("trash-icon-button") ||
+    target.classList.contains("show-details-delete-button")
+  ) {
+    // Declare variable for episode item
     let episodeItem;
 
-    // Nested conditional statements to check which button was clicked 
+    // Nested conditional statements to check which button was clicked
     if (target.classList.contains("trash-icon-button")) {
-      // If trash emoji was clicked, find closest ancestor element and assign to episodeItem 
+      // If trash emoji was clicked, find closest ancestor element and assign to episodeItem
       episodeItem = target.closest(".podcast-list-item-container");
     } else {
       // If delete button in show details pop-up was clicked, retrieve value (episode ID) and assign to episodeItem
       // I resorted to adding the data attribute to the HTML, as I was unable to delete the item using the target.closest method
       const episodeId = target.getAttribute("data-id");
-      episodeItem = document.querySelector(`.podcast-list-item-container[data-id="${episodeId}"]`);
+      episodeItem = document.querySelector(
+        `.podcast-list-item-container[data-id="${episodeId}"]`
+      );
     }
 
     // If episodeItem is valid (not null) then delete episode by calling deleteEpisode() function
     if (episodeItem) {
       // Remove episodeItem from localStorage and the page
       deleteEpisode(episodeItem);
-      // Close pop-up window if deleted via delete button 
+      // Close pop-up window if deleted via delete button
       if (target.classList.contains("show-details-delete-button")) {
         closeDetailsPopup();
       }
@@ -749,10 +748,9 @@ document.addEventListener("click", function (event) {
   }
 });
 
-
 // PODCAST ARRAY & OBJECT CREATION
 // Modified Rob's code from https://github.com/robdongas/deco2017-task-tracker/blob/b070dc4ff3d621b124326d04366782299a4961c8/public/script.js
-// This handles how the user input data is stored in the backend server of localStorage 
+// This handles how the user input data is stored in the backend server of localStorage
 
 // Function contains the object that is going to be added to the array with each form submission
 function addPodcastEpisode(
@@ -802,17 +800,24 @@ function addPodcastEpisode(
   displayPodcasts();
 }
 
-// LOAD EXAMPLE EPISODE ELEMENT IF LOCALSTORAGE EMPTY 
+// LOAD EXAMPLE EPISODE ELEMENT IF LOCALSTORAGE EMPTY
 // Received this code from prompting ChatGPT (see Figure)
 
 // If local storage is empty when the page loads, then call the function to display example podcast episode element
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
   let localEpisodes = JSON.parse(this.localStorage.getItem("episodes"));
 
   if (localEpisodes == null || localEpisodes.length === 0) {
     // Call the function to display example podcast episode element for anyone who loads the website for the first time
-addPodcastEpisode("Serial", "investigative", "Sarah Koenig", "Serial S01 - Ep.1: The Alibi", 1, 36, true, 4);
+    addPodcastEpisode(
+      "Serial",
+      "investigative",
+      "Sarah Koenig",
+      "Serial S01 - Ep.1: The Alibi",
+      1,
+      36,
+      true,
+      4
+    );
   }
 });
-
-

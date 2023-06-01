@@ -131,14 +131,15 @@ header {
 /* Used code from https://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-css/13924997#13924997 */
 #iPod-display-podcast-title,
 #iPod-display-episode-title {
-   display: -webkit-box;
-   -webkit-line-clamp: 2; /* Limit text to 2 lines */
-   -webkit-box-orient: vertical;
-   text-align: center;
-   overflow: hidden;
-   padding-left: 1rem;
-   padding-right: 1rem;
-   margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Limit text to 2 lines */
+  -webkit-box-orient: vertical;
+  text-align: center;
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 #iPod-display-rating {
@@ -450,16 +451,18 @@ button[type="button"]:hover {
 /* Limit line count for long podcast title names */
 #podcast-input-name {
   display: -webkit-box;
-   -webkit-line-clamp: 2; /* Limit text to 2 lines */
-   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* Limit text to 2 lines */
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 /* Limit line count for long episode title names */
 #episode-input-title {
   display: -webkit-box;
-   -webkit-line-clamp: 3; /* Limit text to 3 lines */
-   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  /* Limit text to 3 lines */
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -481,7 +484,8 @@ li {
   flex-flow: column;
   align-items: center;
   align-content: flex-start;
-  overflow: auto; /* Enables scrolling */
+  overflow: auto;
+  /* Enables scrolling */
   width: 50rem;
   height: 45rem;
   margin: 1rem;
@@ -492,8 +496,8 @@ li {
 
 /* Used code from this Codepen to style scrollbar https://codepen.io/devstreak/pen/dMYgeO */
 #podcast-list::-webkit-scrollbar {
-	width: 1.25rem;
-	background-color: #F5F5F5;
+  width: 1.25rem;
+  background-color: #F5F5F5;
 }
 
 /* Scrollbar handle */
@@ -505,7 +509,7 @@ li {
 .podcast-list-item-container {
   display: flex;
   margin-top: 1rem;
-  background-color: white; 
+  background-color: white;
   border: 2px solid #000000;
   border-radius: 20px 20px 20px 20px;
   /* Added padding to the right to create space with the scrollbar */
@@ -521,7 +525,7 @@ li {
 }
 
 .podcast-list-item-container.active {
-  background-color: #C8B6FF; 
+  background-color: #C8B6FF;
 }
 
 /* Styling for the container holding the individual podcast information  */
