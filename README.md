@@ -19,7 +19,6 @@ The **desktop version** was created using the dimensions of **1512 x 775** and t
 
 Podfetch works with a backend web server using **Node.js** and **Express**. The following steps need to be carried out before running Podfetch on your local machine. 
 
-
 ### <u>Steps</u>
 
 ##### 1. Clone the GitHub Repository
@@ -50,138 +49,72 @@ http://localhost:8888
 
 <br>
 
-
-## 1. Podfetch: Overview
+## From Design to Prototype
 
 Podfetch pays homage to the **company Apple** using a minimalistic interface and typography. The term 'Podcast' was coined in 2004 by journalist Ben Hammersley, who combined the words 'iPod' and 'Broadcast' (Yaman, 2016). Taking inspiration from this, the focal point of the application is a **silver iPod classic**. The use of **Apple emoji imagery** links to the **millennial target group** and should encourage users to engage with the app and podcasts. 
 
-### <u>Mockup Desktop</u>
+### <u>Mockup Desktop: Overview</u>
 
-Summary
+The original mockup design for the desktop version consists of a **clean heading**, a **list containing tracked episode elements** and an **iPod** for main controls. Black and white minimalist colours are complemented with a splash of bright colours to lift the aesthethic and appeal to the target group. 
 
 ![Mockup Landing page](/docs/Desktop-Mockup-1.png)
 
-### <u>Prototype Desktop</u>
+### <u>Mockup Desktop: Add Episode Pop-up</u>
 
-Summary
-
-![Prototype Landing page](/docs/Desktop-Prototype-1.png)
-
-### <u>Mockup Mobile</u>
-
-Summary
-
-<img src="/docs/iPhone-Mockup-1.png" alt="Overview mobile mockup" width="250" height="auto">
-
-<img src="/docs/iPhone-Mockup-2.png" alt="Overview mobile mockup" width="250" height="auto">
-
-### <u>Prototype Mobile</u>
-
-Summary
-
-<img src="/docs/iPhone-Prototype-1.png" alt="Overview mobile mockup" width="auto" height="auto">
-
-#### <u>Reflections</u>
-
-* Text 1
-* Text 2
-* Text 3 
-
-```HTML
-<a class="skip-main" href="#main"><h3>Skip to main content</h3></a>
-```
-```CSS
-/* this hides the skip to main content link and only reveals it when it detects the tab key being used for accessibility purposes */
-a.skip-main {
-  position: fixed;
-  top: 0;
-  transform: translate(100%, -100%);
-}
-
-a.skip-main:focus {
-  /* transition will add a subtle animation when this link becomes active or focused */
-  transition: transform 0.4s;
-  transform: translate(100%, 120%);
-}
-```
-
-## 2. Podfetch: Add Episode Pop-up
-
-### <u>Mockup Desktop</u>
-
-Summary
+Used a **pop-up form with a one-column layout** for the user to add their podcast episode. Field **labels are positioned above the fields** so users can easily and quickly scan the form. **All fields are required except for the rating field**. This is notated with asterisks (*) and an alert message below the submission button.  
 
 ![Mockup Landing page](/docs/Desktop-Mockup-2.png)
 
-### <u>Prototype Desktop</u>
+### <u>Mockup Desktop: Show Episode Details Pop-up</u>
+
+The second pop-up lets the user **view all the input data they entered when they added an episode**. This helps keep the information on display in the list container for each episode element minimal without overwhelming the user or the page. The user can select any episode, click 'Show Details' on the click wheel and view all other additional information. 
+
+As well as being able to delete an item from the list container via the trash emoji image, the user can also **delete an episode via the delete button** in the pop-up.  
+
+![Mockup Landing page](/docs/Desktop-Mockup-3.png)
+
+### <u>Prototype Desktop: Overview </u>
+
+The prototype desktop design closely resembles the mockup with a few minor changes. 
+
+* **I swapped the iPod with the list container**, as it felt more logical when going from the desktop to mobile view. 
+* After receiving feedback on the mockup design, **I removed the bright green colour (#EDFFB6)** and only used the light purple (#C8B6FF) as an accent. This makes the aesthethic look more consistent. 
+* **Changed 'Add Podcast' to 'Add Episode'** on the iPod click wheel for clarity purposes.
+* Made the **scrollbar** in the list container more **minimal with no arrows**.
+
+![Prototype Landing page](/docs/Desktop-Prototype-1.png)
+
+### <u>Prototype Desktop: Add Episode Pop-up</u>
 
 Summary
 
 ![Prototype Landing page](/docs/Desktop-Prototype-2.png)
 
-### <u>Mockup Mobile</u>
-
-Summary
-
-<img src="/docs/iPhone-Mockup-3.png" alt="Overview mobile mockup" width="250" height="auto">
-
-### <u>Prototype Mobile</u>
-
-Summary
-
-<img src="/docs/iPhone-Prototype-2.png" alt="Overview mobile mockup" width="250" height="auto">
-
-#### <u>Reflections</u>
-
-* Text 1
-* Text 2
-* Text 3 
-
-```HTML
-<a class="skip-main" href="#main"><h3>Skip to main content</h3></a>
-```
-```CSS
-/* this hides the skip to main content link and only reveals it when it detects the tab key being used for accessibility purposes */
-a.skip-main {
-  position: fixed;
-  top: 0;
-  transform: translate(100%, -100%);
-}
-
-a.skip-main:focus {
-  /* transition will add a subtle animation when this link becomes active or focused */
-  transition: transform 0.4s;
-  transform: translate(100%, 120%);
-}
-```
-
-## 3. Podfetch: Show Details Pop-up
-
-### <u>Mockup Desktop</u>
-
-Summary
-
-![Mockup Landing page](/docs/Desktop-Mockup-3.png)
-
-### <u>Prototype Desktop</u>
+### <u>Prototype Desktop: Show Episode Details Pop-up</u>
 
 Summary
 
 ![Prototype Landing page](/docs/Desktop-Prototype-3.png)
 
-### <u>Mockup Mobile</u>
+### <u>Mockup Responsive Mobile</u>
 
-Summary
+The original mockup design for the mobile version keeps the iPod as the focal point of the page with the list container below. The episode items within the list are changed to a vertical layout compared to in the horizontal desktop version. 
 
-<img src="/docs/iPhone-Mockup-4.png" alt="Overview mobile mockup" width="250" height="auto">
+<img src="/docs/iPhone-Mockup-1.png" alt="Overview mobile mockup" width="250" height="auto">
 
-### <u>Prototype Mobile</u>
+<img src="/docs/iPhone-Mockup-2.png" alt="Overview mobile mockup" width="250" height="auto">
 
-Summary
+<img src="/docs/iPhone-Mockup-3.png" alt="Overview mobile mockup" width="250" height="auto">
 
+### <u>Prototype Responsive Mobile</u>
+
+The mobile prototype design is similar to the mockup. The **episode items** within the list container are **larger than in the mockup**, which helps with **legibility**. 
+
+<img src="/docs/iPhone-Prototype-1.png" alt="Overview mobile mockup" width="250" height="auto">
+<img src="/docs/iPhone-Prototype-2.png" alt="Overview mobile mockup" width="250" height="auto">
 <img src="/docs/iPhone-Prototype-3.png" alt="Overview mobile mockup" width="250" height="auto">
 
-#### <u>Reflections</u>
+#### <u>Code Reflections</u>
 
 * Text 1
 * Text 2
