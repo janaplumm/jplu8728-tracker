@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Podfetch is a **podcast tracking application** that helps people easily track their listening habits. Whether it's the classic comedy show, motivating self-help podcast or binge-worthy true crime series, Podfetch keeps them all in one place. 
+Podfetch is a single-page **podcast tracking application** that helps people easily track their listening habits. Whether it's the classic comedy show, motivating self-help podcast or binge-worthy true crime series, Podfetch keeps them all in one place. 
 
 With Podfetch, you can:
 
@@ -11,11 +11,45 @@ With Podfetch, you can:
 * **View all added episodes**
 * **See details of a specific episode**
 
-The desktop version was created using the dimensions of **1512 x 775** and the responsive mobile version should be adjusted to **400 x 775** for optimal viewing experience. 
+The **desktop version** was created using the dimensions of **1512 x 775** and the **responsive mobile version** should be adjusted to **400 x 775** for optimal viewing experience. 
 
-## Installation
+<br>
+
+## Set Up
+
+Podfetch works with a backend web server using **Node.js** and **Express**. The following steps need to be carried out before running Podfetch on your local machine. 
+
 
 ### <u>Steps</u>
+
+#####1. Clone the GitHub Repository
+Use your terminal to clone the repository to your local machine
+```HTML
+git clone https://github.com/janaplumm/jplu8728-tracker.git
+```
+#####2. Install Node.js
+Download the Installer from the [Node.js Website](https://nodejs.org) and install Node.js and npm (Node Package Manager). Verify that the installation was successful. 
+```HTML
+node --version
+```
+#####3. Install Dependencies
+In the root directory of the cloned GitHub repository, install the Express framework. 
+```HTML
+npm install express
+```
+#####4. Start the Server 
+Start the web server using the script defined in the package.json file. 
+```HTML
+npm run start
+```
+#####5. Open the Application 
+Open your web browser and go to the localhost URL (port number may vary if port is taken). 
+```HTML
+http://localhost:8888
+```
+
+<br>
+
 
 ## 1. Podfetch: Overview
 
@@ -43,7 +77,7 @@ Summary
 
 Summary
 
-<img src="/docs/iPhone-Prototype-1.png" alt="Overview mobile mockup" width="250" height="auto">
+<img src="/docs/iPhone-Prototype-1.png" alt="Overview mobile mockup" width="auto" height="auto">
 
 #### <u>Reflections</u>
 
@@ -174,25 +208,3 @@ a.skip-main:focus {
 Overall, creating this prototype website was quite a **difficult**, but also very **rewarding process**. It taught me to look beyond the materials taught during the lectures and tutorials and to work on my **problem solving skills**. The **responsiveness** was one of the trickier concepts to get my head around, but thanks to this final assignment, I feel a greater level of understanding of it than before. For my next website, I would consider **more planning**, such as considering more **accessibility** and **responsiveness** before coding, and I also would take more care in **structuring the CSS**, like creating more common elements to avoid having to re-use a lot of code. I also look forward to learning more about **JavaScript** in Advanced Web Design, as I purposefully avoided it for this assignment in order to challenge and strengthen my **HTML and CSS understanding**. 
 
 ## References
-
-20 web design principles to follow. (n.d.). Retrieved September 24, 2022, from Learn website: https://www.canva.com/learn/20-web-design-principles-follow/
-
-Aria-label—Examples and best practices. (n.d.). Retrieved November 11, 2022, from Aditus website: https://www.aditus.io/aria/aria-label/
-
-Monus, A. (2018, October 26). Keyboard Accessibility Tips Using HTML and CSS. Retrieved October 29, 2022, from Web Design Envato Tuts+ website: https://webdesign.tutsplus.com/articles/keyboard-accessibility-tips-using-html-and-css--cms-31966
-
-Overflow. (n.d.). Retrieved November 13, 2022, from Web.dev website: https://web.dev/learn/css/overflow/
-
-Pure CSS Responsive Navbar. (n.d.). Retrieved November 11, 2022, from CodePen website: https://codepen.io/jo_Geek/details/xgbaEr
-
-Rascia, T. (2017, April 5). Prevent Mouse Scroll from Zooming on Embedded Google Maps [Blog]. Retrieved November 8, 2022, from Tania Rascia website: https://www.taniarascia.com/prevent-mouse-scroll-from-zooming-on-embedded-google-maps/
-
-Skip to main content – IT Accessibility. (n.d.). Retrieved October 29, 2022, from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/
-
-WebAIM: Contrast Checker. (n.d.). Retrieved November 13, 2022, from https://webaim.org/resources/contrastchecker/
-
-Write descriptive link text—Access Guide. (n.d.). Retrieved November 13, 2022, from https://www.accessguide.io/guide/descriptive-link-text
-
-Wjertzoch, J. (2021, October 18). How to Make a Fully Accessible CSS-Only Carousel. Retrieved November 9, 2022, from Medium website: https://levelup.gitconnected.com/how-to-make-a-fully-accessible-css-only-carousel-40e8bd62032b
-
-Zubarieva, O. (2022, October 4). Website Carousel Design Best Practices and Examples. Retrieved November 13, 2022, from SendPulse Blog website: https://sendpulse.com/blog/website-carousel-design
