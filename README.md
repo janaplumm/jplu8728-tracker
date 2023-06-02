@@ -57,13 +57,13 @@ Podfetch pays homage to the **company Apple** using a minimalistic interface and
 
 The original mockup design for the desktop version consists of a **clean heading**, a **list containing tracked episode elements** and an **iPod** for main controls. Black and white minimalist colours are complemented with a splash of bright colours to lift the aesthethic and appeal to the target group. 
 
-![Mockup Landing page](/docs/Desktop-Mockup-1.png)
+![Mockup Page 1](/docs/Desktop-Mockup-1.png)
 
 ### <u>Mockup Desktop: Add Episode Pop-up</u>
 
 Used a **pop-up form with a one-column layout** for the user to add their podcast episode. Field **labels are positioned above the fields** so users can easily and quickly scan the form. **All fields are required except for the rating field**. This is notated with asterisks (*) and an alert message below the submission button.  
 
-![Mockup Landing page](/docs/Desktop-Mockup-2.png)
+![Mockup Page 2](/docs/Desktop-Mockup-2.png)
 
 ### <u>Mockup Desktop: Show Episode Details Pop-up</u>
 
@@ -71,7 +71,7 @@ The second pop-up lets the user **view all the input data they entered when they
 
 As well as being able to delete an item from the list container via the trash emoji image, the user can also **delete an episode via the delete button** in the pop-up.  
 
-![Mockup Landing page](/docs/Desktop-Mockup-3.png)
+![Mockup Page 3](/docs/Desktop-Mockup-3.png)
 
 ### <u>Prototype Desktop: Overview </u>
 
@@ -83,7 +83,7 @@ The prototype desktop design closely resembles the mockup with a few minor chang
 * Made the **scrollbar** in the list container more **minimal with no arrows**.
 * **Swapped the emoji image for 'History & Culture' genre** after doing user testing, as people felt the scroll was visually more interesting and relevant compared to the hut emoji. 
 
-![Prototype Landing page](/docs/Desktop-Prototype-1.png)
+![Prototype Page 1](/docs/Desktop-Prototype-1.png)
 
 ### <u>Prototype Desktop: Add Episode Pop-up</u>
 
@@ -98,22 +98,22 @@ The prototype user input form has a few changes:
 * Also **changed the height of the submission button** to match the 'Yes' and 'No' button height. 
 * **'Yes' and 'No' buttons remain blank** and **only change colour to light green or light red when** the user has **selected** either button.  
 
-![Prototype Landing page](/docs/Desktop-Prototype-2.png)
+![Prototype Page 2](/docs/Desktop-Prototype-2.png)
 
 ### <u>Prototype Desktop: Show Episode Details Pop-up</u>
 
 The 'Show Details' pop-up prototype most closely resembles the original mockup designs. The **only changes made affected the delete button**, which matches the sizing of the submission button. I **added a confirmation alert for the delete function** so that the user has to confirm that they want to delete an episode to avoid accidental deletion.  
 
-![Prototype Landing page](/docs/Desktop-Prototype-3.png)
+![Prototype Page 3](/docs/Desktop-Prototype-3.png)
 
 ### <u>Mockup Responsive Mobile</u>
 
 The original mockup design for the mobile version **keeps the iPod as the focal point** of the page with the list container below using **a one-column layout**. The episode items within the list are changed to a **vertical layout** compared to in the horizontal desktop version. For the pop-ups, a **blurry background** appears to help the users focus on the pop-ups. 
 
 <div>
-  <img src="/docs/iPhone-Mockup-1.png" alt="Overview mobile mockup" width="250" height="auto">
-  <img src="/docs/iPhone-Mockup-2.png" alt="Overview mobile mockup" width="250" height="auto">
-  <img src="/docs/iPhone-Mockup-3.png" alt="Overview mobile mockup" width="250" height="auto">
+  <img src="/docs/iPhone-Mockup-1.png" alt="Mobile mockup 1" width="250" height="auto">
+  <img src="/docs/iPhone-Mockup-2.png" alt="Mobile mockup 2" width="250" height="auto">
+  <img src="/docs/iPhone-Mockup-3.png" alt="Mobile mockup 3" width="250" height="auto">
 </div>
 
 ### <u>Prototype Responsive Mobile</u>
@@ -124,9 +124,9 @@ The mobile prototype design is similar to the mockup with two main amendments:
 * **Removed the blur background effect**, as it was difficult to implement, and also did not have the same effect when designing the mockups.
 
 <div>
-  <img src="/docs/iPhone-Prototype-1.png" alt="Overview mobile mockup" width="250" height="auto">
-  <img src="/docs/iPhone-Prototype-2.png" alt="Overview mobile mockup" width="250" height="auto">
-  <img src="/docs/iPhone-Prototype-3.png" alt="Overview mobile mockup" width="250" height="auto">
+  <img src="/docs/iPhone-Prototype-1.png" alt="Mobile prototype 1" width="250" height="auto">
+  <img src="/docs/iPhone-Prototype-2.png" alt="Mobile prototype 2" width="250" height="auto">
+  <img src="/docs/iPhone-Prototype-3.png" alt="Mobile prototype 3" width="250" height="auto">
 </div>
 
 <br>
@@ -135,9 +135,11 @@ The mobile prototype design is similar to the mockup with two main amendments:
 
 Podfetch is built using **HTML, CSS and JavaScript**. From the 'Introduction to Web Design' unit, **I had good fundamental HTML and CSS skills**, which I was able to apply on my own for this prototype. The **majority of the Javascript code is based on tutorial content** from this unit, particularly from the interactive task list code. For some additional functionality based on my designs, I sought out **coding examples from the internet** and **prompted ChatGPT** for specific coding assistance. 
 
+<br>
+
 #### <u>HTML Reflections</u>
 
-The HTML code sits within ./public/index.html
+*The HTML code sits within ./public/index.html*
 
 ##### Class and ID Attributes 
 
@@ -166,9 +168,13 @@ A lesson that cost me quite a bit of time was using the on-click attribute withi
 <script type="module" src="./script.js"></script>
 ```
 
+<br>
+
 #### <u>CSS Reflections</u>
 
-The CSS code sits within ./public/style.css
+*The CSS code sits within ./public/style.css*
+
+---
 
 ##### CSS Flexbox and Transform 
 
@@ -182,6 +188,8 @@ After learning a lot of valuable lessons from 'Introduction to Web Design', I st
   transform: translate(4rem, -20rem);
 }
 ```
+ 
+---
 
 ##### Limiting Line Length
 
@@ -204,6 +212,8 @@ While adding temporary episode items, I realised that some podcast and episode t
 }
 ```
 
+---
+
 ##### Scrollbar Styling
 
 As the list container is positioned within the page, I **enabeled scrolling and hid the overflow** so the user is able to add multiple episode items and scroll up and down to view them. In order to style the scrollbar, I made use of Webkit again by coming across a Code Pen that had multiple scrollbar stylings.   
@@ -221,10 +231,211 @@ As the list container is positioned within the page, I **enabeled scrolling and 
 }
 ```
 
+<br>
+
 #### <u>JavaScript Reflections</u>
 
-The JavaScript code sits within ./public/script.js
+*The JavaScript code sits within ./public/script.js*
 
+---
+
+##### iPod Shuffle Buttons 
+
+```JavaScript
+// IPOD SHUFFLE LEFT AND RIGHT BUTTONS
+// Received this code from prompting ChatGPT (see Figure 1)
+// Lets user move through the list of elements as an additional functionality
+
+// Define currentEpisode globally so it can be accessed by multiple functions
+let currentEpisode;
+
+function shuffleLeft() {
+  // Retrieve the list of podcast episodes from the localStorage
+  let localPodcasts = JSON.parse(localStorage.getItem("episodes"));
+
+  // Check if the localPodcasts variable is not empty and if there are episodes on the left side of the current episode
+  if (localPodcasts !== null && currentEpisode) {
+    let currentIndex = localPodcasts.findIndex(
+      (episode) => episode.id === currentEpisode.id
+    );
+
+    if (currentIndex > 0) {
+      // Update the current episode with the previous episode
+      currentEpisode = localPodcasts[currentIndex - 1];
+
+      // Display the previous episode in the iPod display
+      iPodDisplay(currentEpisode);
+    }
+  }
+}
+```
+
+<br>
+
+###### Figure 1: ChatGPT prompt reply for iPod shuffle buttons
+
+<img src="/docs/ChatGPT-1-Shuffle.jpeg" alt="Figure 1 - ChatGPT Shuffle Code" width="600" height="auto">
+
+---
+
+##### Date Format Conversion
+
+```JavaScript
+// Function that determines the output message depending on user input for episode completed
+
+function episodeGreenTick(episode) {
+  let completeMessage;
+
+  // Received this code to convert the date input from prompting ChatGPT (see Figure 2)
+  const options = { day: "numeric", month: "long", year: "numeric" };
+  const completionDate = new Date(episode.date).toLocaleDateString(
+    undefined,
+    options
+  );
+
+  if (episode.completed === true) {
+    completeMessage = "Yes ✅ on " + completionDate;
+  } else {
+    completeMessage = "No";
+  }
+
+  return completeMessage;
+}
+```
+
+<br>
+
+###### Figure 2: ChatGPT prompt reply for date format conversion
+
+<img src="/docs/ChatGPT-2-Date-Conversion.jpeg" alt="Figure 2 ChatGPT Date Conversion" width="600" height="auto">
+
+---
+
+##### Emoji Star Rating
+
+```JavaScript
+// INPUT FORM: STAR RATING FEATURE
+// Received this code from prompting ChatGPT (see Figure 3)
+// This code converts the user rating value from 1 - 5 into star emojis
+
+// Select and store all 'star' class name elements
+const stars = document.querySelectorAll(".star");
+// Select and store selected rating value
+const ratingInput = document.querySelector('[name="rating"]');
+
+// Loop over each star element
+stars.forEach((star) => {
+  // Event listener listens out for any user clicks
+  star.addEventListener("click", () => {
+    // When user clicks on a star, this value is selected and stored
+    const rating = star.getAttribute("data-rating");
+    const currentRating = ratingInput.value;
+
+    // Check for deselection of stars by the user to maintain correct value
+    if (currentRating === rating) {
+      // Deselect the current rating
+      ratingInput.value = "0";
+    } else {
+      // Select the clicked star
+      ratingInput.value = rating;
+    }
+
+    // Iterate over star elements
+    stars.forEach((s) => {
+      // Check if data-rating is less than or equal to updated ratingInput value
+      if (s.getAttribute("data-rating") <= ratingInput.value) {
+        s.innerHTML = "&#11088;"; // Unicode representing filled emoji star
+      } else {
+        s.innerHTML = "&#9734;"; // Unicode representing empty star
+      }
+    });
+    // console.log("Selected rating:", ratingInput.value);
+  });
+});
+```
+
+<br>
+
+###### Figure 3: ChatGPT prompt reply for star rating feature
+
+<img src="/docs/ChatGPT-3-Star-Rating.jpeg" alt="Figure 3 ChatGPT Star Rating" width="600" height="auto">
+
+---
+
+##### Dropdown Menu Alphabetical Order 
+
+```JavaScript
+// INPUT FORM: DROPDOWN MENU FEATURE
+// Received this code from prompting ChatGPT (see Figure 4)
+// This code sorts the genre list alphabetically to keep 'Comedy' in order
+
+// Get the select element
+const selectElement = document.getElementById("podcastGenre");
+
+// Sort the options alphabetically
+const options = Array.from(selectElement.options);
+options.sort(function (a, b) {
+  return a.text.localeCompare(b.text);
+});
+
+// Get the selected value
+const selectedValue = selectElement.value;
+
+// Clear the select element
+selectElement.innerHTML = "";
+
+// Insert the sorted options back into the select element
+for (let i = 0; i < options.length; i++) {
+  selectElement.appendChild(options[i]);
+}
+
+// Set the selected value
+selectElement.value = selectedValue;
+```
+
+<br>
+
+###### Figure 4: ChatGPT prompt reply for alphabetically sorting dropdown menu
+
+<img src="/docs/ChatGPT-4-Dropdown.jpeg" alt="Figure 4 ChatGPT Dropdown" width="600" height="auto">
+
+---
+
+##### Temporary Episode Item for New Users 
+
+```JavaScript
+// LOAD EXAMPLE EPISODE ELEMENT IF LOCALSTORAGE EMPTY
+// Received this code from prompting ChatGPT (see Figure 5)
+
+// If local storage is empty when the page loads, then call the function to display example podcast episode element
+window.addEventListener("load", function () {
+  let localEpisodes = JSON.parse(this.localStorage.getItem("episodes"));
+
+  if (localEpisodes == null || localEpisodes.length === 0) {
+    // Call the function to display example podcast episode element for anyone who loads the website for the first time
+    addPodcastEpisode(
+      "Serial",
+      "investigative",
+      "Sarah Koenig",
+      "Serial S01 - Ep.1: The Alibi",
+      1,
+      36,
+      true,
+      4
+    );
+  }
+});
+```
+
+<br>
+
+###### Figure 5: ChatGPT prompt reply for temporary episode item loading
+
+<img src="/docs/ChatGPT-5-Load.jpeg" alt="Figure 5 ChatGPT Load" width="600" height="auto">
+
+
+<br>
+<br>
 <br>
 
 ## Future Improvements
