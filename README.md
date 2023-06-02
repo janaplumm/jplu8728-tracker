@@ -141,7 +141,7 @@ The HTML code sits within ./public/index.html
 
 ##### Class and ID Attributes 
 
-Due to working with JavaScript, I learned that I can add both class and ID attributes to a single HTML element. The close button is featured on both pop-ups, so for CSS styling purposes I added a class attribute. For the JavaScript functionality, I used an ID attribute. 
+Due to working with JavaScript, I learned that I can **add both class and ID attributes to a single HTML element**. The close button is featured on both pop-ups, so for CSS styling purposes I added a class attribute. For the JavaScript functionality, I used an ID attribute. 
 
 ```HTML
 <img class="close-popup-button" id="close-episode-popup" 
@@ -150,42 +150,91 @@ src="./images/cancel-button.png" alt="Button with a cross to close pop-up window
 
 ##### Additional Form Field Attributes
 
-I also learned how to incorporate additional attributes for the user input form, including placeholder text, min and max values, and how to trigger a required prompt for the user to fill out all required form fields. 
+I also learned how to **incorporate additional attributes for the user input form**, including placeholder text, min and max values, and how to trigger a required prompt for the user to fill out all required form fields. 
 
 ```HTML
 <input type="number" id="episodeMinutes" name="episodeMinutes" 
 min="0" max="59" placeholder="41" required>
 ```
 
+##### Avoid On-Click Attribute 
+
+A lesson that cost me quite a bit of time was using the on-click attribute within my HTML code, which affected my existing JavaScript code once I added the 'type="module"' attribute to import images into the JavaScript file. After some testing with the console, I realised that the **issue was related to the scope of the JavaScript module** and **removed all on-click attributes**, which I replaced with event listeners. 
+
+```HTML
+ <!-- Link to the javascript file -->
+<script type="module" src="./script.js"></script>
+```
+
 #### <u>CSS Reflections</u>
 
 The CSS code sits within ./public/style.css
+
+##### CSS Flexbox and Transform 
+
+After learning a lot of valuable lessons from 'Introduction to Web Design', I started creating the using **flexbox for the styling of the elements**, especially any container elements. It helped a lot with the **dynamic responsiveness** later on. For this project in particular, I worked a lot with the **transform property** to move elements around and keep them in place. I tried using positioning, however, felt that this was not as flexible in that regard.  
+
+```CSS
+/* Styling for iPod, moving it to the correct spot on the screen */
+.iPod {
+  display: flex;
+  flex-direction: column;
+  transform: translate(4rem, -20rem);
+}
+```
+
+##### Limiting Line Length
+
+While adding temporary episode items, I realised that some podcast and episode titles are rather long. So, I found this solution from a Stack Overflow discussion that used **Webkit to determine line length within the iPod display**.  
+
+```CSS
+/* Styling for text elements to prevent overflow within the container if character length exceeds width */
+/* Used code from https://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-css/13924997#13924997 */
+#iPod-display-podcast-title,
+#iPod-display-episode-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Limit text to 2 lines */
+  -webkit-box-orient: vertical;
+  text-align: center;
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+```
+
+##### Scrollbar Styling
+
+As the list container is positioned within the page, I **enabeled scrolling and hid the overflow** so the user is able to add multiple episode items and scroll up and down to view them. In order to style the scrollbar, I made use of Webkit again by coming across a Code Pen that had multiple scrollbar stylings.   
+
+```CSS
+/* Used code from this Codepen to style scrollbar https://codepen.io/devstreak/pen/dMYgeO */
+#podcast-list::-webkit-scrollbar {
+  width: 1.25rem;
+  background-color: #F5F5F5;
+}
+
+/* Scrollbar handle */
+#podcast-list::-webkit-scrollbar-thumb {
+  background: #D9D9D9;
+}
+```
 
 #### <u>JavaScript Reflections</u>
 
 The JavaScript code sits within ./public/script.js
 
-* Text 1
-* Text 2
-* Text 3 
+<br>
 
-```HTML
-<a class="skip-main" href="#main"><h3>Skip to main content</h3></a>
-```
-```CSS
-/* this hides the skip to main content link and only reveals it when it detects the tab key being used for accessibility purposes */
-a.skip-main {
-  position: fixed;
-  top: 0;
-  transform: translate(100%, -100%);
-}
+## Future Improvements
 
-a.skip-main:focus {
-  /* transition will add a subtle animation when this link becomes active or focused */
-  transition: transform 0.4s;
-  transform: translate(100%, 120%);
-}
-```
+There are several improvements that can be made to the application for a more accessible and enjoyable user experience:
+
+* **Accessibility** - The current code only takes minimal accessibility into account, such as font legibility, colour contrast and button sizing. However, this can be improved with additional features like keyboard accessibility, screen readers and focus indicators. 
+* **Animations** - There is some animation in terms of hover and transition effects, but this app can become more playful. When the user clicks on a pop-up, for instance,  this can have a more engaging transition. 
+* **Responsiveness** - Current responsiveness is only tailored to desktop and mobile views and can be expanded to multiple views.
+* **User Control** - The user can only add, view and delete episode items. In the future, this could be scaled up to include editorial control and being able to customise the app for a more personal user experience. 
 
 <br>
 
