@@ -246,4 +246,8 @@ Overall, creating this prototype website was a **very challenging, but also rewa
 
 ## References
 
+Answer to „Limit text length to n lines using CSS“. (2012, December 18). Retrieved 2 June 2023, from Stack Overflow website: https://stackoverflow.com/a/13924997
+
+Custom Scrollbar styling. (o. J.). Retrieved 2 June 2023, from CodePen website: https://codepen.io/devstreak/details/dMYgeO
+
 Yaman, İ. (2016). The Potential Benefits of Podcasts for Language Learning. Journal of Educational and Instructional Studies, 6(1), 60–66.
