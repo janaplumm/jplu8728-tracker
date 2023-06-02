@@ -148,7 +148,7 @@ The mobile prototype design is similar to the mockup with two main amendments:
 
 <br>
 
-### <u>Code Reflections</u>
+## Code Reflections
 
 Podfetch is built using **HTML, CSS and JavaScript**. From the 'Introduction to Web Design' unit, **I had good fundamental HTML and CSS skills**, which I was able to apply on my own for this prototype. The **majority of the Javascript code is based on tutorial content** from this unit, particularly from the interactive task list code. For some additional functionality based on my designs, I sought out **coding examples from the internet** and **prompted ChatGPT** for specific coding assistance. 
 
@@ -158,7 +158,7 @@ Podfetch is built using **HTML, CSS and JavaScript**. From the 'Introduction to 
 
 *The HTML code sits within ./public/index.html*
 
-##### Class and ID Attributes 
+#### Class and ID Attributes 
 
 Due to working with JavaScript, I learned that I can **add both class and ID attributes to a single HTML element**. The close button is featured on both pop-ups, so for CSS styling purposes I added a class attribute. For the JavaScript functionality, I used an ID attribute. 
 
@@ -167,7 +167,7 @@ Due to working with JavaScript, I learned that I can **add both class and ID att
 src="./images/cancel-button.png" alt="Button with a cross to close pop-up window">
 ```
 
-##### Additional Form Field Attributes
+#### Additional Form Field Attributes
 
 I also learned how to **incorporate additional attributes for the user input form**, including placeholder text, min and max values, and how to trigger a required prompt for the user to fill out all required form fields. 
 
@@ -176,7 +176,7 @@ I also learned how to **incorporate additional attributes for the user input for
 min="0" max="59" placeholder="41" required>
 ```
 
-##### Avoid On-Click Attribute 
+#### Avoid On-Click Attribute 
 
 A lesson that cost me quite a bit of time was using the on-click attribute within my HTML code, which affected my existing JavaScript code once I added the 'type="module"' attribute to import images into the JavaScript file. After some testing with the console, I realised that the **issue was related to the scope of the JavaScript module** and **removed all on-click attributes**, which I replaced with event listeners. 
 
@@ -193,7 +193,7 @@ A lesson that cost me quite a bit of time was using the on-click attribute withi
 
 ---
 
-##### CSS Flexbox and Transform 
+#### CSS Flexbox and Transform 
 
 After learning a lot of valuable lessons from 'Introduction to Web Design', I started creating the using **flexbox for the styling of the elements**, especially any container elements. It helped a lot with the **dynamic responsiveness** later on. For this project in particular, I worked a lot with the **transform property** to move elements around and keep them in place. I tried using positioning, however, felt that this was not as flexible in that regard.  
 
@@ -208,7 +208,7 @@ After learning a lot of valuable lessons from 'Introduction to Web Design', I st
  
 ---
 
-##### Limiting Line Length
+#### Limiting Line Length
 
 While adding temporary episode items, I realised that some podcast and episode titles are rather long. So, I found this solution from a Stack Overflow discussion that used **Webkit to determine line length within the iPod display**.  
 
@@ -231,7 +231,7 @@ While adding temporary episode items, I realised that some podcast and episode t
 
 ---
 
-##### Scrollbar Styling
+#### Scrollbar Styling
 
 As the list container is positioned within the page, I **enabeled scrolling and hid the overflow** so the user is able to add multiple episode items and scroll up and down to view them. In order to style the scrollbar, I made use of Webkit again by coming across a Code Pen that had multiple scrollbar stylings.   
 
@@ -258,7 +258,7 @@ The below five JavaScript reflections are based on my prompts with ChatGPT for c
 
 ---
 
-##### iPod Shuffle Buttons 
+#### iPod Shuffle Buttons 
 
 The iPod mimics the iconic iPod classic, which includes the left and right shuffle buttons. I wanted the user to be able to click on any episode item within the list container, but also **use the left and right shuffle buttons to move through the list**. 
 
@@ -306,14 +306,14 @@ document
 
 <br>
 
-###### Figure 1: ChatGPT prompt reply for iPod shuffle buttons
+##### Figure 1: ChatGPT prompt reply for iPod shuffle buttons
 
 
 <img src="/docs/ChatGPT-1-Shuffle.jpeg" alt="Figure 1 - ChatGPT Shuffle Code" width="600" height="auto">
 
 ---
 
-##### Date Format Conversion
+#### Date Format Conversion
 
 In the 'Show Details' pop-up, the user is able to see whether they completed an episode or not. If they completed it, the user is also able to see the date that they completed it on. I used ChatGPT to help me **convert the date data collected from user input submission into a legible completion date** depending on if the user completed the episode or not. 
 
@@ -342,13 +342,13 @@ function episodeGreenTick(episode) {
 
 <br>
 
-###### Figure 2: ChatGPT prompt reply for date format conversion
+##### Figure 2: ChatGPT prompt reply for date format conversion
 
 <img src="/docs/ChatGPT-2-Date-Conversion.jpeg" alt="Figure 2 ChatGPT Date Conversion" width="600" height="auto">
 
 ---
 
-##### Emoji Star Rating
+#### Emoji Star Rating
 
 One of the **biggest struggles with the input form was the star rating feature**. I wanted to work specifically with star emojis and not filled stars. After searching online, I decided to prompt ChatGPT for a possible solution that I could alter. ChatGPT provided the **skeleton structure for the HTML** (I made sure to remove the on-click attributes) and **JavaScript**. I added a **conditional statement** to also ensure deselection was properly noted within the rating value. 
 
@@ -395,14 +395,14 @@ stars.forEach((star) => {
 
 <br>
 
-###### Figure 3: ChatGPT prompt reply for star rating feature
+##### Figure 3: ChatGPT prompt reply for star rating feature
 
 <img src="/docs/ChatGPT-3-Star-Rating.jpeg" alt="Figure 3 ChatGPT Star Rating" width="600" height="auto">
 <img src="/docs/ChatGPT-3-Star-Rating-2.jpeg" alt="Figure 3 ChatGPT Star Rating" width="600" height="auto">
 
 ---
 
-##### Dropdown Menu Alphabetical Order 
+#### Dropdown Menu Alphabetical Order 
 
 I switched the placeholder text from the Serial podcast to Hamish & Andy. I noticed that the alphabetical order would get mixed up, because 'comedy' was the placeholder, but it was not the first genre element. Therefore, I prompted ChatGPT to help me **organise the genre elements in alphabetical order once the user clicks on the dropdown menu to make their selection**. 
 
@@ -437,13 +437,13 @@ selectElement.value = selectedValue;
 
 <br>
 
-###### Figure 4: ChatGPT prompt reply for alphabetically sorting dropdown menu
+##### Figure 4: ChatGPT prompt reply for alphabetically sorting dropdown menu
 
 <img src="/docs/ChatGPT-4-Dropdown.jpeg" alt="Figure 4 ChatGPT Dropdown" width="600" height="auto">
 
 ---
 
-##### Temporary Episode Item for New Users 
+#### Temporary Episode Item for New Users 
 
 I consulted with my tutor about what a new user is supposed to see in the list given that they have not added any episodes yet. **My tutor advised that we should have a temporary episode item in the list** to give the user an example of what it looks like. ChatGPT helped me add the event listener to any window load events and then added in the conditional statement to check whether localStorage is empty and, if so, to display the temporary episode item. 
 
@@ -473,7 +473,7 @@ window.addEventListener("load", function () {
 
 <br>
 
-###### Figure 5: ChatGPT prompt reply for temporary episode item loading
+##### Figure 5: ChatGPT prompt reply for temporary episode item loading
 
 <img src="/docs/ChatGPT-5-Load.jpeg" alt="Figure 5 ChatGPT Load" width="600" height="auto">
 
