@@ -135,6 +135,36 @@ The mobile prototype design is similar to the mockup with two main amendments:
 
 Podfetch is built using **HTML, CSS and JavaScript**. From the 'Introduction to Web Design' unit, **I had good fundamental HTML and CSS skills**, which I was able to apply on my own for this prototype. The **majority of the Javascript code is based on tutorial content** from this unit, particularly from the interactive task list code. For some additional functionality based on my designs, I sought out **coding examples from the internet** and **prompted ChatGPT** for specific coding assistance. 
 
+#### <u>HTML Reflections</u>
+
+The HTML code sits within ./public/index.html
+
+##### Class and ID Attributes 
+
+Due to working with JavaScript, I learned that I can add both class and ID attributes to a single HTML element. The close button is featured on both pop-ups, so for CSS styling purposes I added a class attribute. For the JavaScript functionality, I used an ID attribute. 
+
+```HTML
+<img class="close-popup-button" id="close-episode-popup" 
+src="./images/cancel-button.png" alt="Button with a cross to close pop-up window">
+```
+
+##### Additional Form Field Attributes
+
+I also learned how to incorporate additional attributes for the user input form, including placeholder text, min and max values, and how to trigger a required prompt for the user to fill out all required form fields. 
+
+```HTML
+<input type="number" id="episodeMinutes" name="episodeMinutes" 
+min="0" max="59" placeholder="41" required>
+```
+
+#### <u>CSS Reflections</u>
+
+The CSS code sits within ./public/style.css
+
+#### <u>JavaScript Reflections</u>
+
+The JavaScript code sits within ./public/script.js
+
 * Text 1
 * Text 2
 * Text 3 

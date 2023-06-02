@@ -199,7 +199,7 @@ document
   .addEventListener("click", closeDetailsPopup);
 
 // IPOD SHUFFLE LEFT AND RIGHT BUTTONS
-// Received this code from prompting ChatGPT (see Figure)
+// Received this code from prompting ChatGPT (see Figure 1)
 // Lets user move through the list of elements as an additional functionality
 
 // Define currentEpisode globally so it can be accessed by multiple functions
@@ -392,7 +392,7 @@ function episodeDuration(episode) {
 function episodeGreenTick(episode) {
   let completeMessage;
 
-  // Received this code to convert the date input from prompting ChatGPT (see Figure)
+  // Received this code to convert the date input from prompting ChatGPT (see Figure 2)
   const options = { day: "numeric", month: "long", year: "numeric" };
   const completionDate = new Date(episode.date).toLocaleDateString(
     undefined,
@@ -471,7 +471,7 @@ form.addEventListener("submit", function (event) {
 });
 
 // INPUT FORM: STAR RATING FEATURE
-// Received this code from prompting ChatGPT (see Figure)
+// Received this code from prompting ChatGPT (see Figure 3)
 // This code converts the user rating value from 1 - 5 into star emojis
 
 // Select and store all 'star' class name elements
@@ -510,7 +510,7 @@ stars.forEach((star) => {
 });
 
 // INPUT FORM: DROPDOWN MENU FEATURE
-// Received this code from prompting ChatGPT (see Figure)
+// Received this code from prompting ChatGPT (see Figure 4)
 // This code sorts the genre list alphabetically to keep 'Comedy' in order
 
 // Get the select element
@@ -801,7 +801,7 @@ function addPodcastEpisode(
 }
 
 // LOAD EXAMPLE EPISODE ELEMENT IF LOCALSTORAGE EMPTY
-// Received this code from prompting ChatGPT (see Figure)
+// Received this code from prompting ChatGPT (see Figure 5)
 
 // If local storage is empty when the page loads, then call the function to display example podcast episode element
 window.addEventListener("load", function () {
