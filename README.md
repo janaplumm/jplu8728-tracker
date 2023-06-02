@@ -53,17 +53,23 @@ http://localhost:8888
 
 Podfetch pays homage to the **company Apple** using a minimalistic interface and typography. The term 'Podcast' was coined in 2004 by journalist Ben Hammersley, who combined the words 'iPod' and 'Broadcast' (Yaman, 2016). Taking inspiration from this, the focal point of the application is a **silver iPod classic**. The use of **Apple emoji imagery** links to the **millennial target group** and should encourage users to engage with the app and podcasts. 
 
+---
+
 ### <u>Mockup Desktop: Overview</u>
 
 The original mockup design for the desktop version consists of a **clean heading**, a **list containing tracked episode elements** and an **iPod** for main controls. Black and white minimalist colours are complemented with a splash of bright colours to lift the aesthethic and appeal to the target group. 
 
 ![Mockup Page 1](/docs/Desktop-Mockup-1.png)
 
+---
+
 ### <u>Mockup Desktop: Add Episode Pop-up</u>
 
 Used a **pop-up form with a one-column layout** for the user to add their podcast episode. Field **labels are positioned above the fields** so users can easily and quickly scan the form. **All fields are required except for the rating field**. This is notated with asterisks (*) and an alert message below the submission button.  
 
 ![Mockup Page 2](/docs/Desktop-Mockup-2.png)
+
+---
 
 ### <u>Mockup Desktop: Show Episode Details Pop-up</u>
 
@@ -72,6 +78,8 @@ The second pop-up lets the user **view all the input data they entered when they
 As well as being able to delete an item from the list container via the trash emoji image, the user can also **delete an episode via the delete button** in the pop-up.  
 
 ![Mockup Page 3](/docs/Desktop-Mockup-3.png)
+
+---
 
 ### <u>Prototype Desktop: Overview </u>
 
@@ -84,6 +92,8 @@ The prototype desktop design closely resembles the mockup with a few minor chang
 * **Swapped the emoji image for 'History & Culture' genre** after doing user testing, as people felt the scroll was visually more interesting and relevant compared to the hut emoji. 
 
 ![Prototype Page 1](/docs/Desktop-Prototype-1.png)
+
+---
 
 ### <u>Prototype Desktop: Add Episode Pop-up</u>
 
@@ -100,11 +110,15 @@ The prototype user input form has a few changes:
 
 ![Prototype Page 2](/docs/Desktop-Prototype-2.png)
 
+---
+
 ### <u>Prototype Desktop: Show Episode Details Pop-up</u>
 
 The 'Show Details' pop-up prototype most closely resembles the original mockup designs. The **only changes made affected the delete button**, which matches the sizing of the submission button. I **added a confirmation alert for the delete function** so that the user has to confirm that they want to delete an episode to avoid accidental deletion.  
 
 ![Prototype Page 3](/docs/Desktop-Prototype-3.png)
+
+---
 
 ### <u>Mockup Responsive Mobile</u>
 
@@ -115,6 +129,8 @@ The original mockup design for the mobile version **keeps the iPod as the focal 
   <img src="/docs/iPhone-Mockup-2.png" alt="Mobile mockup 2" width="250" height="auto">
   <img src="/docs/iPhone-Mockup-3.png" alt="Mobile mockup 3" width="250" height="auto">
 </div>
+
+---
 
 ### <u>Prototype Responsive Mobile</u>
 
@@ -128,6 +144,7 @@ The mobile prototype design is similar to the mockup with two main amendments:
   <img src="/docs/iPhone-Prototype-2.png" alt="Mobile prototype 2" width="250" height="auto">
   <img src="/docs/iPhone-Prototype-3.png" alt="Mobile prototype 3" width="250" height="auto">
 </div>
+
 
 <br>
 
