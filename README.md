@@ -237,9 +237,17 @@ As the list container is positioned within the page, I **enabeled scrolling and 
 
 *The JavaScript code sits within ./public/script.js*
 
+The below five JavaScript reflections are based on my prompts with ChatGPT for custom features that I have within Podfetch that extend beyond the scope of the tutorial content. 
+
 ---
 
 ##### iPod Shuffle Buttons 
+
+The iPod mimics the iconic iPod classic, which includes the left and right shuffle buttons. I wanted the user to be able to click on any episode item within the list container, but also **use the left and right shuffle buttons to move through the list**. 
+
+Initially, when I was testing the list items, they were being added in order from earliest to latest. **I wanted to reverse this so that the user always sees their latest tracking addition at the top of the list**. I made sure to incorporate this within the JavaScript code for the shuffle buttons and event listeners. 
+
+The prompt reply from ChatGPT is featured in Figure 1. 
 
 ```JavaScript
 // IPOD SHUFFLE LEFT AND RIGHT BUTTONS
@@ -268,17 +276,29 @@ function shuffleLeft() {
     }
   }
 }
+
+// Add event listeners to the shuffle buttons
+// Reverse the order because array is in reverse
+document
+  .getElementById("left-shuffle-button")
+  .addEventListener("click", shuffleRight);
+document
+  .getElementById("right-shuffle-button")
+  .addEventListener("click", shuffleLeft);
 ```
 
 <br>
 
 ###### Figure 1: ChatGPT prompt reply for iPod shuffle buttons
 
+
 <img src="/docs/ChatGPT-1-Shuffle.jpeg" alt="Figure 1 - ChatGPT Shuffle Code" width="600" height="auto">
 
 ---
 
 ##### Date Format Conversion
+
+In the 'Show Details' pop-up, the user is able to see whether they completed an episode or not. If they completed it, the user is also able to see the date that they completed it on. I used ChatGPT to help me **convert the date data collected from user input submission into a legible completion date** depending on if the user completed the episode or not. 
 
 ```JavaScript
 // Function that determines the output message depending on user input for episode completed
@@ -312,6 +332,8 @@ function episodeGreenTick(episode) {
 ---
 
 ##### Emoji Star Rating
+
+One of the **biggest struggles with the input form was the star rating feature**. I wanted to work specifically with star emojis and not filled stars. After searching online, I decided to prompt ChatGPT for a possible solution that I could alter. ChatGPT provided the **skeleton structure for the HTML** (I made sure to remove the on-click attributes) and **JavaScript**. I added a **conditional statement** to also ensure deselection was properly noted within the rating value. 
 
 ```JavaScript
 // INPUT FORM: STAR RATING FEATURE
@@ -359,10 +381,13 @@ stars.forEach((star) => {
 ###### Figure 3: ChatGPT prompt reply for star rating feature
 
 <img src="/docs/ChatGPT-3-Star-Rating.jpeg" alt="Figure 3 ChatGPT Star Rating" width="600" height="auto">
+<img src="/docs/ChatGPT-3-Star-Rating-2.jpeg" alt="Figure 3 ChatGPT Star Rating" width="600" height="auto">
 
 ---
 
 ##### Dropdown Menu Alphabetical Order 
+
+I switched the placeholder text from the Serial podcast to Hamish & Andy. I noticed that the alphabetical order would get mixed up, because 'comedy' was the placeholder, but it was not the first genre element. Therefore, I prompted ChatGPT to help me **organise the genre elements in alphabetical order once the user clicks on the dropdown menu to make their selection**. 
 
 ```JavaScript
 // INPUT FORM: DROPDOWN MENU FEATURE
@@ -402,6 +427,8 @@ selectElement.value = selectedValue;
 ---
 
 ##### Temporary Episode Item for New Users 
+
+I consulted with my tutor about what a new user is supposed to see in the list given that they have not added any episodes yet. **My tutor advised that we should have a temporary episode item in the list** to give the user an example of what it looks like. ChatGPT helped me add the event listener to any window load events and then added in the conditional statement to check whether localStorage is empty and, if so, to display the temporary episode item. 
 
 ```JavaScript
 // LOAD EXAMPLE EPISODE ELEMENT IF LOCALSTORAGE EMPTY
